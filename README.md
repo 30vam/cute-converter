@@ -1,2 +1,2 @@
 # qt-unit-converter
-My first project in the Qt framework
+A program for common unit conversions in the Qt framework (C++)
