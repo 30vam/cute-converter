@@ -205,17 +205,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <widget class="QScrollArea" name="conversionScrollArea">
         <property name="geometry">
          <rect>
-          <x>-10</x>
-          <y>-50</y>
+          <x>10</x>
+          <y>10</y>
           <width>651</width>
-          <height>1151</height>
+          <height>651</height>
          </rect>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="verticalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOn</enum>
         </property>
         <property name="widgetResizable">
          <bool>true</bool>
@@ -225,39 +219,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>632</width>
-           <height>1149</height>
+           <width>649</width>
+           <height>649</height>
           </rect>
          </property>
-         <widget class="QGroupBox" name="conversionGroupBox">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>10</y>
-            <width>601</width>
-            <height>921</height>
-           </rect>
-          </property>
-          <property name="title">
-           <string>Conversion</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-          <widget class="QPushButton" name="pushButton">
-           <property name="geometry">
-            <rect>
-             <x>100</x>
-             <y>800</y>
-             <width>81</width>
-             <height>24</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>PushButton</string>
-           </property>
-          </widget>
-         </widget>
         </widget>
        </widget>
       </widget>
