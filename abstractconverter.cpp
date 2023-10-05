@@ -20,19 +20,20 @@ AbstractConverter::AbstractConverter(QWidget *parent)
     QFont dosisFont("Dosis", 15, QFont::Light);
     QFont dosisBoldFont("Dosis", 15, QFont::Bold);
     QFont aleoFont("Aleo", 10);
+    QFont aleoBoldFont("Aleo", 15);
     QFont mulishFont("Mulish", 15, QFont::ExtraLight);
 
     //for testing
     //unitList = {"1", "2", "3"};
     //unitList = {"1", "2", "3", "4", "5"};
-    //unitList = {"1", "2", "3", "4", "5", "5", "6", "7", "8", "9", "10"};
-    //unitList = {"1", "2", "3", "4", "5", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
-    unitList = {"1", "2", "3", "4", "5", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"};
+    //unitList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+    //unitList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
+    unitList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"};
     conversionType = "length";
 
     //Setup converter UI
     AbstractConverter::setFont(aleoFont);
-    generateConverterUI(unitList, conversionType, exoFont);
+    generateConverterUI(unitList, conversionType, aleoBoldFont);
     //test
     qDebug() << unitList;
 }
@@ -47,13 +48,20 @@ void AbstractConverter::generateConverterUI(QList<QString> unitList, QString con
 
     //Setup layout inside the scrollArea
     QGridLayout *converterLayout = new QGridLayout(this);
-    converterLayout->setContentsMargins(96, 32, 96, 32);
+    converterLayout->setContentsMargins(64, 32, 64, 32);
+    converterLayout->setHorizontalSpacing(64);
+    converterLayout->setVerticalSpacing(16);
+    converterLayout->setColumnStretch(0,2);
+    converterLayout->setColumnStretch(1,1);
+    converterLayout->setRowMinimumHeight(1, 16);
     setLayout(converterLayout);
 
     //Generate user input section on the top part of the layout
     QLineEdit *inputLineEdit = new QLineEdit(this);
     inputLineEdit->setFont(inputFont);
-    inputLineEdit->setPlaceholderText("Enter " + conversionType.toUpper() + " value here...");
+    inputLineEdit->setPlaceholderText("Enter " + conversionType.toUpper() + "...");
+    inputLineEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
+    inputLineEdit->setClearButtonEnabled(true);
     QComboBox *unitComboBox = new QComboBox(this);
     unitComboBox->setFont(inputFont);
     unitComboBox->addItems(unitList);
@@ -66,11 +74,12 @@ void AbstractConverter::generateConverterUI(QList<QString> unitList, QString con
     //Add all of the above to the grid layout
     converterLayout->addWidget(inputLineEdit, 0, 0);
     converterLayout->addWidget(unitComboBox, 0, 1);
-    converterLayout->addWidget(lineFrame, 1, 0);
+    converterLayout->addWidget(lineFrame, 1, 0, 1, 2);
 
     //Generates converted values inside lineEdits, below the use input section
     for(int row = outputStartingRow; row < (unitList.count() + outputStartingRow); row++){
         QLineEdit *outputLineEdit = new QLineEdit(this);
+        outputLineEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
         outputLineEdit->setPlaceholderText(unitList.at(row - outputStartingRow));
         converterLayout->addWidget(outputLineEdit, row, 0);
 
