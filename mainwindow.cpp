@@ -1,7 +1,6 @@
 #include "mainwindow.h"
+#include "abstractconverter.h"
 #include "ui_mainwindow.h"
-#include <QSize>
-#include <QGroupBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -9,15 +8,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //WIDGET MEMBERS
-
     //Set the starting app size as default. You can use Design tab to change the window size manually.
     this->setFixedSize(this->geometry().width(), this->geometry().height());
 
-    //scrollarea test
-    QGroupBox *testGroupBox = new QGroupBox("Test box", this);
-    testGroupBox->setFixedHeight(2000);
-    ui->conversionScrollArea->setWidget(testGroupBox);
+    //test, remove header ABSTRACT header if it's not needed anymore.
+    AbstractConverter *testConverter = new AbstractConverter(this);
+    ui->conversionScrollArea->setWidget(testConverter);
 
 }
 

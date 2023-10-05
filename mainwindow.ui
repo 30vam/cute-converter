@@ -70,6 +70,12 @@
     </item>
     <item>
      <widget class="QStackedWidget" name="conversionStackedWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -77,6 +83,12 @@
        <number>0</number>
       </property>
       <widget class="QWidget" name="lengthWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <widget class="QGroupBox" name="infoGroupBox">
         <property name="geometry">
          <rect>
@@ -85,6 +97,12 @@
           <width>321</width>
           <height>671</height>
          </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
         <property name="title">
          <string>Info</string>
