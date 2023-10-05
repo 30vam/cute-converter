@@ -2,6 +2,7 @@
 #define ABSTRACTCONVERTER_H
 
 #include <QWidget>
+#include <QGridLayout>
 
 class AbstractConverter : public QWidget
 {
@@ -19,9 +20,12 @@ private:
     //Declaration of members that are unique to each converter.
     QList<QString> unitList;
     QString conversionType;
+    QGridLayout *converterGridLayout;
+    int outputStartingRow;
 
     //This method generates all the buttons, lineEdits etc.
-    void generateConverterUI(QList<QString> unitList, QString conversionType, QFont inputFont);
+    void generateInputSection(QGridLayout *converterGridLayout, QString &conversionType, QList<QString> &unitList, QFont &inputFont);
+    void generateOutputSection(QGridLayout *converterGridLayout, QList<QString> &unitList);
 
 signals:
     //Abstract function for each type of converter
