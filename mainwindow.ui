@@ -41,6 +41,7 @@
        </property>
        <property name="font">
         <font>
+         <family>Exo Black</family>
          <pointsize>15</pointsize>
          <bold>true</bold>
         </font>
@@ -226,7 +227,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <x>10</x>
           <y>10</y>
           <width>651</width>
-          <height>651</height>
+          <height>661</height>
          </rect>
         </property>
         <property name="widgetResizable">
@@ -238,7 +239,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <x>0</x>
            <y>0</y>
            <width>649</width>
-           <height>649</height>
+           <height>659</height>
           </rect>
          </property>
         </widget>

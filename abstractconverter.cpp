@@ -2,43 +2,89 @@
 
 #include <QDebug>
 #include <QScrollArea>
-#include <QHBoxLayout>
+#include <QGridLayout>
 #include <QLineEdit>
 #include <QComboBox>
 #include <QPushButton>
+#include <QFrame>
+#include <QSpacerItem>
 
 AbstractConverter::AbstractConverter(QWidget *parent)
     : QWidget{parent}
 {
-    //test
-    this->unitList.append("Test2");
-    QHBoxLayout *converterLayout = new QHBoxLayout(this);
-    QPushButton *testButton = new QPushButton("TEST", this);
-    testButton->setFixedSize(100, 1000);
-    QPushButton *testButton2 = new QPushButton("TEST2", this);
-    testButton2->setFixedSize(100, 1000);
-    converterLayout->addWidget(testButton);
-    converterLayout->addWidget(testButton2);
-    //DONT FORGET TO ADD THESE LATER
-    //QLineEdit *valueLineEdit;
-    //QComboBox *unitComboBox;
+    //Size policy for buttons etc.
+    //QSizePolicy *buttonSizePolicy = new QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 
-    generateAllUnits(this);
+    //FONTS and other attributes
+    QFont exoFont("Exo Medium", 15);
+    QFont dosisFont("Dosis", 15, QFont::Light);
+    QFont dosisBoldFont("Dosis", 15, QFont::Bold);
+    QFont aleoFont("Aleo", 10);
+    QFont mulishFont("Mulish", 15, QFont::ExtraLight);
+
+    //for testing
+    //unitList = {"1", "2", "3"};
+    //unitList = {"1", "2", "3", "4", "5"};
+    //unitList = {"1", "2", "3", "4", "5", "5", "6", "7", "8", "9", "10"};
+    //unitList = {"1", "2", "3", "4", "5", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
+    unitList = {"1", "2", "3", "4", "5", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"};
+    conversionType = "length";
+
+    //Setup converter UI
+    AbstractConverter::setFont(aleoFont);
+    generateConverterUI(unitList, conversionType, exoFont);
+    //test
+    qDebug() << unitList;
 }
 
-//MAYBE I NEEDED TO SETUP CONVERSION SCROLL AREA WIDGET FIRST
-void AbstractConverter::generateAllUnits(AbstractConverter *converterObject)
+void AbstractConverter::generateConverterUI(QList<QString> unitList, QString conversionType, QFont inputFont)
 {
-    /*//Setup groupBox
-    converterObject->converterGroupBox->setTitle(converterObject->groupBoxTitle);
-    float width = converterObject->conversionScrollArea->width();
-    float height = converterObject->conversionScrollArea->height();
-    converterObject->converterGroupBox->setMinimumSize(width, height);
+    //Test to see if the function runs and recognizes the units
+    qDebug() << "The Units are : "<< unitList;
 
-    //Setup lineEdit
-    converterObject->valueLineEdit->setPlaceholderText("Enter a value...");
+    //In which row should automatic lineEdit generation start ?
+    int outputStartingRow = 2;
 
-    //Setup comboBox
-    converterObject->unitComboBox->addItems(converterObject->unitList);*/
+    //Setup layout inside the scrollArea
+    QGridLayout *converterLayout = new QGridLayout(this);
+    converterLayout->setContentsMargins(96, 32, 96, 32);
+    setLayout(converterLayout);
+
+    //Generate user input section on the top part of the layout
+    QLineEdit *inputLineEdit = new QLineEdit(this);
+    inputLineEdit->setFont(inputFont);
+    inputLineEdit->setPlaceholderText("Enter " + conversionType.toUpper() + " value here...");
+    QComboBox *unitComboBox = new QComboBox(this);
+    unitComboBox->setFont(inputFont);
+    unitComboBox->addItems(unitList);
+
+    //Generates a line that seperates input & output section
+    QFrame *lineFrame = new QFrame(this);
+    lineFrame->setFrameShape(QFrame::HLine);
+    lineFrame->setFrameShadow(QFrame::Sunken);
+
+    //Add all of the above to the grid layout
+    converterLayout->addWidget(inputLineEdit, 0, 0);
+    converterLayout->addWidget(unitComboBox, 0, 1);
+    converterLayout->addWidget(lineFrame, 1, 0);
+
+    //Generates converted values inside lineEdits, below the use input section
+    for(int row = outputStartingRow; row < (unitList.count() + outputStartingRow); row++){
+        QLineEdit *outputLineEdit = new QLineEdit(this);
+        outputLineEdit->setPlaceholderText(unitList.at(row - outputStartingRow));
+        converterLayout->addWidget(outputLineEdit, row, 0);
+
+        //Create a spacer at the end of the button generation
+        if (row >= (unitList.count() + outputStartingRow - 1)) {
+            QSpacerItem *verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+            converterLayout->addItem(verticalSpacer, row + 1, 0);
+        }
+    }
+
+    //Generates unit buttons which can be clicked, right next to their value lineEdits.
+    for(int row = outputStartingRow; row < (unitList.count() + outputStartingRow); row++){
+        QPushButton *unitPushButton = new QPushButton(unitList.at(row - outputStartingRow), this);
+        converterLayout->addWidget(unitPushButton, row, 1);
+    }
 
 }
