@@ -17,13 +17,14 @@ private:
     QFont dosisBoldFont;
     QFont aleoFont;
 
-    //Declaration of members that are unique to each converter.
+    //OTHER MEMBERS
     QList<QString> unitList;
     QString conversionType;
     QGridLayout *converterGridLayout;
     int outputStartingRow;
+    int defaultComboBoxUnit;
 
-    //This method generates all the buttons, lineEdits etc.
+    //This methods generats all the buttons, lineEdits etc.
     void generateInputSection(QGridLayout *converterGridLayout, QString &conversionType, QList<QString> &unitList, QFont &inputFont);
     void generateOutputSection(QGridLayout *converterGridLayout, QList<QString> &unitList);
 

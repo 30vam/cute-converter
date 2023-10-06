@@ -8,6 +8,7 @@
 #include <QPushButton>
 #include <QFrame>
 #include <QSpacerItem>
+#include <QDoubleValidator>
 
 AbstractConverter::AbstractConverter(QWidget *parent)
     : QWidget{parent}
@@ -23,6 +24,7 @@ AbstractConverter::AbstractConverter(QWidget *parent)
     QGridLayout *converterGridLayout = new QGridLayout(this);
     //In which row should output UI start ?
     outputStartingRow = 2;
+    defaultComboBoxUnit = 0;
 
     //for testing
     //unitList = {"1", "2", "3"};
@@ -55,15 +57,21 @@ void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, Q
     converterGridLayout->setRowMinimumHeight(1, 16);
     setLayout(converterGridLayout);
 
-    //Generate user input section on the top part of the layout
+    //Generate the main lineEdit the top part of the layout
     QLineEdit *inputLineEdit = new QLineEdit(this);
     inputLineEdit->setFont(inputFont);
     inputLineEdit->setPlaceholderText("Enter " + conversionType.toUpper() + "...");
     inputLineEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
     inputLineEdit->setClearButtonEnabled(true);
+    //Set input validator for lineEdit
+    QValidator *inputValidator = new QDoubleValidator(this); //This let's us allow doubles inside textEdits only
+    inputLineEdit->setValidator(inputValidator);
+
+    //Create a comboBox for available units
     QComboBox *unitComboBox = new QComboBox(this);
     unitComboBox->setFont(inputFont);
     unitComboBox->addItems(unitList);
+    unitComboBox->setCurrentIndex(defaultComboBoxUnit);
 
     //Generates a line that seperates input & output section
     QFrame *lineFrame = new QFrame(this);
@@ -77,13 +85,16 @@ void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, Q
 
 }
 
-void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, QList<QString> &unitList){
+void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, QList<QString> &unitList)
+{
+    QValidator *inputValidator = new QDoubleValidator(this);
 
     //Generates converted values inside lineEdits, below the use input section
     for(int row = outputStartingRow; row < (unitList.count() + outputStartingRow); row++){
         QLineEdit *outputLineEdit = new QLineEdit(this);
         outputLineEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        outputLineEdit->setPlaceholderText(unitList.at(row - outputStartingRow));
+        outputLineEdit->setPlaceholderText("Enter value to convert from " + unitList.at(row - outputStartingRow));
+        outputLineEdit->setValidator(inputValidator);
         converterGridLayout->addWidget(outputLineEdit, row, 0);
 
         //Create a spacer at the end of the button generation
