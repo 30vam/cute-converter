@@ -2,10 +2,6 @@
 
 #include <QDebug>
 #include <QScrollArea>
-#include <QGridLayout>
-#include <QLineEdit>
-#include <QComboBox>
-#include <QPushButton>
 #include <QFrame>
 #include <QSpacerItem>
 #include <QDoubleValidator>
@@ -20,14 +16,13 @@ AbstractConverter::AbstractConverter(QWidget *parent)
     QFont aleoFont("Aleo", 10);
     QFont aleoBoldFont("Aleo", 15);
     //QFont mulishFont("Mulish", 15, QFont::ExtraLight);
+
     //CREATE THE GRID LAYOUT
     QGridLayout *converterGridLayout = new QGridLayout(this);
     //In which row should output UI start ?
     outputStartingRow = 2;
     defaultComboBoxUnit = 0;
-    conversionType = "[Test value]";
-
-    //for testing
+    conversionType = "[Test]";
     unitList = { {"Test 1", 0.001}, {"Test 2", 0.01}, {"Test 3", 1.0}, {"Test 4", 1000} };
 
     //Setup converter UI
@@ -41,9 +36,6 @@ AbstractConverter::AbstractConverter(QWidget *parent)
 
 void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, QString &conversionType, QList<QPair<QString, double>> &unitList, QFont &inputFont)
 {
-    //Test to see if the function runs and recognizes the units
-    qDebug() << "Units when running method: "<< unitList;
-
     //Setup layout inside the scrollArea
     converterGridLayout->setContentsMargins(64, 32, 64, 32);
     converterGridLayout->setHorizontalSpacing(64);

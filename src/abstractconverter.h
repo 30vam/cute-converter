@@ -3,7 +3,9 @@
 
 #include <QWidget>
 #include <QGridLayout>
-#include <QPair>
+#include <QLineEdit>
+#include <QComboBox>
+#include <QPushButton>
 
 class AbstractConverter : public QWidget
 {
@@ -20,18 +22,22 @@ private:
 
     //OTHER MEMBERS
     QList<QPair<QString, double>> unitList;
+    //QList<QPair<QLineEdit, QString>> lineEditToUnitConnecter; //REMEBER TO FIX LATER
     QString conversionType;
     QGridLayout *converterGridLayout;
+
     int outputStartingRow;
     int defaultComboBoxUnit;
 
-    //This methods generats all the buttons, lineEdits etc.
+    //This methods generate all the buttons, lineEdits etc.
     void generateInputSection(QGridLayout *converterGridLayout, QString &conversionType, QList<QPair<QString, double>> &unitList, QFont &inputFont);
     void generateOutputSection(QGridLayout *converterGridLayout, QList<QPair<QString, double>> &unitList);
 
-signals:
     //Abstract function for each type of converter
-    //virtual void convertValues() = 0;
+    virtual void convertValues() = 0;
+
+signals:
+
 
 };
 
