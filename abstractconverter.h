@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QGridLayout>
+#include <QPair>
 
 class AbstractConverter : public QWidget
 {
@@ -18,15 +19,15 @@ private:
     QFont aleoFont;
 
     //OTHER MEMBERS
-    QList<QString> unitList;
+    QList<QPair<QString, double>> unitList;
     QString conversionType;
     QGridLayout *converterGridLayout;
     int outputStartingRow;
     int defaultComboBoxUnit;
 
     //This methods generats all the buttons, lineEdits etc.
-    void generateInputSection(QGridLayout *converterGridLayout, QString &conversionType, QList<QString> &unitList, QFont &inputFont);
-    void generateOutputSection(QGridLayout *converterGridLayout, QList<QString> &unitList);
+    void generateInputSection(QGridLayout *converterGridLayout, QString &conversionType, QList<QPair<QString, double>> &unitList, QFont &inputFont);
+    void generateOutputSection(QGridLayout *converterGridLayout, QList<QPair<QString, double>> &unitList);
 
 signals:
     //Abstract function for each type of converter

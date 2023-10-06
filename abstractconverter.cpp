@@ -25,14 +25,10 @@ AbstractConverter::AbstractConverter(QWidget *parent)
     //In which row should output UI start ?
     outputStartingRow = 2;
     defaultComboBoxUnit = 0;
+    conversionType = "[Test value]";
 
     //for testing
-    //unitList = {"1", "2", "3"};
-    unitList = {"1", "2", "3", "4", "5"};
-    //unitList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-    //unitList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
-    //unitList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"};
-    conversionType = "length";
+    unitList = { {"Test 1", 0.001}, {"Test 2", 0.01}, {"Test 3", 1.0}, {"Test 4", 1000} };
 
     //Setup converter UI
     AbstractConverter::setFont(aleoFont);
@@ -43,7 +39,7 @@ AbstractConverter::AbstractConverter(QWidget *parent)
     qDebug() << "Units after running method: " << unitList;
 }
 
-void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, QString &conversionType, QList<QString> &unitList, QFont &inputFont)
+void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, QString &conversionType, QList<QPair<QString, double>> &unitList, QFont &inputFont)
 {
     //Test to see if the function runs and recognizes the units
     qDebug() << "Units when running method: "<< unitList;
@@ -70,7 +66,10 @@ void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, Q
     //Create a comboBox for available units
     QComboBox *unitComboBox = new QComboBox(this);
     unitComboBox->setFont(inputFont);
-    unitComboBox->addItems(unitList);
+    for(int i =0; i < unitList.count(); i++) //Loop for adding unit list to the combo box
+    {
+        unitComboBox->addItem(unitList[i].first);
+    }
     unitComboBox->setCurrentIndex(defaultComboBoxUnit);
 
     //Generates a line that seperates input & output section
@@ -85,15 +84,15 @@ void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, Q
 
 }
 
-void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, QList<QString> &unitList)
+void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, QList<QPair<QString, double>> &unitList)
 {
     QValidator *inputValidator = new QDoubleValidator(this);
 
-    //Generates converted values inside lineEdits, below the use input section
+    //Generates as many lineEdits as available units
     for(int row = outputStartingRow; row < (unitList.count() + outputStartingRow); row++){
         QLineEdit *outputLineEdit = new QLineEdit(this);
         outputLineEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        outputLineEdit->setPlaceholderText("Enter value to convert from " + unitList.at(row - outputStartingRow));
+        outputLineEdit->setPlaceholderText("Enter value to convert from " + unitList.at(row - outputStartingRow).first);
         outputLineEdit->setValidator(inputValidator);
         converterGridLayout->addWidget(outputLineEdit, row, 0);
 
@@ -104,9 +103,9 @@ void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, 
         }
     }
 
-    //Generates unit buttons which can be clicked, right next to their value lineEdits.
+    //Generates unit buttons right next to their value lineEdits.
     for(int row = outputStartingRow; row < (unitList.count() + outputStartingRow); row++){
-        QPushButton *unitPushButton = new QPushButton(unitList.at(row - outputStartingRow), this);
+        QPushButton *unitPushButton = new QPushButton(unitList.at(row - outputStartingRow).first, this);
         converterGridLayout->addWidget(unitPushButton, row, 1);
     }
 }
