@@ -1,6 +1,6 @@
 #include "mainwindow.h"
-#include "abstractconverter.h"
 #include "ui_mainwindow.h"
+#include "src/lengthconverter.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,8 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(this->geometry().width(), this->geometry().height());
 
     //just for test, remove header ABSTRACT header if it's not needed anymore.
-    AbstractConverter *testConverter = new AbstractConverter(this);
-    ui->conversionScrollArea->setWidget(testConverter);
+    LengthConverter *lengthConverter = new LengthConverter(this);
+    ui->lengthScrollArea->setWidget(lengthConverter);
 
 }
 
