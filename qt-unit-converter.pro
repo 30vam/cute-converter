@@ -12,11 +12,13 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     src/abstractconverter.cpp \
+    src/areaconverter.cpp \
     src/lengthconverter.cpp
 
 HEADERS += \
     mainwindow.h \
     src/abstractconverter.h \
+    src/areaconverter.h \
     src/lengthconverter.h
 
 FORMS += \
