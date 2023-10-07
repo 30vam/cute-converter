@@ -30,19 +30,43 @@
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
       </property>
       <property name="itemsExpandable">
        <bool>true</bool>
       </property>
+      <property name="headerHidden">
+       <bool>false</bool>
+      </property>
+      <attribute name="headerVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="headerCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="headerDefaultSectionSize">
+       <number>100</number>
+      </attribute>
+      <attribute name="headerHighlightSections">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="headerShowSortIndicator" stdset="0">
+       <bool>false</bool>
+      </attribute>
       <column>
        <property name="text">
-        <string>Available Conversions</string>
+        <string>  Conversions:</string>
        </property>
        <property name="font">
         <font>
          <family>Aleo</family>
-         <pointsize>15</pointsize>
+         <pointsize>25</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -53,8 +77,15 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>15</pointsize>
+         <family>Aleo Medium</family>
+         <pointsize>20</pointsize>
+         <bold>false</bold>
         </font>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normalon>:/icons/basicTreeIcon.png</normalon>
+        </iconset>
        </property>
        <item>
         <property name="text">
@@ -62,9 +93,14 @@
         </property>
         <property name="font">
          <font>
-          <family>Segoe UI</family>
+          <family>Aleo</family>
           <pointsize>12</pointsize>
          </font>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/icons/lengthTreeIcon.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
@@ -73,9 +109,14 @@
         </property>
         <property name="font">
          <font>
-          <family>Segoe UI</family>
+          <family>Aleo</family>
           <pointsize>12</pointsize>
          </font>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/icons/AreaTreeIcon.png</normalon>
+         </iconset>
         </property>
        </item>
       </item>
@@ -85,12 +126,18 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>15</pointsize>
+         <family>Aleo Medium</family>
+         <pointsize>20</pointsize>
         </font>
        </property>
        <item>
         <property name="text">
          <string>New Subitem</string>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
         </property>
        </item>
        <item>
@@ -110,7 +157,8 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>15</pointsize>
+         <family>Aleo Medium</family>
+         <pointsize>20</pointsize>
         </font>
        </property>
        <item>
@@ -125,7 +173,8 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>15</pointsize>
+         <family>Aleo Medium</family>
+         <pointsize>20</pointsize>
         </font>
        </property>
        <item>
@@ -157,17 +206,10 @@
       </property>
       <widget class="QWidget" name="basicPage">
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="1" column="1">
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0">
          <widget class="QPushButton" name="pushButton">
           <property name="text">
-           <string>PushButton</string>
+           <string>This page will have BASIC converter icons</string>
           </property>
          </widget>
         </item>
@@ -363,8 +405,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>646</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>

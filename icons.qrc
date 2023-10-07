@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>icons/lengthIcon.png</file>
         <file>icons/areaIcon.png</file>
+        <file>icons/AreaTreeIcon.png</file>
+        <file>icons/lengthTreeIcon.png</file>
+        <file>icons/basicTreeIcon.png</file>
     </qresource>
 </RCC>
