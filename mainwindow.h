@@ -16,6 +16,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 private:
+    int indexOfItemInParent;
+    int indexOfParent;
 
 private slots:
     void on_conversionTypeTreeWidget_itemSelectionChanged();

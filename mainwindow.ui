@@ -90,7 +90,17 @@
        </property>
        <item>
         <property name="text">
-         <string>test</string>
+         <string>New Subitem</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>New Subitem</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>New Subitem</string>
         </property>
        </item>
       </item>
@@ -103,6 +113,11 @@
          <pointsize>15</pointsize>
         </font>
        </property>
+       <item>
+        <property name="text">
+         <string>New Subitem</string>
+        </property>
+       </item>
       </item>
       <item>
        <property name="text">
@@ -115,7 +130,12 @@
        </property>
        <item>
         <property name="text">
-         <string>test</string>
+         <string>New Subitem</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>New Subitem</string>
         </property>
        </item>
       </item>
@@ -135,6 +155,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
+      <widget class="QWidget" name="basicPage"/>
       <widget class="QWidget" name="lengthWidget">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -467,6 +488,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </widget>
        </widget>
       </widget>
+      <widget class="QWidget" name="page"/>
+      <widget class="QWidget" name="page_2"/>
+      <widget class="QWidget" name="page_3"/>
+      <widget class="QWidget" name="page_4"/>
+      <widget class="QWidget" name="page_5"/>
+      <widget class="QWidget" name="page_6"/>
      </widget>
     </item>
    </layout>
