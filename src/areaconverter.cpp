@@ -1,13 +1,12 @@
 #include "areaconverter.h"
 
 AreaConverter::AreaConverter(QWidget *parent)
-    : AbstractConverter({ {"fm/femtometer", 1e+15}, {"pm/picometer", 1e+12}, {"Å/angstrom", 1e+10}, {"nm/nanometer", 1e+9}, {"μm/micrometer/micron", 1000000},
-                        {"mm/millimeters", 1000}, {"cm/centimeters", 100}, {"dm/decimeter", 10}, {"m/meter", 1}, {"dam/decameter", 0.1},
-                        {"hm/hectometer", 0.01}, {"km/kilometer", 0.001}, {"Mm/megameter", 0.000001}, {"Gm/gigameter", 1e-9},
-                        {"Tm/terameter", 1e-12}, {"Pm/petameter", 1e-15}, {"in/inch", 39.3701}, {"ft/foot", 3.281}, {"yd/yard", 1.094},
-                        {"mi/mile", 0.000621}, {"league", 0.0002071}, {"Light-year/ly", 1.057e-16}, {"parsec/pc", 3.24078e-17}}
-                        ,"Area", 2, parent)
+    : AbstractConverter({ {"pm²/square picometer", 1e+24}, {"nm²/square nanometer", 1e+18}, {"μm²/square micrometer", 1e+12},
+                        {"mm²/square millimeter", 1000000}, {"cm²/square centimeter", 10000}, {"dm²/square decimeter", 100}, {"m²/square meter", 1},
+                        {"a/are", 0.01}, {"ha/hectar", 0.0001}, {"ac/acre", 0.000247}, {"km²/square kilometer", 0.000001}, {"in²/square inch", 1550.0031},
+                        {"ft²/square foot", 10.76391}, {"yd²/square yard", 1.19599}, {"mi²/square mile", 3.861e-7}}, "Area", 7, parent)
 {
+
 
 }
 

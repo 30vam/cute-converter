@@ -32,7 +32,7 @@ AbstractConverter::AbstractConverter(QList<QPair<QString, double>> unitList, QSt
     generateOutputSection(converterGridLayout, unitList);
 
     //test
-    qDebug() << "Units after running method: " << unitList;
+    //qDebug() << "Units after running method: " << unitList;
 }
 
 void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, QString &conversionType, QList<QPair<QString, double>> &unitList, QFont &inputFont)
@@ -85,7 +85,7 @@ void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, 
     for(int row = outputStartingRow; row < (unitList.count() + outputStartingRow); row++){
         QLineEdit *outputLineEdit = new QLineEdit(this);
         outputLineEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        outputLineEdit->setPlaceholderText("Type to convert " + unitList.at(row - outputStartingRow).first);
+        outputLineEdit->setPlaceholderText("Convert " + unitList.at(row - outputStartingRow).first);
         outputLineEdit->setValidator(inputValidator);
         outputLineEdit->setClearButtonEnabled(true);
         converterGridLayout->addWidget(outputLineEdit, row, 0);
