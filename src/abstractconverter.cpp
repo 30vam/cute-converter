@@ -6,7 +6,7 @@
 #include <QSpacerItem>
 #include <QDoubleValidator>
 
-AbstractConverter::AbstractConverter(QWidget *parent)
+AbstractConverter::AbstractConverter(QList<QPair<QString, double>> unitList, QString conversionType, int defaultComboBoxUnit, QWidget *parent)
     : QWidget{parent}
 {
     //FONTS
@@ -21,9 +21,10 @@ AbstractConverter::AbstractConverter(QWidget *parent)
     QGridLayout *converterGridLayout = new QGridLayout(this);
     //In which row should output UI start ?
     outputStartingRow = 2;
-    defaultComboBoxUnit = 0;
-    conversionType = "[Test]";
-    unitList = { {"Test 1", 0.001}, {"Test 2", 0.01}, {"Test 3", 1.0}, {"Test 4", 1000} };
+    //Set up properties that are captured by the constructor
+    this->defaultComboBoxUnit = defaultComboBoxUnit;
+    this->conversionType = conversionType;
+    this->unitList = unitList;
 
     //Setup converter UI
     AbstractConverter::setFont(aleoFont);
@@ -84,7 +85,7 @@ void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, 
     for(int row = outputStartingRow; row < (unitList.count() + outputStartingRow); row++){
         QLineEdit *outputLineEdit = new QLineEdit(this);
         outputLineEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        outputLineEdit->setPlaceholderText("Enter value to convert from " + unitList.at(row - outputStartingRow).first);
+        outputLineEdit->setPlaceholderText("Type to convert " + unitList.at(row - outputStartingRow).first);
         outputLineEdit->setValidator(inputValidator);
         converterGridLayout->addWidget(outputLineEdit, row, 0);
 

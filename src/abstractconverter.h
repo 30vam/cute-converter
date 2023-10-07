@@ -11,7 +11,7 @@ class AbstractConverter : public QWidget
 {
     Q_OBJECT
 public:
-    explicit AbstractConverter(QWidget *parent = nullptr);
+    explicit AbstractConverter(QList<QPair<QString, double>> unitList, QString conversionType, int defaultComboBoxUnit, QWidget *parent = nullptr);
 
 private:
     //FONTS
