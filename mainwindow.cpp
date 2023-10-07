@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "src/lengthconverter.h"
+#include "src/areaconverter.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,9 +18,11 @@ MainWindow::MainWindow(QWidget *parent)
     indexOfItemInParent = 0;
     indexOfParent = 0;
 
-    //Create my custom lengthConverter widget
+    //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
     ui->lengthScrollArea->setWidget(lengthConverter);
+    AreaConverter *areaConverter = new AreaConverter(this);
+    ui->areaScrollArea->setWidget(areaConverter);
 
 }
 

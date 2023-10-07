@@ -87,6 +87,7 @@ void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, 
         outputLineEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
         outputLineEdit->setPlaceholderText("Type to convert " + unitList.at(row - outputStartingRow).first);
         outputLineEdit->setValidator(inputValidator);
+        outputLineEdit->setClearButtonEnabled(true);
         converterGridLayout->addWidget(outputLineEdit, row, 0);
 
         //Create a spacer at the end of the button generation
