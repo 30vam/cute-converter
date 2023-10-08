@@ -2,7 +2,9 @@
 #include "ui_mainwindow.h"
 #include "src/lengthconverter.h"
 #include "src/areaconverter.h"
+#include <QDebug>
 
+//Constructor
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -12,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     //Set the starting app size as default. You can use Design tab to change the window size manually.
     //this->setFixedSize(this->geometry().width(), this->geometry().height());
 
-    //Indexes for left-side tree widget
+    //Set up tree widget
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0));  //Set the default page to the BASIC page
     ui->conversionTypeTreeWidget->expandAll(); //Expand the tree list when the program starts
     indexOfItemInParent = 0;
@@ -26,10 +28,14 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
+//Deconstructor
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+//Methods -----------------------------------------------------------------
+
 
 //SLOTS ------------------------------------------------------------------
 

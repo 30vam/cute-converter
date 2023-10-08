@@ -29,7 +29,7 @@ AbstractConverter::AbstractConverter(QList<QPair<QString, double>> unitList, QSt
     //Setup converter UI
     AbstractConverter::setFont(aleoFont);
     generateInputSection(converterGridLayout, conversionType, unitList, aleoBoldFont);
-    generateOutputSection(converterGridLayout, unitList);
+    generateOutputSection(converterGridLayout, outputLineEditList, unitList);
 
     //test
     //qDebug() << "Units after running method: " << unitList;
@@ -77,7 +77,7 @@ void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, Q
 
 }
 
-void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, QList<QPair<QString, double>> &unitList)
+void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, QList<QLineEdit *> &outputLineEditList, QList<QPair<QString, double>> &unitList)
 {
     QValidator *inputValidator = new QDoubleValidator(this);
 
@@ -89,8 +89,16 @@ void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, 
         outputLineEdit->setValidator(inputValidator);
         outputLineEdit->setClearButtonEnabled(true);
         converterGridLayout->addWidget(outputLineEdit, row, 0);
+        outputLineEditList.append(outputLineEdit); //Add the new lineEdit(its pointer) to a list for later use
 
-        //Create a spacer at the end of the button generation
+        //This connect function, connects the "textChanged" signal from lineEdits to the lambda function,
+        //the lambda function also takes the new entered value, so it can be used inside the calculator function for the final result.
+        connect(outputLineEdit, &QLineEdit::textChanged, [&](QString newText){
+            convertValues(newText, outputLineEditList);
+        });
+
+
+        //Create a spacer if the last lineEdit is made
         if (row >= (unitList.count() + outputStartingRow - 1)) {
             QSpacerItem *verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
             converterGridLayout->addItem(verticalSpacer, row + 1, 0);

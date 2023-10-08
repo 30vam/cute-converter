@@ -18,11 +18,9 @@ public:
 private:
     int indexOfItemInParent;
     int indexOfParent;
+    Ui::MainWindow *ui;
 
 private slots:
     void on_conversionTypeTreeWidget_itemSelectionChanged();
-
-private:
-    Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
