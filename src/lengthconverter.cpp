@@ -15,7 +15,7 @@ LengthConverter::LengthConverter(QWidget *parent)
 
 void LengthConverter::convertValues(int unitIndex, QString valueString, QList<QLineEdit *> &outputLineEditList)
 {
-    qDebug() << "Length unit entered: " << unitList.at(unitIndex);
+    //qDebug() << "Length unit entered: " << unitList.at(unitIndex);
 
     double inputDouble = valueString.toDouble();
     double toMeterCoefficient = unitList.at(unitIndex).second;

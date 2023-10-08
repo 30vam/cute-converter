@@ -12,5 +12,14 @@ AreaConverter::AreaConverter(QWidget *parent)
 
 void AreaConverter::convertValues(int unitIndex, QString valueString, QList<QLineEdit *> &outputLineEditList)
 {
-    qDebug() << "Area value entered: " << valueString ;
+    double inputDouble = valueString.toDouble();
+    double toMeterCoefficient = unitList.at(unitIndex).second;
+    double inputToMeter = inputDouble / toMeterCoefficient;
+
+    //Convert value from meter to each unit INDIVIDUALLY
+    for(int i = 0; i < outputLineEditList.count(); i++)
+    {
+        double convertedValue = inputToMeter * unitList.at(i).second;
+        outputLineEditList.at(i)->setText(QString::number(convertedValue));
+    }
 }
