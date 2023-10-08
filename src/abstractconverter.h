@@ -14,6 +14,9 @@ class AbstractConverter : public QWidget
 public:
     explicit AbstractConverter(QList<QPair<QString, double>> unitList, QString conversionType, int defaultComboBoxUnit, QWidget *parent = nullptr);
 
+protected:
+    QList<QPair<QString, double>> unitList;
+
 private:
     //FONTS
     QFont exoFont;
@@ -22,7 +25,7 @@ private:
     QFont aleoFont;
 
     //Class members
-    QList<QPair<QString, double>> unitList;
+
     QList<QLineEdit *> outputLineEditList; //List of the generated output LineEdits inside the current widget page
     QString conversionType;
     QGridLayout *converterGridLayout;
@@ -35,7 +38,7 @@ private:
     void generateOutputSection(QGridLayout *converterGridLayout, QList<QLineEdit *> &outputLineEditList, QList<QPair<QString, double>> &unitList);
 
     //Abstract function for each type of converter
-    virtual void convertValues(QString valueString, QList<QLineEdit *> &outputLineEditList) = 0;
+    virtual void convertValues(int unitIndex, QString valueString, QList<QLineEdit *> &outputLineEditList) = 0;
 
 signals:
 

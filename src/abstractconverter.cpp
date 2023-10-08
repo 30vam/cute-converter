@@ -93,10 +93,11 @@ void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, 
 
         //This connect function, connects the "textChanged" signal from lineEdits to the lambda function,
         //the lambda function also takes the new entered value, so it can be used inside the calculator function for the final result.
-        connect(outputLineEdit, &QLineEdit::textChanged, [&](QString newText){
-            convertValues(newText, outputLineEditList);
+        int unitIndex = row - outputStartingRow; //For passing the index of lineEdit as value inside connect, so we can know which unit to use
+        //Capture only unitIndex BY VALUE and everything else as reference. We need to capture it by value, because otherwise it'll be out of scope?
+        connect(outputLineEdit, &QLineEdit::textEdited, [&, unitIndex](QString newText){
+            convertValues(unitIndex, newText, outputLineEditList);
         });
-
 
         //Create a spacer if the last lineEdit is made
         if (row >= (unitList.count() + outputStartingRow - 1)) {

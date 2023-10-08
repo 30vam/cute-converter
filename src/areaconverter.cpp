@@ -10,7 +10,7 @@ AreaConverter::AreaConverter(QWidget *parent)
 
 }
 
-void AreaConverter::convertValues(QString valueString, QList<QLineEdit *> &outputLineEditList)
+void AreaConverter::convertValues(int unitIndex, QString valueString, QList<QLineEdit *> &outputLineEditList)
 {
     qDebug() << "Area value entered: " << valueString ;
 }

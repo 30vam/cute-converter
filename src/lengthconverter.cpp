@@ -13,7 +13,18 @@ LengthConverter::LengthConverter(QWidget *parent)
 
 }
 
-void LengthConverter::convertValues(QString valueString, QList<QLineEdit *> &outputLineEditList)
+void LengthConverter::convertValues(int unitIndex, QString valueString, QList<QLineEdit *> &outputLineEditList)
 {
-    qDebug() << "Length value entered: "<< valueString;
+    qDebug() << "Length unit entered: " << unitList.at(unitIndex);
+
+    double inputUnit = unitList.at(unitIndex);
+    double inputToMeter = (valueString.toDouble());
+    double result;
+
+    //Change the value inside all the lineEdits after calculating the result
+    for(int i = 0; i < outputLineEditList.count(); i++)
+    {
+
+        outputLineEditList.at(i)->setText(valueString);
+    }
 }

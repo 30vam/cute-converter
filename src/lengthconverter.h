@@ -10,7 +10,7 @@ public:
     explicit LengthConverter(QWidget *parent = nullptr);
 
 private:
-    void convertValues(QString valueString, QList<QLineEdit *> &outputLineEditList) override;
+    void convertValues(int unitIndex, QString valueString, QList<QLineEdit *> &outputLineEditList) override;
 };
 
 #endif // LENGTHCONVERTER_H
