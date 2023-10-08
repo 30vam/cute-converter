@@ -17,14 +17,14 @@ void LengthConverter::convertValues(int unitIndex, QString valueString, QList<QL
 {
     qDebug() << "Length unit entered: " << unitList.at(unitIndex);
 
-    double inputUnit = unitList.at(unitIndex);
-    double inputToMeter = (valueString.toDouble());
-    double result;
+    double inputDouble = valueString.toDouble();
+    double toMeterCoefficient = unitList.at(unitIndex).second;
+    double inputToMeter = inputDouble / toMeterCoefficient;
 
-    //Change the value inside all the lineEdits after calculating the result
+    //Convert value from meter to each unit INDIVIDUALLY
     for(int i = 0; i < outputLineEditList.count(); i++)
     {
-
-        outputLineEditList.at(i)->setText(valueString);
+        double convertedValue = inputToMeter * unitList.at(i).second;
+        outputLineEditList.at(i)->setText(QString::number(convertedValue));
     }
 }
