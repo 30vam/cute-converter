@@ -13,18 +13,16 @@ LengthConverter::LengthConverter(QWidget *parent)
 
 }
 
-void LengthConverter::convertValues(int unitIndex, QString valueString, QList<QLineEdit *> &outputLineEditList)
+void LengthConverter::convertValues(int unitIndex, QString valueString)
 {
-    //qDebug() << "Length unit entered: " << unitList.at(unitIndex);
-
     double inputDouble = valueString.toDouble();
     double toMeterCoefficient = _unitList.at(unitIndex).second;
     double inputToMeter = inputDouble / toMeterCoefficient;
 
     //Convert value from meter to each unit INDIVIDUALLY
-    for(int i = 0; i < outputLineEditList.count(); i++)
+    for(int i = 0; i < _lineEditList.count(); i++)
     {
         double convertedValue = inputToMeter * _unitList.at(i).second;
-        outputLineEditList.at(i)->setText(QString::number(convertedValue));
+        _lineEditList.at(i)->setText(QString::number(convertedValue));
     }
 }

@@ -10,7 +10,7 @@ public:
     explicit AreaConverter(QWidget *parent = nullptr);
 
 private:
-    void convertValues(int unitIndex, QString valueString, QList<QLineEdit *> &outputLineEditList) override;
+    void convertValues(int unitIndex, QString valueString) override;
 };
 
 #endif // AREACONVERTER_H
