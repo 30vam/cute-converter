@@ -6,39 +6,24 @@
 #include <QSpacerItem>
 #include <QDoubleValidator>
 
-AbstractConverter::AbstractConverter(QList<QPair<QString, double>> unitList, QString conversionType, int defaultComboBoxUnit, QWidget *parent)
-    : QWidget{parent}
+//Use an initilizer list to setup field members, and then define the constructor
+AbstractConverter::AbstractConverter(QList<QPair<QString, double>> unitList, QString conversionType, QWidget *parent, int defaultComboBoxUnit)
+    : QWidget(parent), _unitList(unitList), _conversionType(conversionType), _defaultComboBoxUnit(defaultComboBoxUnit),  //Fields that need unique parameters from constructor
+    _aleoFont("Aleo", 10), _aleoBigFont("Aleo", 15)  //Fonts (Fields that don't need parameters to initilize, but couldn't find a way to initilize them inside header, so they're initilized here.
 {
-    //FONTS
-    //QFont exoFont("Exo Medium", 15);
-    //QFont dosisFont("Dosis", 15, QFont::Light);
-    //QFont dosisBoldFont("Dosis", 15, QFont::Bold);
-    QFont aleoFont("Aleo", 10);
-    QFont aleoBoldFont("Aleo", 15);
-    //QFont mulishFont("Mulish", 15, QFont::ExtraLight);
-
     //CREATE THE GRID LAYOUT
-    QGridLayout *converterGridLayout = new QGridLayout(this);
-    //In which row should output UI start ?
-    outputStartingRow = 2;
-    //Set up properties that are captured by the constructor
-    this->defaultComboBoxUnit = defaultComboBoxUnit;
-    this->conversionType = conversionType;
-    this->unitList = unitList;
+    _converterGridLayout = new QGridLayout(this);
 
     //Setup converter UI
-    AbstractConverter::setFont(aleoFont);
-    generateInputSection(converterGridLayout, conversionType, unitList, aleoBoldFont);
-    generateOutputSection(converterGridLayout, outputLineEditList, unitList);
-
-    //test
-    //qDebug() << "Units after running method: " << unitList;
+    AbstractConverter::setFont(_aleoFont);
+    generateInputSection(_converterGridLayout, _conversionType, _unitList, _aleoBigFont);  //Probably won't use it
+    generateOutputSection(_converterGridLayout, _outputLineEditList, _unitList);
 }
 
-void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, QString &conversionType, QList<QPair<QString, double>> &unitList, QFont &inputFont)
+void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, QString &conversionType, QList<QPair<QString, double>> &unitList, const QFont &inputFont)
 {
     //Setup layout inside the scrollArea
-    converterGridLayout->setContentsMargins(64, 32, 64, 32);
+    _converterGridLayout->setContentsMargins(64, 32, 64, 32);
     converterGridLayout->setHorizontalSpacing(64);
     converterGridLayout->setVerticalSpacing(16);
     converterGridLayout->setColumnStretch(0,2);
@@ -63,7 +48,7 @@ void AbstractConverter::generateInputSection(QGridLayout *converterGridLayout, Q
     {
         unitComboBox->addItem(unitList[i].first);
     }
-    unitComboBox->setCurrentIndex(defaultComboBoxUnit);
+    unitComboBox->setCurrentIndex(this->_defaultComboBoxUnit);
 
     //Generates a line that seperates input & output section
     QFrame *lineFrame = new QFrame(this);
@@ -82,10 +67,10 @@ void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, 
     QValidator *inputValidator = new QDoubleValidator(this);
 
     //Generates as many lineEdits as available units
-    for(int row = outputStartingRow; row < (unitList.count() + outputStartingRow); row++){
+    for(int row = _outputStartingRow; row < (unitList.count() + _outputStartingRow); row++){
         QLineEdit *outputLineEdit = new QLineEdit(this);
         outputLineEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        outputLineEdit->setPlaceholderText("Convert " + unitList.at(row - outputStartingRow).first);
+        outputLineEdit->setPlaceholderText("Convert " + unitList.at(row - _outputStartingRow).first);
         outputLineEdit->setValidator(inputValidator);
         outputLineEdit->setClearButtonEnabled(true);
         converterGridLayout->addWidget(outputLineEdit, row, 0);
@@ -93,22 +78,22 @@ void AbstractConverter::generateOutputSection(QGridLayout *converterGridLayout, 
 
         //This connect function, connects the "textChanged" signal from lineEdits to the lambda function,
         //the lambda function also takes the new entered value, so it can be used inside the calculator function for the final result.
-        int unitIndex = row - outputStartingRow; //For passing the index of lineEdit as value inside connect, so we can know which unit to use
+        int unitIndex = row - _outputStartingRow; //For passing the index of lineEdit as value inside connect, so we can know which unit to use
         //Capture only unitIndex BY VALUE and everything else as reference. We need to capture it by value, because otherwise it'll be out of scope?
-        connect(outputLineEdit, &QLineEdit::textEdited, [&, unitIndex](QString newText){
+        connect(outputLineEdit, &QLineEdit::textEdited, this, [&, unitIndex](QString newText){
             convertValues(unitIndex, newText, outputLineEditList);
         });
 
         //Create a spacer if the last lineEdit is made
-        if (row >= (unitList.count() + outputStartingRow - 1)) {
+        if (row >= (unitList.count() + _outputStartingRow - 1)) {
             QSpacerItem *verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
             converterGridLayout->addItem(verticalSpacer, row + 1, 0);
         }
     }
 
     //Generates unit buttons right next to their value lineEdits.
-    for(int row = outputStartingRow; row < (unitList.count() + outputStartingRow); row++){
-        QPushButton *unitPushButton = new QPushButton(unitList.at(row - outputStartingRow).first, this);
+    for(int row = _outputStartingRow; row < (unitList.count() + _outputStartingRow); row++){
+        QPushButton *unitPushButton = new QPushButton(unitList.at(row - _outputStartingRow).first, this);
         converterGridLayout->addWidget(unitPushButton, row, 1);
     }
 }

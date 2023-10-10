@@ -7,7 +7,7 @@ LengthConverter::LengthConverter(QWidget *parent)
                         {"hm/hectometer", 0.01}, {"km/kilometer", 0.001}, {"Mm/megameter", 0.000001}, {"Gm/gigameter", 1e-9},
                         {"Tm/terameter", 1e-12}, {"Pm/petameter", 1e-15}, {"ly/light-year", 1.057e-16}, {"pc/parsec", 3.24078e-17},
                         {"in/inch", 39.3701}, {"ft/foot", 3.281}, {"yd/yard", 1.094},
-                        {"mi/mile", 0.000621}, {"league", 0.0002071} } , "Length", 8, parent)
+                        {"mi/mile", 0.000621}, {"league", 0.0002071} } , "Length", parent)
 
 {
 
@@ -18,13 +18,13 @@ void LengthConverter::convertValues(int unitIndex, QString valueString, QList<QL
     //qDebug() << "Length unit entered: " << unitList.at(unitIndex);
 
     double inputDouble = valueString.toDouble();
-    double toMeterCoefficient = unitList.at(unitIndex).second;
+    double toMeterCoefficient = _unitList.at(unitIndex).second;
     double inputToMeter = inputDouble / toMeterCoefficient;
 
     //Convert value from meter to each unit INDIVIDUALLY
     for(int i = 0; i < outputLineEditList.count(); i++)
     {
-        double convertedValue = inputToMeter * unitList.at(i).second;
+        double convertedValue = inputToMeter * _unitList.at(i).second;
         outputLineEditList.at(i)->setText(QString::number(convertedValue));
     }
 }
