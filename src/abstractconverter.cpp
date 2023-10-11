@@ -8,7 +8,7 @@
 //Use an initilizer list to setup field members, and then define the constructor
 AbstractConverter::AbstractConverter(QList<QPair<QString, double>> unitList, QString conversionType, QWidget *parent, int defaultComboBoxUnit)
     : QWidget(parent), m_unitList(unitList), m_conversionType(conversionType), m_defaultComboBoxIndex(defaultComboBoxUnit),  //Fields that need unique parameters from constructor
-    m_aleoFont("Aleo", 10), m_aleoBigFont("Aleo", 15)  //Fonts (Fields that don't need parameters to initilize, but couldn't find a way to initilize them inside header, so they're initilized here.
+    m_aleoFont("Aleo", 16), m_aleoBigFont("Aleo", 15)  //Fonts (Fields that don't need parameters to initilize, but couldn't find a way to initilize them inside header, so they're initilized here.
 {
 
     //Setup layout inside the scrollArea
@@ -65,6 +65,7 @@ void AbstractConverter::generateLineEdits()
         outputLineEdit->setPlaceholderText("Convert " + m_unitList.at(row - m_outputStartingRow).first);
         outputLineEdit->setValidator(m_inputValidator);
         outputLineEdit->setClearButtonEnabled(true);
+        outputLineEdit->setFixedHeight(m_buttonHeight);
         m_converterGridLayout->addWidget(outputLineEdit, row, 0);
         m_lineEditList.append(outputLineEdit); //Add the new LineEdit to a list for later use
 
@@ -86,6 +87,7 @@ void AbstractConverter::generateLineEdits()
     //Generates unit buttons right next to their value lineEdits.
     for(int row = m_outputStartingRow; row < (m_unitList.count() + m_outputStartingRow); row++){
         QPushButton *unitPushButton = new QPushButton(m_unitList.at(row - m_outputStartingRow).first, this);
+        unitPushButton->setFixedHeight(m_buttonHeight);
         m_converterGridLayout->addWidget(unitPushButton, row, 1);
     }
 }

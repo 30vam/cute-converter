@@ -27,6 +27,7 @@ private:
     QString m_conversionType; //The name of the conversion e.g. "Length"
     const int m_outputStartingRow = 0; //In which row should lineEdit UI start ?
     int m_defaultComboBoxIndex; //If i decide to make an input section, what should the default comboBox unit be set to?
+    int m_buttonHeight = 48; //Fixed heights for the LineEdits and the unit buttons
 
     //FONTS DECLERATION, they are defined inside constructor initilizer lsit (inside source file)
     const QFont m_aleoFont;
