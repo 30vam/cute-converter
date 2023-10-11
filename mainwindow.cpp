@@ -11,8 +11,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //Set the starting app size as default. You can use Design tab to change the window size manually.
-    //this->setFixedSize(this->geometry().width(), this->geometry().height());
+    //Set app to fullscreen
+    this->showMaximized();
 
     //Set up tree widget
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0));  //Set the default page to the BASIC page

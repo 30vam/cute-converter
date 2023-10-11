@@ -15,8 +15,8 @@ AbstractConverter::AbstractConverter(QList<QPair<QString, double>> unitList, QSt
     m_converterGridLayout->setContentsMargins(64, 32, 64, 32);
     m_converterGridLayout->setHorizontalSpacing(64);
     m_converterGridLayout->setVerticalSpacing(16);
-    m_converterGridLayout->setColumnStretch(0,2);
-    m_converterGridLayout->setColumnStretch(1,1);
+    m_converterGridLayout->setColumnStretch(0,3);
+    m_converterGridLayout->setColumnStretch(1,2);
     m_converterGridLayout->setRowMinimumHeight(1, 16);
     setLayout(m_converterGridLayout);
 
