@@ -13,13 +13,13 @@ AreaConverter::AreaConverter(QWidget *parent)
 void AreaConverter::convertValues(int unitIndex, QString valueString)
 {
     double inputDouble = valueString.toDouble();
-    double toMeterCoefficient = _unitList.at(unitIndex).second;
+    double toMeterCoefficient = m_unitList.at(unitIndex).second;
     double inputToMeter = inputDouble / toMeterCoefficient;
 
     //Convert value from meter to each unit INDIVIDUALLY
-    for(int i = 0; i < _lineEditList.count(); i++)
+    for(int i = 0; i < m_lineEditList.count(); i++)
     {
-        double convertedValue = inputToMeter * _unitList.at(i).second;
-        _lineEditList.at(i)->setText(QString::number(convertedValue));
+        double convertedValue = inputToMeter * m_unitList.at(i).second;
+        m_lineEditList.at(i)->setText(QString::number(convertedValue));
     }
 }
