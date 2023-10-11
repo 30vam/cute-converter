@@ -15,14 +15,30 @@ LengthConverter::LengthConverter(QWidget *parent)
 
 void LengthConverter::convertValues(int unitIndex, QString valueString)
 {
-    double inputDouble = valueString.toDouble();
-    double toMeterCoefficient = m_unitList.at(unitIndex).second;
-    double inputToMeter = inputDouble / toMeterCoefficient;
-
-    //Convert value from meter to each unit INDIVIDUALLY
-    for(int i = 0; i < m_lineEditList.count(); i++)
+    //If the input LineEdit is cleared, clear other LineEdits as well
+    if(valueString.isEmpty() || valueString.endsWith("e", Qt::CaseInsensitive))
     {
-        double convertedValue = inputToMeter * m_unitList.at(i).second;
-        m_lineEditList.at(i)->setText(QString::number(convertedValue));
+        for(int i = 0; i < m_lineEditList.count(); i++)
+        {
+            if (i != unitIndex) //dont change the selected lineEdit
+                m_lineEditList.at(i)->setText("");
+        }
+    }
+
+    //Otherwise convert value from meter to each unit INDIVIDUALLY
+    else
+    {
+        double inputDouble = valueString.toDouble();
+        double toMeterCoefficient = m_unitList.at(unitIndex).second;
+        double inputToMeter = inputDouble / toMeterCoefficient;
+
+        for(int i = 0; i < m_lineEditList.count(); i++)
+        {
+            //This condition makes it so the LineEdit which is correctly being edited is not affected by the loop
+            if (i != unitIndex) {
+                double convertedValue = inputToMeter * m_unitList.at(i).second;
+                m_lineEditList.at(i)->setText(QString::number(convertedValue));
+            }
+        }
     }
 }
