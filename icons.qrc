@@ -5,5 +5,7 @@
         <file>icons/AreaTreeIcon.png</file>
         <file>icons/lengthTreeIcon.png</file>
         <file>icons/basicTreeIcon.png</file>
+        <file>icons/volumeIcon.png</file>
+        <file>icons/volumeTreeIcon.png</file>
     </qresource>
 </RCC>

@@ -129,6 +129,10 @@
           <pointsize>12</pointsize>
          </font>
         </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/volumeTreeIcon.png</normaloff>:/icons/volumeTreeIcon.png</iconset>
+        </property>
        </item>
       </item>
       <item>
@@ -250,8 +254,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>646</height>
+             <width>98</width>
+             <height>28</height>
             </rect>
            </property>
           </widget>
@@ -416,8 +420,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>646</height>
+             <width>98</width>
+             <height>28</height>
             </rect>
            </property>
           </widget>
@@ -685,7 +689,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
               <enum>Qt::AutoText</enum>
              </property>
              <property name="pixmap">
-              <pixmap resource="icons.qrc">:/icons/lengthIcon.png</pixmap>
+              <pixmap resource="icons.qrc">:/icons/volumeIcon.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
