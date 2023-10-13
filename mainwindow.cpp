@@ -54,6 +54,9 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()
         else if(selectedItem->text(0) == "Area"){
             ui->conversionStackedWidget->setCurrentIndex(2);
         }
+        else if(selectedItem->text(0) == "Volume"){
+            ui->conversionStackedWidget->setCurrentIndex(3);
+        }
     }
 
 }
