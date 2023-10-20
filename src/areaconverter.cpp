@@ -7,7 +7,6 @@ AreaConverter::AreaConverter(QWidget *parent)
                         {"ft²/square foot", 10.76391}, {"yd²/square yard", 1.19599}, {"mi²/square mile", 3.861e-7}}, "Area", parent)
 {
 
-
 }
 
 void AreaConverter::convertValues(int unitIndex, QString valueString)
