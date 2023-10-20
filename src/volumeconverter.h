@@ -8,7 +8,7 @@ class VolumeConverter : public AbstractConverter
     Q_OBJECT
 public:
     explicit VolumeConverter(QWidget *parent = nullptr);
-    virtual ~VolumeConverter() {};
+    //virtual ~VolumeConverter() {};
 
 
 private:

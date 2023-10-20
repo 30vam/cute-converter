@@ -8,7 +8,7 @@ class LengthConverter : public AbstractConverter
     Q_OBJECT
 public:
     explicit LengthConverter(QWidget *parent = nullptr);
-    virtual ~LengthConverter() {};
+    //virtual ~LengthConverter() {};  //In case there was an error
 
 private:
     void convertValues(int unitIndex, QString valueString) override;

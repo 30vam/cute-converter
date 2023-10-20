@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "src/lengthconverter.h"
 #include "src/areaconverter.h"
+#include "src/volumeconverter.h"
 #include <QDebug>
 
 //Constructor
@@ -25,6 +26,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lengthScrollArea->setWidget(lengthConverter);
     AreaConverter *areaConverter = new AreaConverter(this);
     ui->areaScrollArea->setWidget(areaConverter);
+    VolumeConverter *volumeConverter = new VolumeConverter(this);
+    ui->volumeScrollArea->setWidget(volumeConverter);
 
 }
 
