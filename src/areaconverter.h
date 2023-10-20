@@ -8,6 +8,7 @@ class AreaConverter : public AbstractConverter
     Q_OBJECT
 public:
     explicit AreaConverter(QWidget *parent = nullptr);
+    ~AreaConverter() {};
 
 private:
     void convertValues(int unitIndex, QString valueString) override;

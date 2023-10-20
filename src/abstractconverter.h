@@ -14,6 +14,7 @@ class AbstractConverter : public QWidget
 public:
     //Constructor, intitilizer list is inside source file
     explicit AbstractConverter(QList<QPair<QString, double>> unitList, QString conversionType, QWidget *parent = nullptr, int defaultComboBoxUnit = 0);
+    ~AbstractConverter() {};
 
 protected:
     //Field names start with _ to differentiate them from local variables

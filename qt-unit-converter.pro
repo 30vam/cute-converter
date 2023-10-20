@@ -13,13 +13,15 @@ SOURCES += \
     mainwindow.cpp \
     src/abstractconverter.cpp \
     src/areaconverter.cpp \
-    src/lengthconverter.cpp
+    src/lengthconverter.cpp \
+    src/volumeconverter.cpp
 
 HEADERS += \
     mainwindow.h \
     src/abstractconverter.h \
     src/areaconverter.h \
-    src/lengthconverter.h
+    src/lengthconverter.h \
+    src/volumeconverter.h
 
 FORMS += \
     mainwindow.ui
