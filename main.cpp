@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
         if (translator.load(":/i18n/" + baseName)) {
             a.installTranslator(&translator);
             break;
+            //
         }
     }
     MainWindow w;
