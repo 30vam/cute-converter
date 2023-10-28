@@ -223,6 +223,19 @@
        <layout class="QHBoxLayout" name="horizontalLayout_5">
         <item>
          <layout class="QGridLayout" name="gridLayout">
+          <item row="1" column="0">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item row="0" column="0">
            <widget class="QToolButton" name="lengthToolButton">
             <property name="enabled">
@@ -268,6 +281,51 @@
             </property>
            </widget>
           </item>
+          <item row="0" column="2">
+           <widget class="QToolButton" name="volumeToolButton">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>Aleo</family>
+              <pointsize>26</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Volume</string>
+            </property>
+            <property name="icon">
+             <iconset resource="icons.qrc">
+              <normaloff>:/icons/volumeIcon.png</normaloff>:/icons/volumeIcon.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>156</width>
+              <height>156</height>
+             </size>
+            </property>
+            <property name="popupMode">
+             <enum>QToolButton::DelayedPopup</enum>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextUnderIcon</enum>
+            </property>
+            <property name="autoRaise">
+             <bool>false</bool>
+            </property>
+            <property name="arrowType">
+             <enum>Qt::NoArrow</enum>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="1">
            <widget class="QToolButton" name="areaToolButton">
             <property name="enabled">
@@ -291,65 +349,7 @@
             </property>
             <property name="icon">
              <iconset resource="icons.qrc">
-              <normaloff>:/icons/lengthIcon.png</normaloff>:/icons/lengthIcon.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>156</width>
-              <height>156</height>
-             </size>
-            </property>
-            <property name="popupMode">
-             <enum>QToolButton::DelayedPopup</enum>
-            </property>
-            <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextUnderIcon</enum>
-            </property>
-            <property name="autoRaise">
-             <bool>false</bool>
-            </property>
-            <property name="arrowType">
-             <enum>Qt::NoArrow</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="2">
-           <widget class="QToolButton" name="areaToolButton_2">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <family>Aleo</family>
-              <pointsize>26</pointsize>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Volume</string>
-            </property>
-            <property name="icon">
-             <iconset resource="icons.qrc">
-              <normaloff>:/icons/lengthIcon.png</normaloff>:/icons/lengthIcon.png</iconset>
+              <normaloff>:/icons/areaIcon.png</normaloff>:/icons/areaIcon.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -929,6 +929,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>false</bool>
    </attribute>
    <addaction name="switchToLengthAction"/>
+   <addaction name="switchToAreaAction"/>
+   <addaction name="switchToVolumeAction"/>
   </widget>
   <action name="switchToLengthAction">
    <property name="icon">
@@ -940,6 +942,30 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="toolTip">
     <string>Switch To Length Converter</string>
+   </property>
+  </action>
+  <action name="switchToAreaAction">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/areaIcon.png</normaloff>:/icons/areaIcon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Area</string>
+   </property>
+   <property name="toolTip">
+    <string>Switch To Area Converter</string>
+   </property>
+  </action>
+  <action name="switchToVolumeAction">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/volumeIcon.png</normaloff>:/icons/volumeIcon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Volume</string>
+   </property>
+   <property name="toolTip">
+    <string>Switch To Volume Converter</string>
    </property>
   </action>
  </widget>

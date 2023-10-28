@@ -17,12 +17,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Set up tree widget
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0));  //Set the default page to the BASIC page
-    ui->conversionTypeTreeWidget->expandAll(); //Expand the tree list when the program starts
+    //ui->conversionTypeTreeWidget->expandAll(); //Expand the tree list when the program starts
     indexOfItemInParent = 0;
     indexOfParent = 0;
 
-    //Set up converter selection tool buttons to do their corresponding actions
+    //Set up buttons to go to their corresponding converters
     ui->lengthToolButton->setDefaultAction(ui->switchToLengthAction);
+    ui->areaToolButton->setDefaultAction(ui->switchToAreaAction);
+    ui->volumeToolButton->setDefaultAction(ui->switchToVolumeAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -63,9 +65,21 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()
     }
 }
 
+//ACTIONS --------------------------------------------------------------------
+
 //Toolbar actions for changing converters
-void MainWindow::on_switchToLengthAction_triggered()
+void MainWindow::on_switchToLengthAction_triggered()  //LENGTH
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(0));
+}
+
+void MainWindow::on_switchToAreaAction_triggered()  //AREA
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(1));
+}
+
+void MainWindow::on_switchToVolumeAction_triggered()
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(2));
 }
 

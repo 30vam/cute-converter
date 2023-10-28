@@ -23,5 +23,7 @@ private:
 private slots:
     void on_conversionTypeTreeWidget_itemSelectionChanged();
     void on_switchToLengthAction_triggered();
+    void on_switchToAreaAction_triggered();
+    void on_switchToVolumeAction_triggered();
 };
 #endif // MAINWINDOW_H
