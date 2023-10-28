@@ -42,26 +42,22 @@ MainWindow::~MainWindow()
 
 //SLOTS ------------------------------------------------------------------
 
-//Setup Stacked Widget pag
+//Setup Stacked Widget page
 //Using SelectionChanged slot instead of Clicked because it also works with keyboard
 void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()
 {
     QList<QTreeWidgetItem*> selectedItems = ui->conversionTypeTreeWidget->selectedItems();
     foreach (QTreeWidgetItem *selectedItem, selectedItems) //There's only 1 selected item at a time in this case, but Qt still treats it as a list so I use a loop
     {
-        if(selectedItem->text(0) == "Basic")
+        if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0))  //Basic page
             ui->conversionStackedWidget->setCurrentIndex(0);
-        else if(selectedItem->text(0) == "Length"){
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(0))  //Length page
             ui->conversionStackedWidget->setCurrentIndex(1);
-        }
-        else if(selectedItem->text(0) == "Area"){
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(1))  //Area page
             ui->conversionStackedWidget->setCurrentIndex(2);
-        }
-        else if(selectedItem->text(0) == "Volume"){
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(2))  //Volume page
             ui->conversionStackedWidget->setCurrentIndex(3);
-        }
     }
-
 }
 
 //Toolbar actions for changing converters
