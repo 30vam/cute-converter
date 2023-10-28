@@ -64,3 +64,9 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()
 
 }
 
+//Toolbar actions for changing converters
+void MainWindow::on_actionSwitchToLength_triggered()
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(0));
+}
+
