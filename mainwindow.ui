@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>720</height>
+    <height>784</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -219,7 +219,59 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="basicPage"/>
+      <widget class="QWidget" name="basicPage">
+       <widget class="QToolButton" name="lengthToolButton">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>201</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Aleo</family>
+          <pointsize>26</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Length</string>
+        </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/lengthIcon.png</normaloff>:/icons/lengthIcon.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>156</width>
+          <height>156</height>
+         </size>
+        </property>
+        <property name="popupMode">
+         <enum>QToolButton::DelayedPopup</enum>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>false</bool>
+        </property>
+        <property name="arrowType">
+         <enum>Qt::NoArrow</enum>
+        </property>
+       </widget>
+      </widget>
       <widget class="QWidget" name="lengthWidget">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -244,8 +296,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>647</width>
+             <height>648</height>
             </rect>
            </property>
           </widget>
@@ -761,21 +813,27 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
+   <property name="iconSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionSwitchToLength"/>
+   <addaction name="switchToLengthAction"/>
   </widget>
-  <action name="actionSwitchToLength">
+  <action name="switchToLengthAction">
    <property name="icon">
     <iconset resource="icons.qrc">
      <normaloff>:/icons/lengthIcon.png</normaloff>:/icons/lengthIcon.png</iconset>
    </property>
    <property name="text">
-    <string>SwitchToLength</string>
+    <string>Length</string>
    </property>
    <property name="toolTip">
     <string>Switch To Length Converter</string>

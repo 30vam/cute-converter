@@ -21,6 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
     indexOfItemInParent = 0;
     indexOfParent = 0;
 
+    //Set up converter selection tool buttons to do their corresponding actions
+    ui->lengthToolButton->setDefaultAction(ui->switchToLengthAction);
+
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
     ui->lengthScrollArea->setWidget(lengthConverter);
@@ -61,7 +64,7 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()
 }
 
 //Toolbar actions for changing converters
-void MainWindow::on_actionSwitchToLength_triggered()
+void MainWindow::on_switchToLengthAction_triggered()
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(0));
 }
