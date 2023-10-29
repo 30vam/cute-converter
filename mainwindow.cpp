@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lengthToolButton->setDefaultAction(ui->switchToLengthAction);
     ui->areaToolButton->setDefaultAction(ui->switchToAreaAction);
     ui->volumeToolButton->setDefaultAction(ui->switchToVolumeAction);
+    ui->weightToolButton->setDefaultAction(ui->switchToWeightAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
