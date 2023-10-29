@@ -134,6 +134,17 @@
           <normaloff>:/icons/volumeTreeIcon.png</normaloff>:/icons/volumeTreeIcon.png</iconset>
         </property>
        </item>
+       <item>
+        <property name="text">
+         <string>Weight/Mass</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Aleo</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+       </item>
       </item>
       <item>
        <property name="text">
@@ -399,8 +410,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>648</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -565,8 +576,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>646</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -745,8 +756,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>646</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
