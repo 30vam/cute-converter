@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     indexOfItemInParent = 0;
     indexOfParent = 0;
 
-    //Set up buttons to go to their corresponding converters
+    //Connect QToolButtons to their corresponding converters
     ui->lengthToolButton->setDefaultAction(ui->switchToLengthAction);
     ui->areaToolButton->setDefaultAction(ui->switchToAreaAction);
     ui->volumeToolButton->setDefaultAction(ui->switchToVolumeAction);
@@ -33,7 +33,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->areaScrollArea->setWidget(areaConverter);
     VolumeConverter *volumeConverter = new VolumeConverter(this);
     ui->volumeScrollArea->setWidget(volumeConverter);
-
 }
 
 //Deconstructor
@@ -42,10 +41,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-//Methods -----------------------------------------------------------------
+//Methods ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-//SLOTS ------------------------------------------------------------------
+//SLOTS -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Setup Stacked Widget page
 //Using SelectionChanged slot instead of Clicked because it also works with keyboard
@@ -65,7 +64,7 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()
     }
 }
 
-//ACTIONS --------------------------------------------------------------------
+//ACTIONS ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Toolbar actions for changing converters
 void MainWindow::on_switchToLengthAction_triggered()  //LENGTH
