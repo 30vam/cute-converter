@@ -3,6 +3,7 @@
 #include "src/lengthconverter.h"
 #include "src/areaconverter.h"
 #include "src/volumeconverter.h"
+#include "src/weightconverter.h"
 #include <QDebug>
 
 //Constructor
@@ -33,6 +34,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->areaScrollArea->setWidget(areaConverter);
     VolumeConverter *volumeConverter = new VolumeConverter(this);
     ui->volumeScrollArea->setWidget(volumeConverter);
+    WeightConverter *weightConverter = new WeightConverter(this);
+    ui->weightScrollArea->setWidget(weightConverter);
 }
 
 //Deconstructor
@@ -47,8 +50,7 @@ MainWindow::~MainWindow()
 //SLOTS -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Setup Stacked Widget page
-//Using SelectionChanged slot instead of Clicked because it also works with keyboard
-void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()
+void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using SelectionChanged slot instead of Clicked because it also works with keyboard
 {
     QList<QTreeWidgetItem*> selectedItems = ui->conversionTypeTreeWidget->selectedItems();
     foreach (QTreeWidgetItem *selectedItem, selectedItems) //There's only 1 selected item at a time in this case, but Qt still treats it as a list so I use a loop
@@ -61,6 +63,8 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()
             ui->conversionStackedWidget->setCurrentIndex(2);
         else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(2))  //Volume page
             ui->conversionStackedWidget->setCurrentIndex(3);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(3))  //Weight/Mass page
+            ui->conversionStackedWidget->setCurrentIndex(4);
     }
 }
 
@@ -77,8 +81,13 @@ void MainWindow::on_switchToAreaAction_triggered()  //AREA
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(1));
 }
 
-void MainWindow::on_switchToVolumeAction_triggered()
+void MainWindow::on_switchToVolumeAction_triggered()  //VOLUME
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(2));
+}
+
+void MainWindow::on_switchToWeightAction_triggered()
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(3));
 }
 
