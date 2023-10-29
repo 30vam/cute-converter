@@ -1,12 +1,10 @@
 #include "weightconverter.h"
 
 WeightConverter::WeightConverter(QWidget *parent)
-    : AbstractConverter({ {"fm/femtometer", 1e+15}, {"pm/picometer", 1e+12}, {"Å/angstrom", 1e+10}, {"nm/nanometer", 1e+9}, {"μm/micrometer", 1000000},
-                        {"mm/millimeter", 1000}, {"cm/centimeter", 100}, {"dm/decimeter", 10}, {"m/meter", 1}, {"dam/decameter", 0.1},
-                        {"hm/hectometer", 0.01}, {"km/kilometer", 0.001}, {"Mm/megameter", 0.000001}, {"Gm/gigameter", 1e-9},
-                        {"Tm/terameter", 1e-12}, {"Pm/petameter", 1e-15}, {"ly/light-year", 1.057e-16}, {"pc/parsec", 3.24078e-17},
-                        {"in/inch", 39.3701}, {"ft/foot", 3.281}, {"yd/yard", 1.094},
-                        {"mi/mile", 0.000621}, {"league", 0.0002071} } , "Weight/Mass", parent)
+    : AbstractConverter({ {"µg/microgram", 1000000}, {"mg/milligram", 1000}, {"cg/centigram", 100}, {"g/gram", 1}, {"kg/kilogram", 0.001}, {"hg/hectogram", 0.01},
+                        {"oz/ounces", 0.035274}, {"oz t/troy ounces", 0.0321507}, {"AT(UK)/assay ton(UK)", 0.0306122449}, {"lb/pound", 0.00220462}, {"st/stones", 0.000157473},
+                        {"q/quintal", 0.00001}, {"t/ton", 0.000001}, {"pwt/pennyweight", 0.643015}, {"car/carat", 5}, {"gr/grain", 15.4324}, {"u/Atomic mass unit", 6.022e+23} },
+                        "Weight/Mass", parent)
 {
 
 }
@@ -27,14 +25,14 @@ void WeightConverter::convertValues(int unitIndex, QString valueString)
     else
     {
         double inputDouble = valueString.toDouble();
-        double toMeterCoefficient = m_unitList.at(unitIndex).second;
-        double inputToMeter = inputDouble / toMeterCoefficient;
+        double toGramCoefficient = m_unitList.at(unitIndex).second;
+        double inputToGram = inputDouble / toGramCoefficient;
 
         for(int i = 0; i < m_lineEditList.count(); i++)
         {
             //This condition makes it so the LineEdit which is correctly being edited is not affected by the loop
             if (i != unitIndex) {
-                double convertedValue = inputToMeter * m_unitList.at(i).second;
+                double convertedValue = inputToGram * m_unitList.at(i).second;
                 m_lineEditList.at(i)->setText(QString::number(convertedValue));
             }
         }
