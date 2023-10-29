@@ -1,11 +1,13 @@
 <RCC>
     <qresource prefix="/">
-        <file>icons/lengthIcon.png</file>
-        <file>icons/areaIcon.png</file>
-        <file>icons/AreaTreeIcon.png</file>
-        <file>icons/lengthTreeIcon.png</file>
-        <file>icons/basicTreeIcon.png</file>
-        <file>icons/volumeIcon.png</file>
-        <file>icons/volumeTreeIcon.png</file>
+        <file>icons/length_icon.png</file>
+        <file>icons/area_icon.png</file>
+        <file>icons/area_tree_icon.png</file>
+        <file>icons/length_tree_icon.png</file>
+        <file>icons/basic_tree_icon.png</file>
+        <file>icons/volume_icon.png</file>
+        <file>icons/volume_tree_icon.png</file>
+        <file>icons/wight(mass)_icon.png</file>
+        <file>icons/wight(mass)_tree_icon.png</file>
     </qresource>
 </RCC>

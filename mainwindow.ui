@@ -83,9 +83,8 @@
         </font>
        </property>
        <property name="icon">
-        <iconset>
-         <normalon>:/icons/basicTreeIcon.png</normalon>
-        </iconset>
+        <iconset resource="icons.qrc">
+         <normaloff>:/icons/basic_tree_icon.png</normaloff>:/icons/basic_tree_icon.png</iconset>
        </property>
        <item>
         <property name="text">
@@ -98,9 +97,8 @@
          </font>
         </property>
         <property name="icon">
-         <iconset>
-          <normalon>:/icons/lengthTreeIcon.png</normalon>
-         </iconset>
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/length_tree_icon.png</normaloff>:/icons/length_tree_icon.png</iconset>
         </property>
        </item>
        <item>
@@ -114,9 +112,8 @@
          </font>
         </property>
         <property name="icon">
-         <iconset>
-          <normalon>:/icons/AreaTreeIcon.png</normalon>
-         </iconset>
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/area_tree_icon.png</normaloff>:/icons/area_tree_icon.png</iconset>
         </property>
        </item>
        <item>
@@ -131,7 +128,7 @@
         </property>
         <property name="icon">
          <iconset resource="icons.qrc">
-          <normaloff>:/icons/volumeTreeIcon.png</normaloff>:/icons/volumeTreeIcon.png</iconset>
+          <normaloff>:/icons/volume_tree_icon.png</normaloff>:/icons/volume_tree_icon.png</iconset>
         </property>
        </item>
        <item>
@@ -143,6 +140,10 @@
           <family>Aleo</family>
           <pointsize>12</pointsize>
          </font>
+        </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/wight(mass)_tree_icon.png</normaloff>:/icons/wight(mass)_tree_icon.png</iconset>
         </property>
        </item>
       </item>
@@ -268,10 +269,6 @@
             <property name="text">
              <string>Length</string>
             </property>
-            <property name="icon">
-             <iconset resource="icons.qrc">
-              <normaloff>:/icons/lengthIcon.png</normaloff>:/icons/lengthIcon.png</iconset>
-            </property>
             <property name="iconSize">
              <size>
               <width>156</width>
@@ -313,10 +310,6 @@
             <property name="text">
              <string>Volume</string>
             </property>
-            <property name="icon">
-             <iconset resource="icons.qrc">
-              <normaloff>:/icons/volumeIcon.png</normaloff>:/icons/volumeIcon.png</iconset>
-            </property>
             <property name="iconSize">
              <size>
               <width>156</width>
@@ -357,10 +350,6 @@
             </property>
             <property name="text">
              <string>Area</string>
-            </property>
-            <property name="icon">
-             <iconset resource="icons.qrc">
-              <normaloff>:/icons/areaIcon.png</normaloff>:/icons/areaIcon.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -410,8 +399,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>647</width>
+             <height>648</height>
             </rect>
            </property>
           </widget>
@@ -499,7 +488,7 @@
               <enum>Qt::AutoText</enum>
              </property>
              <property name="pixmap">
-              <pixmap resource="icons.qrc">:/icons/lengthIcon.png</pixmap>
+              <pixmap resource="icons.qrc">:/icons/length_icon.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -576,8 +565,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>647</width>
+             <height>648</height>
             </rect>
            </property>
           </widget>
@@ -659,7 +648,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
               <enum>Qt::AutoText</enum>
              </property>
              <property name="pixmap">
-              <pixmap resource="icons.qrc">:/icons/areaIcon.png</pixmap>
+              <pixmap resource="icons.qrc">:/icons/area_icon.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -756,8 +745,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>647</width>
+             <height>648</height>
             </rect>
            </property>
           </widget>
@@ -845,7 +834,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
               <enum>Qt::AutoText</enum>
              </property>
              <property name="pixmap">
-              <pixmap resource="icons.qrc">:/icons/volumeIcon.png</pixmap>
+              <pixmap resource="icons.qrc">:/icons/volume_icon.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -909,6 +898,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="weightWidget"/>
      </widget>
     </item>
    </layout>
@@ -946,7 +936,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <action name="switchToLengthAction">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/lengthIcon.png</normaloff>:/icons/lengthIcon.png</iconset>
+     <normaloff>:/icons/length_icon.png</normaloff>:/icons/length_icon.png</iconset>
    </property>
    <property name="text">
     <string>Length</string>
@@ -958,7 +948,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <action name="switchToAreaAction">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/areaIcon.png</normaloff>:/icons/areaIcon.png</iconset>
+     <normaloff>:/icons/area_icon.png</normaloff>:/icons/area_icon.png</iconset>
    </property>
    <property name="text">
     <string>Area</string>
@@ -970,7 +960,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <action name="switchToVolumeAction">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/icons/volumeIcon.png</normaloff>:/icons/volumeIcon.png</iconset>
+     <normaloff>:/icons/volume_icon.png</normaloff>:/icons/volume_icon.png</iconset>
    </property>
    <property name="text">
     <string>Volume</string>
