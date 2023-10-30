@@ -23,11 +23,10 @@ void TemperatureConverter::convertValues(int unitIndex, QString valueString)
     else
     {
         double inputDouble = valueString.toDouble();
-        double coefficient = m_unitList.at(unitIndex).second;
         double inputToKelvin;
         double inputToCelsius;
 
-        //Convert input to kelvin/celsius
+        //Convert FROM different units to kelvin/celsius
         switch (unitIndex) {
         case 0:  //K
             inputToKelvin = inputDouble;
@@ -53,12 +52,34 @@ void TemperatureConverter::convertValues(int unitIndex, QString valueString)
             break;
         }
 
-        //Convert kelvin/celsius to different units
+        //Convert TO different units
         for(int i = 0; i < m_lineEditList.count(); i++)
         {
+            double convertedValue;
+
             //This condition makes it so the LineEdit which is correctly being edited is not affected by the loop
             if (i != unitIndex) {
-                double convertedValue = inputToKelvin * m_unitList.at(i).second;
+                switch (i) {
+                case 0:  //K
+                    convertedValue = inputToKelvin;
+                    break;
+                case 1:  //°C
+                    convertedValue = inputToCelsius;
+                    break;
+                case 2:  //°F
+                    convertedValue = (inputToCelsius * m_fahrenheitCoefficient) + m_fahrenheitThreshold;
+                    break;
+                case 3:  //°R
+                    convertedValue = inputToKelvin * m_rankineCoefficient;
+                    break;
+                case 4:  //°Ré
+                    convertedValue = inputToCelsius / m_reaumurCoefficient;
+                    break;
+                default:
+                    convertedValue = 0;
+                    break;
+                }
+
                 m_lineEditList.at(i)->setText(QString::number(convertedValue));
             }
         }

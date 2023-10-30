@@ -25,7 +25,7 @@ void VolumeConverter::convertValues(int unitIndex, QString valueString)
         }
     }
 
-    //Otherwise convert value from meter to each unit INDIVIDUALLY
+    //Otherwise convert values
     else
     {
         double inputDouble = valueString.toDouble();
