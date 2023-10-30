@@ -27,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->areaToolButton->setDefaultAction(ui->switchToAreaAction);
     ui->volumeToolButton->setDefaultAction(ui->switchToVolumeAction);
     ui->weightToolButton->setDefaultAction(ui->switchToWeightAction);
+    ui->temperatureToolButton->setDefaultAction(ui->switchToTemperatureAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -37,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->volumeScrollArea->setWidget(volumeConverter);
     WeightConverter *weightConverter = new WeightConverter(this);
     ui->weightScrollArea->setWidget(weightConverter);
+
 }
 
 //Deconstructor
@@ -66,6 +68,8 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
             ui->conversionStackedWidget->setCurrentIndex(3);
         else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(3))  //Weight/Mass page
             ui->conversionStackedWidget->setCurrentIndex(4);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(4))  //Temperature page
+            ui->conversionStackedWidget->setCurrentIndex(5);
     }
 }
 
@@ -90,5 +94,10 @@ void MainWindow::on_switchToVolumeAction_triggered()  //VOLUME
 void MainWindow::on_switchToWeightAction_triggered()
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(3));
+}
+
+void MainWindow::on_switchToTemperatureAction_triggered()
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(4));
 }
 

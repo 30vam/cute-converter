@@ -26,5 +26,6 @@ private slots:
     void on_switchToAreaAction_triggered();
     void on_switchToVolumeAction_triggered();
     void on_switchToWeightAction_triggered();
+    void on_switchToTemperatureAction_triggered();
 };
 #endif // MAINWINDOW_H
