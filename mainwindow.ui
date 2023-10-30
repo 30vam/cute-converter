@@ -146,35 +146,15 @@
           <normaloff>:/icons/wight(mass)_tree_icon.png</normaloff>:/icons/wight(mass)_tree_icon.png</iconset>
         </property>
        </item>
-      </item>
-      <item>
-       <property name="text">
-        <string>Life</string>
-       </property>
-       <property name="font">
-        <font>
-         <family>Aleo Medium</family>
-         <pointsize>20</pointsize>
-        </font>
-       </property>
        <item>
         <property name="text">
-         <string>New Subitem</string>
+         <string>Temperature</string>
         </property>
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
+          <family>Aleo</family>
+          <pointsize>12</pointsize>
          </font>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>New Subitem</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>New Subitem</string>
         </property>
        </item>
       </item>
@@ -229,7 +209,7 @@
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="basicPage">
        <layout class="QGridLayout" name="gridLayout">
@@ -436,8 +416,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>648</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -602,8 +582,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -1148,6 +1128,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="separator"/>
    <addaction name="switchToLengthAction"/>
    <addaction name="switchToAreaAction"/>
    <addaction name="switchToVolumeAction"/>
