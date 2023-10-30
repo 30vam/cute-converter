@@ -23,7 +23,6 @@ void LengthConverter::convertValues(int unitIndex, QString valueString)
                 m_lineEditList.at(i)->setText("");
         }
     }
-
     //Otherwise convert values
     else
     {

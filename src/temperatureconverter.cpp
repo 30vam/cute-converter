@@ -57,30 +57,39 @@ void TemperatureConverter::convertValues(int unitIndex, QString valueString)
         {
             double convertedValue{ 0 };
 
-            //This condition makes it so the LineEdit which is correctly being edited is not affected by the loop
-            if (i != unitIndex) {
-                switch (i) {
-                case 0:  //K
-                    convertedValue = inputToKelvin;
-                    break;
-                case 1:  //°C
-                    convertedValue = inputToCelsius;
-                    break;
-                case 2:  //°F
-                    convertedValue = (inputToCelsius * m_fahrenheitCoefficient) + m_fahrenheitThreshold;
-                    break;
-                case 3:  //°R
-                    convertedValue = inputToKelvin * m_rankineCoefficient;
-                    break;
-                case 4:  //°Ré
-                    convertedValue = inputToCelsius / m_reaumurCoefficient;
-                    break;
-                default:
-                    convertedValue = 0;
-                    break;
-                }
+            //If kelvin IS NOT valid, print "invalid" in other LineEdits
+            if(inputToKelvin < 0 &&i != unitIndex )
+            {
+                m_lineEditList.at(i)->clear();
+                m_lineEditList.at(i)->setPlaceholderText("Temp can't be lower than absolute 0");
+            }
+            //If kelvin IS valid, convert it to other units
+            else {
+                //This condition makes it so the LineEdit which is correctly being edited is not affected by the loop
+                if (i != unitIndex) {
+                    switch (i) {
+                    case 0:  //K
+                        convertedValue = inputToKelvin;
+                        break;
+                    case 1:  //°C
+                        convertedValue = inputToCelsius;
+                        break;
+                    case 2:  //°F
+                        convertedValue = (inputToCelsius * m_fahrenheitCoefficient) + m_fahrenheitThreshold;
+                        break;
+                    case 3:  //°R
+                        convertedValue = inputToKelvin * m_rankineCoefficient;
+                        break;
+                    case 4:  //°Ré
+                        convertedValue = inputToCelsius / m_reaumurCoefficient;
+                        break;
+                    default:
+                        convertedValue = 0;
+                        break;
+                    }
 
-                m_lineEditList.at(i)->setText(QString::number(convertedValue));
+                    m_lineEditList.at(i)->setText(QString::number(convertedValue));
+                }
             }
         }
     }
