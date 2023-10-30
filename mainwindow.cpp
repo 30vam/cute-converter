@@ -4,6 +4,7 @@
 #include "src/areaconverter.h"
 #include "src/volumeconverter.h"
 #include "src/weightconverter.h"
+#include "src/temperatureconverter.h"
 #include <QDebug>
 
 //Constructor
@@ -38,7 +39,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->volumeScrollArea->setWidget(volumeConverter);
     WeightConverter *weightConverter = new WeightConverter(this);
     ui->weightScrollArea->setWidget(weightConverter);
-
+    TemperatureConverter *temperatureConverter = new TemperatureConverter(this);
+    ui->temperatureScrollArea->setWidget(temperatureConverter);
 }
 
 //Deconstructor
