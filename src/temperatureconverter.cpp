@@ -45,7 +45,7 @@ void TemperatureConverter::convertValues(int unitIndex, QString valueString)
             inputToCelsius = inputToKelvin - m_celsiusThreshold;
             break;
         case 4:  //°Ré
-            inputToCelsius = inputDouble * m_rankineCoefficient;
+            inputToCelsius = inputDouble * m_reaumurCoefficient;
             inputToKelvin = inputToCelsius + m_celsiusThreshold;
             break;
         default:
@@ -55,7 +55,7 @@ void TemperatureConverter::convertValues(int unitIndex, QString valueString)
         //Convert TO different units
         for(int i = 0; i < m_lineEditList.count(); i++)
         {
-            double convertedValue;
+            double convertedValue{ 0 };
 
             //This condition makes it so the LineEdit which is correctly being edited is not affected by the loop
             if (i != unitIndex) {
