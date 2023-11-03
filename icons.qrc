@@ -11,5 +11,7 @@
         <file>icons/wight(mass)_tree_icon.png</file>
         <file>icons/temperature_icon.png</file>
         <file>icons/temperature_tree_icon.png</file>
+        <file>icons/time_icon.png</file>
+        <file>icons/time_tree_icon.png</file>
     </qresource>
 </RCC>

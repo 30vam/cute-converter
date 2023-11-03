@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->volumeToolButton->setDefaultAction(ui->switchToVolumeAction);
     ui->weightToolButton->setDefaultAction(ui->switchToWeightAction);
     ui->temperatureToolButton->setDefaultAction(ui->switchToTemperatureAction);
+    ui->timeToolButton->setDefaultAction(ui->switchToTimeAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -72,6 +73,8 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
             ui->conversionStackedWidget->setCurrentIndex(4);
         else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(4))  //Temperature page
             ui->conversionStackedWidget->setCurrentIndex(5);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(5))  //Temperature page
+            ui->conversionStackedWidget->setCurrentIndex(6);
     }
 }
 
@@ -101,5 +104,10 @@ void MainWindow::on_switchToWeightAction_triggered()
 void MainWindow::on_switchToTemperatureAction_triggered()
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(4));
+}
+
+void MainWindow::on_switchToTimeAction_triggered()
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(5));
 }
 
