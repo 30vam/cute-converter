@@ -10,6 +10,9 @@ TimeConverter::TimeConverter(QWidget *parent)
 
 void TimeConverter::convertValues(int unitIndex, QString valueString)
 {
+    //What is the index of second in unitList?
+    int secondIndex = 5;
+
     //If the input LineEdit is cleared, clear other LineEdits as well
     if(valueString.isEmpty() || valueString.endsWith("e", Qt::CaseInsensitive))
     {
@@ -24,13 +27,24 @@ void TimeConverter::convertValues(int unitIndex, QString valueString)
     {
         double inputDouble = valueString.toDouble();
         double toSecondCoefficient = m_unitList.at(unitIndex).second;
-        double inputToSecond = inputDouble / toSecondCoefficient;
+        double inputToSecond{0};
+
+        if(unitIndex <= secondIndex)  //devide value by its coefficient if the unit is SMALLER than second
+            inputToSecond = inputDouble / toSecondCoefficient;
+        else //multiply value by its coefficient if the unit is LARGER than second
+            inputToSecond = inputDouble * toSecondCoefficient;
 
         for(int i = 0; i < m_lineEditList.count(); i++)
         {
+            double convertedValue{0};
+
             //This condition makes it so the LineEdit which is correctly being edited is not affected by the loop
             if (i != unitIndex) {
-                double convertedValue = inputToSecond * m_unitList.at(i).second;
+                if(i <= secondIndex)  //multiply second by its coefficient if the unit is SMALLER than second
+                    convertedValue = inputToSecond * m_unitList.at(i).second;
+                else //devide second by its coefficient if the unit is LARGER than second
+                    convertedValue = inputToSecond / m_unitList.at(i).second;
+
                 m_lineEditList.at(i)->setText(QString::number(convertedValue));
             }
         }
