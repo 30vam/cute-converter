@@ -1,9 +1,9 @@
 #include "timeconverter.h"
 
 TimeConverter::TimeConverter(QWidget *parent)
-    : AbstractConverter({ {"ml(cc)/milliliter", 1000000}, {"cl/centiliter", 100000}, {"L/liter", 1000},
-                        {"mm³/cubic millimeter", 1e+9}, {"cm³/cubic centimeter", 1000000}, {"dm³/cubic decimeter", 1000}, {"m³/cubic meter", 1},
-                        {"gallon(US)", 264.172}, {"gallon(Imperial)", 219.969} }, "Time", parent)
+    : AbstractConverter({ {"nanosecond", 1e+9}, {"microsecond", 1e+6}, {"millisecond", 1000}, {"centisecond", 100}, {"decisecond", 10}, {"second", 1},
+                         {"minute", 60}, {"hour", 3600}, {"day", 86400}, {"week", 604800}, {"month", 2.628e+6}, {"year", 3.154e+7}, {"lustrum", 1.577e+8}, {"decade", 3.154e+8},
+                        {"century", 3.154e+9}, {"millenium", 3.154e+10} }, "Time", parent)
 {
 
 }
