@@ -31,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->weightToolButton->setDefaultAction(ui->switchToWeightAction);
     ui->temperatureToolButton->setDefaultAction(ui->switchToTemperatureAction);
     ui->timeToolButton->setDefaultAction(ui->switchToTimeAction);
+    ui->speedToolButton->setDefaultAction(ui->switchToSpeedAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -76,8 +77,10 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
             ui->conversionStackedWidget->setCurrentIndex(4);
         else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(4))  //Temperature page
             ui->conversionStackedWidget->setCurrentIndex(5);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(5))  //Temperature page
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(5))  //Time page
             ui->conversionStackedWidget->setCurrentIndex(6);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(6))  //Speed page
+            ui->conversionStackedWidget->setCurrentIndex(7);
     }
 }
 
@@ -99,18 +102,23 @@ void MainWindow::on_switchToVolumeAction_triggered()  //VOLUME
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(2));
 }
 
-void MainWindow::on_switchToWeightAction_triggered()
+void MainWindow::on_switchToWeightAction_triggered()  //WEIGHT
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(3));
 }
 
-void MainWindow::on_switchToTemperatureAction_triggered()
+void MainWindow::on_switchToTemperatureAction_triggered()  //TEMPERATURE
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(4));
 }
 
-void MainWindow::on_switchToTimeAction_triggered()
+void MainWindow::on_switchToTimeAction_triggered()  //TIME
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(5));
+}
+
+void MainWindow::on_switchToSpeedAction_triggered()  //SPEED
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(6));
 }
 

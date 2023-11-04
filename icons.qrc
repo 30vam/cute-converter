@@ -13,5 +13,7 @@
         <file>icons/temperature_tree_icon.png</file>
         <file>icons/time_icon.png</file>
         <file>icons/time_tree_icon.png</file>
+        <file>icons/speed_icon.png</file>
+        <file>icons/speed_tree_icon.png</file>
     </qresource>
 </RCC>

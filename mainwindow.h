@@ -28,5 +28,6 @@ private slots:
     void on_switchToWeightAction_triggered();
     void on_switchToTemperatureAction_triggered();
     void on_switchToTimeAction_triggered();
+    void on_switchToSpeedAction_triggered();
 };
 #endif // MAINWINDOW_H
