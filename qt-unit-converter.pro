@@ -14,6 +14,7 @@ SOURCES += \
     src/abstractconverter.cpp \
     src/areaconverter.cpp \
     src/lengthconverter.cpp \
+    src/speedconverter.cpp \
     src/temperatureconverter.cpp \
     src/timeconverter.cpp \
     src/volumeconverter.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     src/abstractconverter.h \
     src/areaconverter.h \
     src/lengthconverter.h \
+    src/speedconverter.h \
     src/temperatureconverter.h \
     src/timeconverter.h \
     src/volumeconverter.h \

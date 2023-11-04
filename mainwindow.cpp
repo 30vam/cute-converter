@@ -6,6 +6,7 @@
 #include "src/weightconverter.h"
 #include "src/temperatureconverter.h"
 #include "src/timeconverter.h"
+#include "src/speedconverter.h"
 #include <QDebug>
 
 //Constructor
@@ -46,6 +47,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->temperatureScrollArea->setWidget(temperatureConverter);
     TimeConverter *timeConverter = new TimeConverter(this);
     ui->timeScrollArea->setWidget(timeConverter);
+    SpeedConverter *speedConverter = new SpeedConverter(this);
+    ui->speedScrollArea->setWidget(speedConverter);
 }
 
 //Deconstructor
