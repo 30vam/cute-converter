@@ -14,7 +14,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Unit Converter</string>
+   <string>Qt Converter</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="icons.qrc">
+    <normaloff>:/icons/!application_icon.png</normaloff>:/icons/!application_icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -1250,8 +1254,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -1425,8 +1429,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>

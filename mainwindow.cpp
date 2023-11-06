@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //Set app to fullscreen
+    //Set app to fullscreen and icon
     this->showMaximized();
 
     //Set up tree widget
