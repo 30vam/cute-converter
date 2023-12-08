@@ -132,6 +132,6 @@ void MainWindow::on_switchToSpeedAction_triggered()  //SPEED
 
 void MainWindow::on_switchToPressureAction_triggered()  //PRESSURE
 {
-
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(0));
 }
 
