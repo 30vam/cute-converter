@@ -84,6 +84,8 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
             ui->conversionStackedWidget->setCurrentIndex(6);
         else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(6))  //Speed page
             ui->conversionStackedWidget->setCurrentIndex(7);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1))  //Scientific page
+            ui->conversionStackedWidget->setCurrentIndex(8);
     }
 }
 
