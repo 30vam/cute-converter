@@ -1846,6 +1846,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <addaction name="switchToTemperatureAction"/>
    <addaction name="switchToTimeAction"/>
    <addaction name="switchToSpeedAction"/>
+   <addaction name="switchToPressureAction"/>
   </widget>
   <action name="switchToLengthAction">
    <property name="icon">
@@ -1929,6 +1930,18 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="toolTip">
     <string>Switch to speed converter</string>
+   </property>
+  </action>
+  <action name="switchToPressureAction">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/pressure_icon.png</normaloff>:/icons/pressure_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pressure</string>
+   </property>
+   <property name="toolTip">
+    <string>Switch to ressure converter</string>
    </property>
   </action>
  </widget>

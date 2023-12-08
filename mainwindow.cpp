@@ -33,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->temperatureToolButton->setDefaultAction(ui->switchToTemperatureAction);
     ui->timeToolButton->setDefaultAction(ui->switchToTimeAction);
     ui->speedToolButton->setDefaultAction(ui->switchToSpeedAction);
+    ui->pressureToolButton->setDefaultAction(ui->switchToPressureAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -125,5 +126,11 @@ void MainWindow::on_switchToTimeAction_triggered()  //TIME
 void MainWindow::on_switchToSpeedAction_triggered()  //SPEED
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(6));
+}
+
+
+void MainWindow::on_switchToPressureAction_triggered()  //PRESSURE
+{
+
 }
 
