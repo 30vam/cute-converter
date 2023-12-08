@@ -7,6 +7,8 @@
 #include "src/temperatureconverter.h"
 #include "src/timeconverter.h"
 #include "src/speedconverter.h"
+#include "src/pressureconverter.h"
+
 #include <QDebug>
 
 //Constructor
@@ -50,6 +52,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->timeScrollArea->setWidget(timeConverter);
     SpeedConverter *speedConverter = new SpeedConverter(this);
     ui->speedScrollArea->setWidget(speedConverter);
+    PressureConverter *pressureConverter = new PressureConverter(this);
+    ui->pressureScrollArea->setWidget(pressureConverter);
 }
 
 //Deconstructor

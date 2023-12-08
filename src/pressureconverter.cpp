@@ -1,10 +1,9 @@
 #include "pressureconverter.h"
 
 PressureConverter::PressureConverter(QWidget *parent)
-    : AbstractConverter({ {"m/s(meter per second)", 1}, {"m/min(meter per minute)", 60}, {"km/s", 0.001}, {"km/min", 0.06}, {"km/h(kilometer per hour)", 3.6},
+    : AbstractConverter({ {"Pa(Pascal)", 1}, {"m/min(meter per minute)", 60}, {"km/s", 0.001}, {"km/min", 0.06}, {"km/h(kilometer per hour)", 3.6},
                          {"ft/s(foot per second)", 3.281}, {"ft/min(foot per minute)", 196.85}, {"mi/h(mile per hour)", 2.237}, {"mach", 0.00291545}, {"knot", 1.944} },
                         "Pressure", parent)
-
 {
 
 }
