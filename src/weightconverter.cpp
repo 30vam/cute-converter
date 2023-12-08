@@ -2,7 +2,7 @@
 
 WeightConverter::WeightConverter(QWidget *parent)
     : AbstractConverter({ {"µg/microgram", 1000000}, {"mg/milligram", 1000}, {"cg/centigram", 100}, {"g/gram", 1}, {"kg/kilogram", 0.001}, {"hg/hectogram", 0.01},
-                        {"oz/ounces", 0.035274}, {"oz t/troy ounces", 0.0321507}, {"AT(UK)/assay ton(UK)", 0.0306122449}, {"lb/pound", 0.00220462}, {"st/stones", 0.000157473},
+                        {"oz/ounces", 0.035274}, {"oz t/troy ounces", 0.0321507}, {"AT/assay ton", 0.0306122449}, {"lb/pound", 0.00220462}, {"st/stones", 0.000157473},
                         {"q/quintal", 0.00001}, {"t/ton", 0.000001}, {"pwt/pennyweight", 0.643015}, {"car/carat", 5}, {"gr/grain", 15.4324}, {"u/Atomic mass unit", 6.022e+23} },
                         "Weight/Mass", parent)
 {
