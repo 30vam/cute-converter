@@ -206,6 +206,100 @@
          <pointsize>20</pointsize>
         </font>
        </property>
+       <property name="icon">
+        <iconset resource="icons.qrc">
+         <normaloff>:/icons/scientific_tree_icon.png</normaloff>:/icons/scientific_tree_icon.png</iconset>
+       </property>
+       <item>
+        <property name="text">
+         <string>Pressure</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Aleo</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/pressure_tree_icon.png</normaloff>:/icons/pressure_tree_icon.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Force</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Aleo</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/force_tree_icon.png</normaloff>:/icons/force_tree_icon.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Energy</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Aleo</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/energy_tree_icon.png</normaloff>:/icons/energy_tree_icon.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Power</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Aleo</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/power_tree_icon.png</normaloff>:/icons/power_tree_icon.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Current</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Aleo</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/current_tree_icon.png</normaloff>:/icons/current_tree_icon.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Voltage</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Aleo</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="icon">
+         <iconset resource="icons.qrc">
+          <normaloff>:/icons/voltage_tree_icon.png</normaloff>:/icons/voltage_tree_icon.png</iconset>
+        </property>
+       </item>
       </item>
       <item>
        <property name="text">

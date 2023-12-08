@@ -18,5 +18,16 @@
         <file>icons/!application_icon.png</file>
         <file>icons/pressure_icon.png</file>
         <file>icons/pressure_tree_icon.png</file>
+        <file>icons/scientific_tree_icon.png</file>
+        <file>icons/current_icon.png</file>
+        <file>icons/current_tree_icon.png</file>
+        <file>icons/energy_icon.png</file>
+        <file>icons/energy_tree_icon.png</file>
+        <file>icons/force_icon.png</file>
+        <file>icons/force_tree_icon.png</file>
+        <file>icons/power_icon.png</file>
+        <file>icons/power_tree_icon.png</file>
+        <file>icons/voltage_icon.png</file>
+        <file>icons/voltage_tree_icon.png</file>
     </qresource>
 </RCC>
