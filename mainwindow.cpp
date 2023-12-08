@@ -87,6 +87,8 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
             ui->conversionStackedWidget->setCurrentIndex(7);
         else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1))  //Scientific page
             ui->conversionStackedWidget->setCurrentIndex(8);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(0))  //Pressure page
+            ui->conversionStackedWidget->setCurrentIndex(9);
     }
 }
 
@@ -127,7 +129,6 @@ void MainWindow::on_switchToSpeedAction_triggered()  //SPEED
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(6));
 }
-
 
 void MainWindow::on_switchToPressureAction_triggered()  //PRESSURE
 {
