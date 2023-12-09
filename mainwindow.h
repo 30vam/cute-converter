@@ -34,5 +34,6 @@ private slots:
     void on_switchToEnergyAction_triggered();
     void on_switchToPowerAction_triggered();
     void on_switchToCurrentAction_triggered();
+    void on_switchToVoltageAction_triggered();
 };
 #endif // MAINWINDOW_H

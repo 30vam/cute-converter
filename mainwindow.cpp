@@ -12,6 +12,7 @@
 #include "src/energyconverter.h"
 #include "src/powerconverter.h"
 #include "src/currentconverter.h"
+#include "src/voltageconverter.h"
 
 #include <QDebug>
 
@@ -44,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->energyToolButton->setDefaultAction(ui->switchToEnergyAction);
     ui->powerToolButton->setDefaultAction(ui->switchToPowerAction);
     ui->currentToolButton->setDefaultAction(ui->switchToCurrentAction);
+    ui->voltageToolButton->setDefaultAction(ui->switchToVoltageAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -70,6 +72,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->powerScrollArea->setWidget(powerConverter);
     CurrentConverter *currentConverter = new CurrentConverter(this);
     ui->currentScrollArea->setWidget(currentConverter);
+    VoltageConverter *voltageConverter = new VoltageConverter(this);
+    ui->voltageScrollArea->setWidget(voltageConverter);
 }
 
 //Deconstructor
@@ -117,6 +121,8 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
             ui->conversionStackedWidget->setCurrentIndex(12);
         else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(4))  //Current page
             ui->conversionStackedWidget->setCurrentIndex(13);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(5))  //Voltage page
+            ui->conversionStackedWidget->setCurrentIndex(14);
     }
 }
 
@@ -181,5 +187,10 @@ void MainWindow::on_switchToPowerAction_triggered()  //POWER
 void MainWindow::on_switchToCurrentAction_triggered()
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(4));
+}
+
+void MainWindow::on_switchToVoltageAction_triggered()
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(5));
 }
 

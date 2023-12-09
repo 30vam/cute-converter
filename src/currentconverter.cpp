@@ -1,9 +1,9 @@
 #include "currentconverter.h"
 
 CurrentConverter::CurrentConverter(QWidget *parent)
-    : AbstractConverter({{"mA (milliampere)", 1000}, {"A (ampere)", 1}, {"kA (kiloampere)", 0.001}, {"Bi (biot)", 0.1},
-                         {"EMU of current", 0.1}, {"ESU of current", 2997924536.8},  {"abA (abampere)", 0.1}, {"stA (statampere)", 2997924536.8},
-                         {"CGS e.m.", 0.1}, {"CGS e.s.", 2997924536.8} },
+    : AbstractConverter({{"mA (milliampere)", 1000}, {"A (ampere)", 1}, {"kA (kiloampere)", 0.001}, {"MA (megaampere)", 1e-6}, {"GA (gigaampere)", 1e-9},
+                        {"Bi (biot)", 0.1}, {"EMU of current", 0.1}, {"ESU of current", 2997924536.8},  {"abA (abampere)", 0.1}, {"stA (statampere)", 2997924536.8},
+                        {"CGS e.m.", 0.1}, {"CGS e.s.", 2997924536.8} },
                         "Current", parent)
 {
 

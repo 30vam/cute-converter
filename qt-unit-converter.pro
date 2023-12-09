@@ -22,6 +22,7 @@ SOURCES += \
     src/speedconverter.cpp \
     src/temperatureconverter.cpp \
     src/timeconverter.cpp \
+    src/voltageconverter.cpp \
     src/volumeconverter.cpp \
     src/weightconverter.cpp
 
@@ -38,6 +39,7 @@ HEADERS += \
     src/speedconverter.h \
     src/temperatureconverter.h \
     src/timeconverter.h \
+    src/voltageconverter.h \
     src/volumeconverter.h \
     src/weightconverter.h
 
