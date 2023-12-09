@@ -1901,6 +1901,38 @@ li.checked::marker { content: &quot;\2612&quot;; }
           </property>
          </widget>
         </item>
+        <item row="2" column="3">
+         <widget class="QToolButton" name="voltageToolButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Aleo</family>
+            <pointsize>26</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="text">
+           <string>Voltage</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>156</width>
+            <height>156</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextUnderIcon</enum>
+          </property>
+         </widget>
+        </item>
         <item row="0" column="0">
          <widget class="QToolButton" name="pressureToolButton">
           <property name="sizePolicy">
@@ -1921,6 +1953,38 @@ li.checked::marker { content: &quot;\2612&quot;; }
           </property>
           <property name="text">
            <string>Pressure</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>156</width>
+            <height>156</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextUnderIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QToolButton" name="forceToolButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Aleo</family>
+            <pointsize>26</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="text">
+           <string>Force</string>
           </property>
           <property name="iconSize">
            <size>
@@ -1998,70 +2062,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
           </property>
           <property name="text">
            <string>Energy</string>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>156</width>
-            <height>156</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonTextUnderIcon</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QToolButton" name="forceToolButton">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Aleo</family>
-            <pointsize>26</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="focusPolicy">
-           <enum>Qt::StrongFocus</enum>
-          </property>
-          <property name="text">
-           <string>Force</string>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>156</width>
-            <height>156</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonTextUnderIcon</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="3">
-         <widget class="QToolButton" name="voltageToolButton">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Aleo</family>
-            <pointsize>26</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="focusPolicy">
-           <enum>Qt::StrongFocus</enum>
-          </property>
-          <property name="text">
-           <string>Voltage</string>
           </property>
           <property name="iconSize">
            <size>
@@ -3167,18 +3167,31 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <addaction name="aboutAction"/>
    <addaction name="separator"/>
    <addaction name="switchToLengthAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToAreaAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToVolumeAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToWeightAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToTemperatureAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToTimeAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToSpeedAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToPressureAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToForceAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToEnergyAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToPowerAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToCurrentAction"/>
+   <addaction name="separator"/>
    <addaction name="switchToVoltageAction"/>
+   <addaction name="separator"/>
   </widget>
   <action name="switchToLengthAction">
    <property name="icon">
