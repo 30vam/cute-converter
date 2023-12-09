@@ -30,5 +30,6 @@ private slots:
     void on_switchToTimeAction_triggered();
     void on_switchToSpeedAction_triggered();
     void on_switchToPressureAction_triggered();
+    void on_switchToForceAction_triggered();
 };
 #endif // MAINWINDOW_H

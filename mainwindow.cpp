@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
     indexOfItemInParent = 0;
     indexOfParent = 0;
 
-    //Connect QToolButtons to their corresponding converters
+    //Connect QToolButtons from GENERAL pages(basic, scientific) to their corresponding converters
     ui->lengthToolButton->setDefaultAction(ui->switchToLengthAction);
     ui->areaToolButton->setDefaultAction(ui->switchToAreaAction);
     ui->volumeToolButton->setDefaultAction(ui->switchToVolumeAction);
@@ -36,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->timeToolButton->setDefaultAction(ui->switchToTimeAction);
     ui->speedToolButton->setDefaultAction(ui->switchToSpeedAction);
     ui->pressureToolButton->setDefaultAction(ui->switchToPressureAction);
+    ui->forceToolButton->setDefaultAction(ui->switchToForceAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -93,6 +94,8 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
             ui->conversionStackedWidget->setCurrentIndex(8);
         else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(0))  //Pressure page
             ui->conversionStackedWidget->setCurrentIndex(9);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(1))  //Force page
+            ui->conversionStackedWidget->setCurrentIndex(10);
     }
 }
 
@@ -137,5 +140,10 @@ void MainWindow::on_switchToSpeedAction_triggered()  //SPEED
 void MainWindow::on_switchToPressureAction_triggered()  //PRESSURE
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(0));
+}
+
+void MainWindow::on_switchToForceAction_triggered()  //FORCE
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(1));
 }
 
