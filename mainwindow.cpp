@@ -8,6 +8,7 @@
 #include "src/timeconverter.h"
 #include "src/speedconverter.h"
 #include "src/pressureconverter.h"
+#include "src/forceconverter.h"
 
 #include <QDebug>
 
@@ -55,6 +56,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->speedScrollArea->setWidget(speedConverter);
     PressureConverter *pressureConverter = new PressureConverter(this);
     ui->pressureScrollArea->setWidget(pressureConverter);
+    ForceConverter *forceConverter = new ForceConverter(this);
+    ui->forceScrollArea->setWidget(forceConverter);
 }
 
 //Deconstructor
