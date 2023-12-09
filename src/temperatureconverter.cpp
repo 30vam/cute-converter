@@ -1,7 +1,7 @@
 #include "temperatureconverter.h"
 
 TemperatureConverter::TemperatureConverter(QWidget *parent)
-    : AbstractConverter({ {"K/Kelvin", 0}, {"°C/Celsius(Centigrade)", 0}, {"°F/Fahrenheit", 0}, {"°R/Rankine", 0}, {"°Ré/Réaumur", 0} },
+    : AbstractConverter({ {"K/Kelvin", 0}, {"°C/Celsius (Centigrade)", 0}, {"°F/Fahrenheit", 0}, {"°R/Rankine", 0}, {"°Ré/Réaumur", 0} },
                         "Temperature", parent)
 {
 

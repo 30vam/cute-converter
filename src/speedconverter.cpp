@@ -1,8 +1,8 @@
 #include "speedconverter.h"
 
 SpeedConverter::SpeedConverter(QWidget *parent)
-    : AbstractConverter({ {"m/s(meter/second)", 1}, {"m/min(meter/minute)", 60}, {"km/s(kmeter/sec)", 0.001}, {"km/min(kmeter/minute)", 0.06}, {"km/h(kmeter/hour)", 3.6},
-                        {"ft/s(foot/second)", 3.281}, {"ft/min(foot/minute)", 196.85}, {"mi/h(mile/hour)", 2.237}, {"mach", 0.00291545}, {"knot", 1.944} },
+    : AbstractConverter({ {"m/s (meter/second)", 1}, {"m/min (meter/minute)", 60}, {"km/s (kmeter/sec)", 0.001}, {"km/min (kmeter/minute)", 0.06}, {"km/h (kmeter/hour)", 3.6},
+                        {"ft/s (foot/second)", 3.281}, {"ft/min (foot/minute)", 196.85}, {"mi/h (mile/hour)", 2.237}, {"mach", 0.00291545}, {"knot", 1.944} },
                         "Speed", parent)
 {
 
