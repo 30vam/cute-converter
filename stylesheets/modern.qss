@@ -486,18 +486,18 @@ QSlider:focus
 
 QLineEdit
 {
-    background-color: #dcf3fc;
+    background-color: #e3f5fc;
     padding: 0.23em;
     border-style: solid;
-    border: 0.04em solid #bab9b8;
+    border: 0.05em solid #bab9b8;
     border-radius: 20px;
     color: #050505;
 }
 
 QAbstractScrollArea
 {
-    border-radius: 0.09em;
-    border: 0.09em solid #bab9b8;
+    border-radius: 1.00em;
+    border: 0.06em transparent #bab9b8;
     background-color: transparent;
 }
 
@@ -731,7 +731,7 @@ QFrame[frameShape="6"]  /* QFrame::StyledPanel == 0x0006 */
     border-style: solid;
     border-color: #eff0f1;
     background-color: #bab9b8;
-    border-radius: 0.23em;
+    border-radius: 1.00em;
 }
 
 /* Provide highlighting for frame objects. */
@@ -741,7 +741,7 @@ QFrame[frameShape="4"]:hover,
 QFrame[frameShape="5"]:hover,
 QFrame[frameShape="6"]:hover
 {
-    border: 0.04em solid rgba(51, 164, 223, 0.5);
+    border: 1.00em solid rgba(51, 164, 223, 0.5);
 }
 
 /* Don't provide an outline if we have a widget that takes up the space. */
@@ -802,7 +802,7 @@ QToolBar QToolButton
 
 QToolBar QToolButton:hover
 {
-    border: 0.04em solid rgba(51, 164, 223, 0.5);
+    border: 0.1em solid rgba(51, 164, 223, 0.5);
 }
 
 QToolBar QToolButton:pressed
@@ -836,10 +836,10 @@ QDialog QToolBar QToolButton[popupMode="2"]
 QPushButton
 {
     color: #31363b;
-    background-color: #eaebec;
-    border: 0.04em solid #bab9b8;
+    background-color: #dae2e3;
+    border: 0.00em transparent #bab9b8;
     padding: 0.23em;
-    border-radius: 0.09em;
+    border-radius: 0.5em;
     outline: none;
     min-height: 1.1em;
 }
@@ -913,8 +913,8 @@ QPushButton:checked
 
 QPushButton:hover
 {
-    background-color: #eaebec;
-    border: 0.04em solid rgba(51, 164, 223, 0.5);
+    background-color: #f6facd;
+    border: 0.00em solid rgba(51, 164, 223, 0.5);
     color: #31363b;
 }
 
@@ -939,7 +939,7 @@ QAbstractView:hover,
 QTreeView:hover,
 QTreeView:focus
 {
-    border: 0.04em solid rgba(51, 164, 223, 0.5);
+    border: 0.1em solid rgba(51, 164, 223, 0.5);
     color: #31363b;
 }
 
@@ -952,7 +952,7 @@ QPlainTextEdit:hover:pressed,
 QAbstractView:hover:pressed,
 QTreeView:hover:pressed
 {
-    background-color: #eff0f1;
+    background-color: #ecf590;
 }
 
 QColumnView
@@ -1998,7 +1998,7 @@ QToolButton[autoRaise="false"]
 {
     background-color: #eff0f1;
     border: 0.04em solid #bab9b8;
-    border-radius: 0.09em;
+    border-radius: 0.6em;
 }
 
 QToolButton[autoRaise="true"]
@@ -2022,7 +2022,7 @@ QDialog QToolBar QToolButton[hasMenu="true"][popupMode="2"]
 
 QToolButton:hover
 {
-    border: 0.04em solid rgba(51, 164, 223, 0.5);
+    border: 0.1em solid rgba(51, 164, 223, 0.5);
 }
 
 QToolButton:checked,
@@ -2179,7 +2179,7 @@ QAbstractItemView::item
 
 QAbstractItemView::item:pressed
 {
-    background: rgba(45, 147, 200, 0.5);
+    background: rgba(184, 246, 252, 0.5);
     color: #31363b;
 }
 

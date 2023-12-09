@@ -65,7 +65,7 @@
       </attribute>
       <column>
        <property name="text">
-        <string>  Conversions:</string>
+        <string>  Conversions</string>
        </property>
        <property name="font">
         <font>
