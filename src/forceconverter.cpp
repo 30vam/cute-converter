@@ -2,7 +2,7 @@
 
 ForceConverter::ForceConverter(QWidget *parent)
     : AbstractConverter({ {"dyn (dyne)", 100000}, {"N (newton)", 1}, {"daN (dekaNewton)", 0.1}, {"kN (kiloNewton)", 0.001}, {"kgf (kilogram-force)", 0.101972},
-                        {"ibf (pound-force)", 0.224809}, {"pdl (poundal)", 7.23301}, {"kip (kip-force)", 0.0002248089}, },
+                        {"lbf (pound-force)", 0.224809}, {"pdl (poundal)", 7.23301}, {"kip (kip-force)", 0.0002248089}, },
                         "Force", parent)
 {
 

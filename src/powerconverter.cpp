@@ -1,9 +1,9 @@
 #include "powerconverter.h"
 
 PowerConverter::PowerConverter(QWidget *parent)
-    : AbstractConverter({ {"W (watt)", 1}, {"kJ (kilojoule)", 0.001}, {"cal (calorie)", 0.239006}, {"kcal (kilocalorie)", 0.000239006}, {"kW.h (kilowatt hour)", 2.77778e-7},
-                        {"kgf.m (kg-force meter)", 0.1019716213}, {"in.lbf (inch-pound)", 8.8507457916}, {"ft.lbf (foot-pound)", 0.737562},
-                        {"BTU (British Thermal Unit)", 0.000947817}, {"eV (electronvolt)", 6.242e+18}},
+    : AbstractConverter({ {"mw (milliwatt)", 1000}, {"W (watt)", 1}, {"kW (kilowatt)", 0.001}, {"MW (megawatt)", 0.000001}, {"GW (gigawatt)", 1e-9},
+                        {"kcal/s (kcalorie/second)", 0.000239}, {"kcal/h (kcalorie/hour)", 0.8598452279}, {"HP (horsepower)", 0.00134102},
+                        {"BTU/h (British Thermal Unit/h)", 3.4121416331}, {"TR (ton of refrigeration)", 0.000284345} },
                         "Power", parent)
 {
 
