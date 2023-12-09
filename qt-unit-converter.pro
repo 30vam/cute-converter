@@ -60,6 +60,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    fonts.qrc \
     icons.qrc \
     stylesheets/stylesheets.qrc \
     stylesheets/stylesheets.qrc

@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fonts/Aleo-Black.ttf</file>
+        <file>fonts/Aleo-BlackItalic.ttf</file>
+        <file>fonts/Aleo-Bold.ttf</file>
+        <file>fonts/Aleo-BoldItalic.ttf</file>
+        <file>fonts/Aleo-ExtraBold.ttf</file>
+        <file>fonts/Aleo-ExtraBoldItalic.ttf</file>
+        <file>fonts/Aleo-ExtraLight.ttf</file>
+        <file>fonts/Aleo-ExtraLightItalic.ttf</file>
+        <file>fonts/Aleo-Italic.ttf</file>
+        <file>fonts/Aleo-Italic-VariableFont_wght.ttf</file>
+        <file>fonts/Aleo-Light.ttf</file>
+        <file>fonts/Aleo-LightItalic.ttf</file>
+        <file>fonts/Aleo-Medium.ttf</file>
+        <file>fonts/Aleo-MediumItalic.ttf</file>
+        <file>fonts/Aleo-Regular.ttf</file>
+        <file>fonts/Aleo-SemiBold.ttf</file>
+        <file>fonts/Aleo-SemiBoldItalic.ttf</file>
+        <file>fonts/Aleo-Thin.ttf</file>
+        <file>fonts/Aleo-ThinItalic.ttf</file>
+        <file>fonts/Aleo-VariableFont_wght.ttf</file>
+    </qresource>
+</RCC>

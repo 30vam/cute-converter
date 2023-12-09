@@ -328,6 +328,13 @@
      </widget>
     </item>
     <item>
+     <widget class="QLabel" name="background">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QStackedWidget" name="conversionStackedWidget">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -2094,7 +2101,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
+             <width>639</width>
              <height>639</height>
             </rect>
            </property>

@@ -3,10 +3,18 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QFile>
+#include <QFontDatabase>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    //Fonts database
+    QFontDatabase::addApplicationFont("://fonts/Aleo-Medium.ttf");
+    QFontDatabase::addApplicationFont("://fonts/Aleo-Regular.ttf");
+    QFontDatabase::addApplicationFont("://fonts/Aleo-Bold.ttf");
+    QFontDatabase::addApplicationFont("://fonts/Aleo-Light.ttf");
+    QFontDatabase::addApplicationFont("://fonts/Aleo-Thin.ttf");
 
     //Stylesheets
     //Load the external stylesheet files

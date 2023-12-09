@@ -87,5 +87,8 @@
         <file>light/vmovetoolbar.svg</file>
         <file>light/vseptoolbar.svg</file>
         <file>light/window_close.svg</file>
+        <file>light/!background.png</file>
+        <file>light/!background2.png</file>
+        <file>light/!background3.png</file>
     </qresource>
 </RCC>
