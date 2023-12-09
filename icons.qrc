@@ -29,5 +29,6 @@
         <file>icons/power_tree_icon.png</file>
         <file>icons/voltage_icon.png</file>
         <file>icons/voltage_tree_icon.png</file>
+        <file>icons/about_icon.png</file>
     </qresource>
 </RCC>
