@@ -13,6 +13,7 @@ SOURCES += \
     mainwindow.cpp \
     src/abstractconverter.cpp \
     src/areaconverter.cpp \
+    src/currentconverter.cpp \
     src/energyconverter.cpp \
     src/forceconverter.cpp \
     src/lengthconverter.cpp \
@@ -28,6 +29,7 @@ HEADERS += \
     mainwindow.h \
     src/abstractconverter.h \
     src/areaconverter.h \
+    src/currentconverter.h \
     src/energyconverter.h \
     src/forceconverter.h \
     src/lengthconverter.h \
