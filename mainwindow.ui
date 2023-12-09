@@ -1858,8 +1858,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <widget class="QToolButton" name="pressureToolButton">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>120</y>
+          <x>30</x>
+          <y>40</y>
           <width>361</width>
           <height>221</height>
          </rect>
@@ -1896,7 +1896,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <widget class="QToolButton" name="forceToolButton">
         <property name="geometry">
          <rect>
-          <x>470</x>
+          <x>420</x>
           <y>140</y>
           <width>361</width>
           <height>221</height>
