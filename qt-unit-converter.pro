@@ -16,6 +16,7 @@ SOURCES += \
     src/energyconverter.cpp \
     src/forceconverter.cpp \
     src/lengthconverter.cpp \
+    src/powerconverter.cpp \
     src/pressureconverter.cpp \
     src/speedconverter.cpp \
     src/temperatureconverter.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     src/energyconverter.h \
     src/forceconverter.h \
     src/lengthconverter.h \
+    src/powerconverter.h \
     src/pressureconverter.h \
     src/speedconverter.h \
     src/temperatureconverter.h \

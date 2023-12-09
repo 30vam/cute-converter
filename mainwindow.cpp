@@ -10,6 +10,7 @@
 #include "src/pressureconverter.h"
 #include "src/forceconverter.h"
 #include "src/energyconverter.h"
+#include "src/powerconverter.h"
 
 #include <QDebug>
 
@@ -40,6 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pressureToolButton->setDefaultAction(ui->switchToPressureAction);
     ui->forceToolButton->setDefaultAction(ui->switchToForceAction);
     ui->energyToolButton->setDefaultAction(ui->switchToEnergyAction);
+    ui->powerToolButton->setDefaultAction(ui->switchToPowerAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -62,6 +64,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->forceScrollArea->setWidget(forceConverter);
     EnergyConverter *energyConverter = new EnergyConverter(this);
     ui->energyScrollArea->setWidget(energyConverter);
+    PowerConverter *powerConverter = new PowerConverter(this);
+    ui->powerScrollArea->setWidget(powerConverter);
 }
 
 //Deconstructor
@@ -105,6 +109,8 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
             ui->conversionStackedWidget->setCurrentIndex(10);
         else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(2))  //Energy page
             ui->conversionStackedWidget->setCurrentIndex(11);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(3))  //Power page
+            ui->conversionStackedWidget->setCurrentIndex(12);
     }
 }
 
@@ -159,5 +165,10 @@ void MainWindow::on_switchToForceAction_triggered()  //FORCE
 void MainWindow::on_switchToEnergyAction_triggered()  //ENERGY
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(2));
+}
+
+void MainWindow::on_switchToPowerAction_triggered()  //POWER
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(3));
 }
 
