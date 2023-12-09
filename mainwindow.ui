@@ -339,7 +339,7 @@
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>9</number>
       </property>
       <widget class="QWidget" name="basicPage">
        <layout class="QGridLayout" name="gridLayout">
@@ -672,8 +672,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -838,8 +838,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -1018,8 +1018,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -1189,8 +1189,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -1364,8 +1364,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -1539,8 +1539,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -1712,8 +1712,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -1868,7 +1868,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="scientificPage">
-       <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0,0,0,0,0,0">
+       <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0,0,0">
         <item row="2" column="0">
          <widget class="QToolButton" name="powerToolButton">
           <property name="sizePolicy">
@@ -2267,8 +2267,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -2444,8 +2444,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -2621,8 +2621,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -2794,8 +2794,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -2969,8 +2969,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>647</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>

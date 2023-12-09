@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>dark-style.css</file>
+        <file>modern.qss</file>
     </qresource>
 </RCC>

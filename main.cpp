@@ -10,14 +10,9 @@ int main(int argc, char *argv[])
 
     //Stylesheets
     //Load the external stylesheet files
-    //Darkmode
-    QFile darkModeFile("://dark-style.css");
-    darkModeFile.open(QFile::ReadOnly);
-    QString darkModeString = QLatin1String(darkModeFile.readAll());
-    //Modern
-    QFile modernFile("://CadWin Light Deep Cerulean.qss");
-    darkModeFile.open(QFile::ReadOnly);
-    QString modernString = QLatin1String(darkModeFile.readAll());
+    QFile modernFile("://modern.qss");
+    modernFile.open(QFile::ReadOnly);
+    QString modernString = QLatin1String(modernFile.readAll());
 
     //Apply the stylesheet
     a.setStyleSheet(modernString);
