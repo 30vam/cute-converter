@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTreeWidget>
+#include "aboutdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,6 +19,8 @@ public:
 private:
     int indexOfItemInParent;
     int indexOfParent;
+    AboutDialog *aboutPage;  //About page instance
+
     Ui::MainWindow *ui;
 
 private slots:
@@ -35,5 +38,6 @@ private slots:
     void on_switchToPowerAction_triggered();
     void on_switchToCurrentAction_triggered();
     void on_switchToVoltageAction_triggered();
+    void on_aboutAction_triggered();
 };
 #endif // MAINWINDOW_H

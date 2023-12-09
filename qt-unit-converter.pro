@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    aboutdialog.cpp \
     main.cpp \
     mainwindow.cpp \
     src/abstractconverter.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
     src/weightconverter.cpp
 
 HEADERS += \
+    aboutdialog.h \
     mainwindow.h \
     src/abstractconverter.h \
     src/areaconverter.h \
@@ -44,6 +46,7 @@ HEADERS += \
     src/weightconverter.h
 
 FORMS += \
+    aboutdialog.ui \
     mainwindow.ui
 
 TRANSLATIONS += \

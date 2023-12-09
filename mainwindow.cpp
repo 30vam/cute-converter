@@ -32,6 +32,9 @@ MainWindow::MainWindow(QWidget *parent)
     indexOfItemInParent = 0;
     indexOfParent = 0;
 
+    //Create about page
+    aboutPage = new AboutDialog(this);
+
     //Connect QToolButtons from GENERAL pages(basic, scientific) to their corresponding converters
     ui->lengthToolButton->setDefaultAction(ui->switchToLengthAction);
     ui->areaToolButton->setDefaultAction(ui->switchToAreaAction);
@@ -128,6 +131,13 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
 
 //ACTIONS ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Credit window
+void MainWindow::on_aboutAction_triggered()
+{
+    aboutPage->exec();
+}
+
+
 //Toolbar actions for changing converters
 void MainWindow::on_switchToLengthAction_triggered()  //LENGTH
 {
@@ -193,4 +203,3 @@ void MainWindow::on_switchToVoltageAction_triggered()
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(5));
 }
-
