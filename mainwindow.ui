@@ -2098,8 +2098,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>639</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -2625,8 +2625,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>639</width>
-             <height>639</height>
+             <width>52</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
