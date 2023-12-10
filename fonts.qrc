@@ -20,5 +20,6 @@
         <file>fonts/Aleo-Thin.ttf</file>
         <file>fonts/Aleo-ThinItalic.ttf</file>
         <file>fonts/Aleo-VariableFont_wght.ttf</file>
+        <file>fonts/Segoeui.ttf</file>
     </qresource>
 </RCC>

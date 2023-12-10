@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     QFontDatabase::addApplicationFont("://fonts/Aleo-Bold.ttf");
     QFontDatabase::addApplicationFont("://fonts/Aleo-Light.ttf");
     QFontDatabase::addApplicationFont("://fonts/Aleo-Thin.ttf");
+    QFontDatabase::addApplicationFont("://fonts/Segoeui.ttf");
 
     //Stylesheets
     //Load the external stylesheet files
