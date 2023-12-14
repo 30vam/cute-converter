@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>800</height>
+    <height>836</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -92,7 +92,7 @@
        </property>
        <item>
         <property name="text">
-         <string>طول / Length</string>
+         <string>Length</string>
         </property>
         <property name="font">
          <font>
@@ -108,7 +108,7 @@
        </item>
        <item>
         <property name="text">
-         <string>مساحت / Area</string>
+         <string>Area</string>
         </property>
         <property name="font">
          <font>
@@ -124,7 +124,7 @@
        </item>
        <item>
         <property name="text">
-         <string>حجم / Volume</string>
+         <string>Volume</string>
         </property>
         <property name="font">
          <font>
@@ -140,7 +140,7 @@
        </item>
        <item>
         <property name="text">
-         <string>جرم / Mass (Weight)</string>
+         <string>Mass (Weight)</string>
         </property>
         <property name="font">
          <font>
@@ -156,7 +156,7 @@
        </item>
        <item>
         <property name="text">
-         <string>دما / Temperature</string>
+         <string>Temperature</string>
         </property>
         <property name="font">
          <font>
@@ -172,7 +172,7 @@
        </item>
        <item>
         <property name="text">
-         <string>زمان / Time</string>
+         <string>Time</string>
         </property>
         <property name="font">
          <font>
@@ -188,7 +188,7 @@
        </item>
        <item>
         <property name="text">
-         <string>سرعت / Speed</string>
+         <string>Speed</string>
         </property>
         <property name="font">
          <font>
@@ -219,7 +219,7 @@
        </property>
        <item>
         <property name="text">
-         <string>فشار / Pressure</string>
+         <string>Pressure</string>
         </property>
         <property name="font">
          <font>
@@ -235,7 +235,7 @@
        </item>
        <item>
         <property name="text">
-         <string>نیرو / Force</string>
+         <string>Force</string>
         </property>
         <property name="font">
          <font>
@@ -251,7 +251,7 @@
        </item>
        <item>
         <property name="text">
-         <string>انرژی / Energy</string>
+         <string>Energy</string>
         </property>
         <property name="font">
          <font>
@@ -267,7 +267,7 @@
        </item>
        <item>
         <property name="text">
-         <string>توان / Power</string>
+         <string>Power</string>
         </property>
         <property name="font">
          <font>
@@ -283,7 +283,7 @@
        </item>
        <item>
         <property name="text">
-         <string>جریان / Current</string>
+         <string>Current</string>
         </property>
         <property name="font">
          <font>
@@ -299,7 +299,7 @@
        </item>
        <item>
         <property name="text">
-         <string>ولتاژ / Voltage</string>
+         <string>Voltage</string>
         </property>
         <property name="font">
          <font>
@@ -337,7 +337,7 @@
     <item>
      <widget class="QStackedWidget" name="conversionStackedWidget">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -662,7 +662,7 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,0">
         <property name="sizeConstraint">
          <enum>QLayout::SetDefaultConstraint</enum>
         </property>
@@ -682,8 +682,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>639</width>
-             <height>639</height>
+             <width>620</width>
+             <height>675</height>
             </rect>
            </property>
           </widget>
@@ -692,7 +692,7 @@
         <item>
          <widget class="QGroupBox" name="lengthInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -700,19 +700,25 @@
           <property name="title">
            <string>Info</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout">
+          <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0">
            <item>
             <widget class="QLabel" name="lengthLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -745,10 +751,22 @@
            <item>
             <widget class="QLabel" name="lengthImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
+              </size>
              </property>
              <property name="font">
               <font>
@@ -778,21 +796,21 @@
            <item>
             <widget class="QTextBrowser" name="lengthTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -2098,8 +2116,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>639</width>
+             <height>675</height>
             </rect>
            </property>
           </widget>
@@ -2625,8 +2643,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>639</width>
+             <height>675</height>
             </rect>
            </property>
           </widget>
@@ -2798,8 +2816,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>639</width>
+             <height>675</height>
             </rect>
            </property>
           </widget>
