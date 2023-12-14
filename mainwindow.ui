@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>836</height>
+    <height>839</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -346,7 +346,7 @@
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>14</number>
       </property>
       <widget class="QWidget" name="basicPage">
        <layout class="QGridLayout" name="gridLayout">
@@ -683,7 +683,7 @@
              <x>0</x>
              <y>0</y>
              <width>620</width>
-             <height>675</height>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -849,7 +849,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="areaWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="areaScrollArea">
           <property name="widgetResizable">
@@ -860,8 +860,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -870,7 +870,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="areaInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -882,15 +882,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="areaLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -923,10 +929,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="areaImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
+              </size>
              </property>
              <property name="font">
               <font>
@@ -956,21 +974,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="areaTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -1023,7 +1041,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="volumeWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="volumeScrollArea">
           <property name="sizePolicy">
@@ -1040,8 +1058,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -1050,7 +1068,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="volumeInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1062,15 +1080,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="volumeLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -1103,15 +1127,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="volumeImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
               </size>
              </property>
              <property name="font">
@@ -1142,21 +1172,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="volumeTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -1194,7 +1224,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="weightWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="weightScrollArea">
           <property name="sizePolicy">
@@ -1211,8 +1241,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -1221,7 +1251,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="weightInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1233,15 +1263,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="weightLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -1274,15 +1310,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="weightImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
               </size>
              </property>
              <property name="font">
@@ -1313,21 +1355,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="weightTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -1369,7 +1411,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="temperatureWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="temperatureScrollArea">
           <property name="sizePolicy">
@@ -1386,8 +1428,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -1396,7 +1438,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="temperatureInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1408,15 +1450,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="temperatureLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -1449,15 +1497,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="temperatureImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
               </size>
              </property>
              <property name="font">
@@ -1488,21 +1542,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="temperatureTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -1544,7 +1598,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="timeWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="timeScrollArea">
           <property name="sizePolicy">
@@ -1561,8 +1615,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -1571,7 +1625,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="timeInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1583,15 +1637,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="timeLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -1624,15 +1684,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="timeImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
               </size>
              </property>
              <property name="font">
@@ -1663,21 +1729,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="timeTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -1717,7 +1783,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="speedWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="speedScrollArea">
           <property name="sizePolicy">
@@ -1734,8 +1800,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -1744,7 +1810,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="speedInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1756,15 +1822,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="speedLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -1797,15 +1869,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="speedImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
               </size>
              </property>
              <property name="font">
@@ -1836,21 +1914,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="speedTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -2099,7 +2177,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="pressureWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="pressureScrollArea">
           <property name="sizePolicy">
@@ -2116,8 +2194,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>639</width>
-             <height>675</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -2126,7 +2204,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="pressureInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -2138,15 +2216,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="pressureLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -2179,15 +2263,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="pressureImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
               </size>
              </property>
              <property name="font">
@@ -2218,21 +2308,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="pressureTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -2272,7 +2362,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="forceWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="forceScrollArea">
           <property name="sizePolicy">
@@ -2289,8 +2379,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -2299,7 +2389,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="forceInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -2311,15 +2401,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="forceLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -2352,15 +2448,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="forceImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
               </size>
              </property>
              <property name="font">
@@ -2391,21 +2493,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="forceTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -2449,7 +2551,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="energyWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="energyScrollArea">
           <property name="sizePolicy">
@@ -2466,8 +2568,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -2476,7 +2578,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="energyInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -2488,15 +2590,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="energyLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -2529,15 +2637,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="energyImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
               </size>
              </property>
              <property name="font">
@@ -2568,21 +2682,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="energyTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -2626,7 +2740,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="powerWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="powerScrollArea">
           <property name="sizePolicy">
@@ -2643,8 +2757,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>639</width>
-             <height>675</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -2653,7 +2767,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="powerInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -2665,15 +2779,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="powerLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -2706,15 +2826,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="powerImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
               </size>
              </property>
              <property name="font">
@@ -2745,21 +2871,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="powerTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -2799,7 +2925,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="currentWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="currentScrollArea">
           <property name="sizePolicy">
@@ -2816,8 +2942,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>639</width>
-             <height>675</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -2826,7 +2952,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="currentInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -2838,15 +2964,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="currentLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -2879,15 +3011,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="currentImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
               </size>
              </property>
              <property name="font">
@@ -2918,21 +3056,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="currentTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
@@ -2974,7 +3112,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </widget>
       <widget class="QWidget" name="voltageWidget">
-       <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="2,1">
+       <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="2,0">
         <item>
          <widget class="QScrollArea" name="voltageScrollArea">
           <property name="sizePolicy">
@@ -2991,8 +3129,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>52</width>
-             <height>16</height>
+             <width>620</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -3001,7 +3139,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QGroupBox" name="voltageInfoGroupBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -3013,15 +3151,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="voltageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>80</height>
               </size>
              </property>
              <property name="font">
@@ -3054,15 +3198,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="voltageImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>320</width>
+               <height>320</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>320</width>
+               <height>320</height>
               </size>
              </property>
              <property name="font">
@@ -3093,21 +3243,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QTextBrowser" name="voltageTextBrowser">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>320</width>
                <height>232</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>232</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="font">
