@@ -23,8 +23,10 @@ SOURCES += \
     src/speedconverter.cpp \
     src/temperatureconverter.cpp \
     src/timeconverter.cpp \
+    src/torqueconverter.cpp \
     src/voltageconverter.cpp \
     src/volumeconverter.cpp \
+    src/volumetricflowrateconverter.cpp \
     src/weightconverter.cpp
 
 HEADERS += \
@@ -41,8 +43,10 @@ HEADERS += \
     src/speedconverter.h \
     src/temperatureconverter.h \
     src/timeconverter.h \
+    src/torqueconverter.h \
     src/voltageconverter.h \
     src/volumeconverter.h \
+    src/volumetricflowrateconverter.h \
     src/weightconverter.h
 
 FORMS += \

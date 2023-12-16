@@ -30,5 +30,9 @@
         <file>icons/voltage_icon.png</file>
         <file>icons/voltage_tree_icon.png</file>
         <file>icons/about_icon.png</file>
+        <file>icons/torque_icon.png</file>
+        <file>icons/torque_tree_icon.png</file>
+        <file>icons/volumetric-flow-rate_icon.png</file>
+        <file>icons/volumetric-flow-rate_tree_icon.png</file>
     </qresource>
 </RCC>

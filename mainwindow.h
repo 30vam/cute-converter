@@ -39,5 +39,7 @@ private slots:
     void on_switchToCurrentAction_triggered();
     void on_switchToVoltageAction_triggered();
     void on_aboutAction_triggered();
+    void on_switchToTorqueAction_triggered();
+    void on_switchToVolumetricFlowRateAction_triggered();
 };
 #endif // MAINWINDOW_H
