@@ -62,7 +62,7 @@
       </font>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A Simple converter built for scientific and miscellaneous quantities.&lt;/p&gt;&lt;p&gt;Author: Sina Kh.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple converter built for scientific and miscellaneous quantities.&lt;/p&gt;&lt;p&gt;Author: Sina Kh.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="textFormat">
       <enum>Qt::RichText</enum>

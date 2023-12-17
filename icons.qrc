@@ -34,5 +34,15 @@
         <file>icons/torque_tree_icon.png</file>
         <file>icons/volumetric-flow-rate_icon.png</file>
         <file>icons/volumetric-flow-rate_tree_icon.png</file>
+        <file>icons/density_icon.png</file>
+        <file>icons/density_tree_icon.png</file>
+        <file>icons/viscosity_icon.png</file>
+        <file>icons/viscosity_tree_icon.png</file>
+        <file>icons/concentration_icon.png</file>
+        <file>icons/concentration_tree_icon.png</file>
+        <file>icons/magnetic_flux_density_icon.png</file>
+        <file>icons/magnetic_flux_density_tree_icon.png</file>
+        <file>icons/search_icon.png</file>
+        <file>icons/favorite_icon.png</file>
     </qresource>
 </RCC>
