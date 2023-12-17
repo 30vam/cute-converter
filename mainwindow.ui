@@ -36,6 +36,9 @@
       <property name="frameShadow">
        <enum>QFrame::Sunken</enum>
       </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
+      </property>
       <property name="iconSize">
        <size>
         <width>48</width>
@@ -371,7 +374,7 @@
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="currentIndex">
-       <number>16</number>
+       <number>10</number>
       </property>
       <widget class="QWidget" name="basicPage">
        <layout class="QHBoxLayout" name="horizontalLayout_15">
@@ -755,7 +758,7 @@
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -802,14 +805,14 @@
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -847,7 +850,7 @@
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -877,9 +880,11 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aleo'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Length is a measure of distance. In the International System of Quantities, length is a quantity with dimension distance. In most systems of measurement a base unit for length is chosen, from which all other units are derived. In the International System of Units (SI) system the base unit for length is the metre.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Length is a measure of distance. In the International System of Quantities, length is a quantity with dimension distance. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In most systems of measurement a base unit for length is chosen, from which all other units are derived. In the International System of Units (SI) system the base unit for length is the metre.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Length is commonly understood to mean the most extended dimension of a fixed object. However, this is not always the case and may depend on the position the object is in.&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Various terms for the length of a fixed object are used, and these include height, which is vertical length or vertical extent, and width, breadth or depth. Height is used when there is a base from which vertical measurements can be taken. Width or breadth usually refer to a shorter dimension when length is the longest one. Depth is used for the third dimension of a three dimensional object.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Various terms for the length of a fixed object are used, and these include height, which is vertical length or vertical extent, and width, breadth or depth. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Height is used when there is a base from which vertical measurements can be taken. Width or breadth usually refer to a shorter dimension when length is the longest one. Depth is used for the third dimension of a three dimensional object.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Length is the measure of one spatial dimension, whereas area is a measure of two dimensions (length squared) and volume is a measure of three dimensions (length cubed).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="openLinks">
@@ -933,7 +938,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -980,14 +985,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -1025,7 +1030,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -1058,15 +1063,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Area can be understood as the amount of material with a given thickness that would be necessary to fashion a model of the shape, or the amount of paint necessary to cover the surface with a single coat. &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;It is the two-dimensional analogue of the length of a curve (a one-dimensional concept) or the volume of a solid (a three-dimensional concept). Two different regions may have the same area (as in squaring the circle); by synecdoche, &amp;quot;area&amp;quot; sometimes is used to refer to the region, as in a &amp;quot;polygonal area&amp;quot;.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;It is the two-dimensional analogue of the length of a curve (a one-dimensional concept) or the volume of a solid (a three-dimensional concept). &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The area of a shape can be measured by comparing the shape to squares of a fixed size. In the International System of Units (SI), the standard unit of area is the square metre (written as m2), which is the area of a square whose sides are one metre long.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Two different regions may have the same area (as in squaring the circle); by synecdoche, &amp;quot;area&amp;quot; sometimes is used to refer to the region, as in a &amp;quot;polygonal area&amp;quot;. The area of a shape can be measured by comparing the shape to squares of a fixed size. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In the International System of Units (SI), the standard unit of area is the square metre (written as m2), which is the area of a square whose sides are one metre long.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; A shape with an area of three square metres would have the same area as three such squares. In mathematics, the unit square is defined to have area one, and the area of any other shape or surface is a dimensionless real number.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;There are several well-known formulas for the areas of simple shapes such as triangles, rectangles, and circles. Using these formulas, the area of any polygon can be found by dividing the polygon into triangles. For shapes with curved boundary, calculus is usually required to compute the area. Indeed, the problem of determining the area of plane figures was a major motivation for the historical development of calculus.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;There are several well-known formulas for the areas of simple shapes such as triangles, rectangles, and circles. Using these formulas, the area of any polygon can be found by dividing the polygon into triangles. &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;For a solid shape such as a sphere, cone, or cylinder, the area of its boundary surface is called the surface area. Formulas for the surface areas of simple shapes were computed by the ancient Greeks, but computing the surface area of a more complicated shape usually requires multivariable calculus.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;For shapes with curved boundary, calculus is usually required to compute the area. Indeed, the problem of determining the area of plane figures was a major motivation for the historical development of calculus.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;For a solid shape such as a sphere, cone, or cylinder, the area of its boundary surface is called the surface area. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Formulas for the surface areas of simple shapes were computed by the ancient Greeks, but computing the surface area of a more complicated shape usually requires multivariable calculus.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Area plays an important role in modern mathematics. In addition to its obvious importance in geometry and calculus, area is related to the definition of determinants in linear algebra, and is a basic property of surfaces in differential geometry. &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1131,7 +1142,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -1178,14 +1189,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -1223,7 +1234,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -1253,9 +1264,15 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aleo'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volume is a measure of regions in three-dimensional space. It is often quantified numerically using SI derived units (such as the cubic metre and litre) or by various imperial or US customary units (such as the gallon, quart, cubic inch). The definition of length (cubed) is interrelated with volume. The volume of a container is generally understood to be the capacity of the container; i.e., the amount of fluid (gas or liquid) that the container could hold, rather than the amount of space the container itself displaces. By metonymy, the term &amp;quot;volume&amp;quot; sometimes is used to refer to the corresponding region (e.g., bounding volume).&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volume is a measure of regions in three-dimensional space. It is often quantified numerically using SI derived units (such as the cubic metre and litre) or by various imperial or US customary units (such as the gallon, quart, cubic inch). &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In ancient times, volume was measured using similar-shaped natural containers. Later on, standardized containers were used. Some simple three-dimensional shapes can have their volume easily calculated using arithmetic formulas. Volumes of more complicated shapes can be calculated with integral calculus if a formula exists for the shape's boundary. Zero-, one- and two-dimensional objects have no volume; in fourth and higher dimensions, an analogous concept to the normal volume is the hypervolume.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The definition of length (cubed) is interrelated with volume. The volume of a container is generally understood to be the capacity of the container; i.e., the amount of fluid (gas or liquid) that the container could hold, rather than the amount of space the container itself displaces. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;By metonymy, the term &amp;quot;volume&amp;quot; sometimes is used to refer to the corresponding region (e.g., bounding volume).&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In ancient times, volume was measured using similar-shaped natural containers. Later on, standardized containers were used. Some simple three-dimensional shapes can have their volume easily calculated using arithmetic formulas. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volumes of more complicated shapes can be calculated with integral calculus if a formula exists for the shape's boundary. Zero-, one- and two-dimensional objects have no volume; in fourth and higher dimensions, an analogous concept to the normal volume is the hypervolume.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="openLinks">
               <bool>false</bool>
@@ -1314,7 +1331,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -1361,14 +1378,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -1406,7 +1423,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -1436,9 +1453,12 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aleo'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mass, commonly called weight by mistake is an intrinsic property of a body. It was traditionally believed to be related to the quantity of matter in a body, until the discovery of the atom and particle physics. It was found that different atoms and different elementary particles, theoretically with the same amount of matter, have nonetheless different masses. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mass, commonly called weight by mistake is an intrinsic property of a body. It was traditionally believed to be related to the quantity of matter in a body, until the discovery of the atom and particle physics. &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mass in modern physics has multiple definitions which are conceptually distinct, but physically equivalent. Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;It was found that different atoms and different elementary particles, theoretically with the same amount of matter, have nonetheless different masses. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mass in modern physics has multiple definitions which are conceptually distinct, but physically equivalent.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The SI base unit of mass is the kilogram (kg). In physics, mass is not the same as weight, even though mass is often determined by measuring the object's weight using a spring scale, rather than balance scale comparing it directly with known masses. &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1501,7 +1521,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -1548,14 +1568,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -1593,7 +1613,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -1625,11 +1645,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aleo'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Temperature is a physical quantity that expresses quantitatively the attribute of hotness or coldness. Temperature is measured with a thermometer. It reflects the kinetic energy of the vibrating and colliding atoms making up a substance.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Thermometers are calibrated in various temperature scales that historically have relied on various reference points and thermometric substances for definition. The most common scales are the Celsius scale with the unit symbol °C (formerly called centigrade), the Fahrenheit scale (°F), and the Kelvin scale (K), the latter being used predominantly for scientific purposes. The kelvin is one of the seven base units in the International System of Units (SI).&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Thermometers are calibrated in various temperature scales that historically have relied on various reference points and thermometric substances for definition. &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Absolute zero, i.e., zero kelvin or −273.15 °C, is the lowest point in the thermodynamic temperature scale. Experimentally, it can be approached very closely but not actually reached, as recognized in the third law of thermodynamics. It would be impossible to extract energy as heat from a body at that temperature.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The most common scales are the Celsius scale with the unit symbol °C (formerly called centigrade), the Fahrenheit scale (°F), and the Kelvin scale (K), the latter being used predominantly for scientific purposes. The kelvin is one of the seven base units in the International System of Units (SI).&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Temperature is important in all fields of natural science, including physics, chemistry, Earth science, astronomy, medicine, biology, ecology, material science, metallurgy, mechanical engineering and geography as well as most aspects of daily life.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Absolute zero, i.e., zero kelvin or −273.15 °C, is the lowest point in the thermodynamic temperature scale. Experimentally, it can be approached very closely but not actually reached, as recognized in the third law of thermodynamics.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; It would be impossible to extract energy as heat from a body at that temperature. Temperature is important in all fields of natural science, including physics, chemistry, Earth science, astronomy, medicine, biology, ecology, material science, metallurgy, mechanical engineering and geography as well as most aspects of daily life.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="openLinks">
               <bool>false</bool>
@@ -1688,7 +1710,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -1735,14 +1757,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -1780,7 +1802,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -1810,11 +1832,20 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aleo'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Time is the continued sequence of existence and events that occurs in an apparently irreversible succession from the past, through the present, and into the future. It is a component quantity of various measurements used to sequence events, to compare the duration of events or the intervals between them, and to quantify rates of change of quantities in material reality or in the conscious experience. Time is often referred to as a fourth dimension, along with three spatial dimensions.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Time is the continued sequence of existence and events that occurs in an apparently irreversible succession from the past, through the present, and into the future.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Time is one of the seven fundamental physical quantities in both the International System of Units (SI) and International System of Quantities. The SI base unit of time is the second, which is defined by measuring the electronic transition frequency of caesium atoms. General relativity is the primary framework for understanding how spacetime works. Through advances in both theoretical and experimental investigations of spacetime, it has been shown that time can be distorted and dilated, particularly at the edges of black holes.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; It is a component quantity of various measurements used to sequence events, to compare the duration of events or the intervals between them, and to quantify rates of change of quantities in material reality or in the conscious experience. &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Throughout history, time has been an important subject of study in religion, philosophy, and science. Temporal measurement has occupied scientists and technologists and has been a prime motivation in navigation and astronomy. Time is also of significant social importance, having economic value (&amp;quot;time is money&amp;quot;) as well as personal value, due to an awareness of the limited time in each day and in human life spans.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Time is often referred to as a fourth dimension, along with three spatial dimensions.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Time is one of the seven fundamental physical quantities in both the International System of Units (SI) and International System of Quantities. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The SI base unit of time is the second, which is defined by measuring the electronic transition frequency of caesium atoms. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;General relativity is the primary framework for understanding how spacetime works. Through advances in both theoretical and experimental investigations of spacetime, it has been shown that time can be distorted and dilated, particularly at the edges of black holes.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Throughout history, time has been an important subject of study in religion, philosophy, and science. Temporal measurement has occupied scientists and technologists and has been a prime motivation in navigation and astronomy.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Time is also of significant social importance, having economic value (&amp;quot;time is money&amp;quot;) as well as personal value, due to an awareness of the limited time in each day and in human life spans.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="openLinks">
               <bool>false</bool>
@@ -1873,7 +1904,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -1920,14 +1951,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -1965,7 +1996,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -1995,11 +2026,17 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aleo'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In everyday use and in kinematics, the speed (commonly referred to as v) of an object is the magnitude of the change of its position over time or the magnitude of the change of its position per unit of time; it is thus a scalar quantity. The average speed of an object in an interval of time is the distance travelled by the object divided by the duration of the interval; the instantaneous speed is the limit of the average speed as the duration of the time interval approaches zero. Speed is the magnitude of velocity (a vector), which indicates additionally the direction of motion.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In everyday use and in kinematics, the speed (commonly referred to as v) of an object is the magnitude of the change of its position over time or the magnitude of the change of its position per unit of time; it is thus a scalar quantity. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The average speed of an object in an interval of time is the distance travelled by the object divided by the duration of the interval; the instantaneous speed is the limit of the average speed as the duration of the time interval approaches zero. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Speed is the magnitude of velocity (a vector), which indicates additionally the direction of motion.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Speed has the dimensions of distance divided by time. The SI unit of speed is the metre per second (m/s), but the most common unit of speed in everyday usage is the kilometre per hour (km/h) or, in the US and the UK, miles per hour (mph). For air and marine travel, the knot is commonly used.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The fastest possible speed at which energy or information can travel, according to special relativity, is the speed of light in vacuum c = 299792458 metres per second (approximately 1079000000 km/h or 671000000 mph). Matter cannot quite reach the speed of light, as this would require an infinite amount of energy. In relativity physics, the concept of rapidity replaces the classical idea of speed.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The fastest possible speed at which energy or information can travel, according to special relativity, is the speed of light in vacuum c = 299792458 metres per second (approximately 1079000000 km/h or 671000000 mph). &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Matter cannot quite reach the speed of light, as this would require an infinite amount of energy. In relativity physics, the concept of rapidity replaces the classical idea of speed.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="openLinks">
               <bool>false</bool>
@@ -2023,8 +2060,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>978</width>
-             <height>678</height>
+             <width>728</width>
+             <height>180</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout">
@@ -2321,8 +2358,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>632</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -2350,7 +2387,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -2397,14 +2434,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -2442,7 +2479,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -2474,9 +2511,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aleo'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Pressure (symbol: p or P) is the force applied perpendicular to the surface of an object per unit area over which that force is distributed.  Gauge pressure (also spelled gage pressure) is the pressure relative to the ambient pressure.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Various units are used to express pressure. Some of these derive from a unit of force divided by a unit of area; the SI unit of pressure, the pascal (Pa), for example, is one newton per square metre (N/m2); similarly, the pound-force per square inch (psi, symbol lbf/in2) is the traditional unit of pressure in the imperial and US customary systems.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Various units are used to express pressure. Some of these derive from a unit of force divided by a unit of area; the SI unit of pressure, the pascal (Pa), for example, is one newton per square metre (N/m2);&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Pressure may also be expressed in terms of standard atmospheric pressure; the atmosphere (atm) is equal to this pressure, and the torr is defined as 1⁄760 of this. Manometric units such as the centimetre of water, millimetre of mercury, and inch of mercury are used to express pressures in terms of the height of column of a particular fluid in a manometer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; similarly, the pound-force per square inch (psi, symbol lbf/in2) is the traditional unit of pressure in the imperial and US customary systems.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Pressure may also be expressed in terms of standard atmospheric pressure; the atmosphere (atm) is equal to this pressure, and the torr is defined as 1⁄760 of this.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Manometric units such as the centimetre of water, millimetre of mercury, and inch of mercury are used to express pressures in terms of the height of column of a particular fluid in a manometer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="openLinks">
               <bool>false</bool>
@@ -2506,7 +2547,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>632</width>
+             <width>696</width>
              <height>678</height>
             </rect>
            </property>
@@ -2535,7 +2576,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -2582,14 +2623,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -2627,7 +2668,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -2661,9 +2702,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The concept of force makes the everyday notion of pushing or pulling mathematically precise. Because the magnitude and direction of a force are both important, force is a vector quantity. The SI unit of force is the newton (N), and force is often represented by the symbol F.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Force plays a central role in classical mechanics, figuring in all three of Newton's laws of motion, which specify that the force on an object with an unchanging mass is equal to the product of the object's mass and the acceleration that it undergoes. Types of forces often encountered in classical mechanics include elastic, frictional, contact or &amp;quot;normal&amp;quot; forces, and gravitational. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Force plays a central role in classical mechanics, figuring in all three of Newton's laws of motion, which specify that the force on an object with an unchanging mass is equal to the product of the object's mass and the acceleration that it undergoes. &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The rotational version of force is torque, which produces changes in the rotational speed of an object. In an extended body, each part often applies forces on the adjacent parts; the distribution of such forces through the body is the internal mechanical stress. In equilibrium these stresses cause no acceleration of the body as the forces balance one another. If these are not in equilibrium they can cause deformation of solid materials, or flow in fluids.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Types of forces often encountered in classical mechanics include elastic, frictional, contact or &amp;quot;normal&amp;quot; forces, and gravitational. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The rotational version of force is torque, which produces changes in the rotational speed of an object. In an extended body, each part often applies forces on the adjacent parts; the distribution of such forces through the body is the internal mechanical stress.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; In equilibrium these stresses cause no acceleration of the body as the forces balance one another. If these are not in equilibrium they can cause deformation of solid materials, or flow in fluids.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In modern physics, which includes relativity and quantum mechanics, the laws governing motion are revised to rely on fundamental interactions as the ultimate origin of force, but the understanding of force provided by classical mechanics remains entirely satisfactory for many practical purposes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -2695,8 +2740,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>632</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -2724,7 +2769,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -2771,14 +2816,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -2816,7 +2861,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -2884,8 +2929,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>632</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -2913,7 +2958,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -2960,14 +3005,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -3005,7 +3050,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -3069,8 +3114,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>632</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -3098,7 +3143,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -3145,14 +3190,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -3190,7 +3235,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -3220,13 +3265,19 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aleo'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An electric current is a flow of charged particles, such as electrons or ions, moving through an electrical conductor or space. It is defined as the net rate of flow of electric charge through a surface.  The moving particles are called charge carriers, which may be one of several types of particles, depending on the conductor. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An electric current is a flow of charged particles, such as electrons or ions, moving through an electrical conductor or space. It is defined as the net rate of flow of electric charge through a surface. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; The moving particles are called charge carriers, which may be one of several types of particles, depending on the conductor. &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In electric circuits the charge carriers are often electrons moving through a wire. In semiconductors they can be electrons or holes. In an electrolyte the charge carriers are ions, while in plasma, an ionized gas, they are ions and electrons.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In the International System of Units (SI), electric current is expressed in units of ampere (sometimes called an &amp;quot;amp&amp;quot;, symbol A), which is equivalent to one coulomb per second. The ampere is an SI base unit and electric current is a base quantity in the International System of Quantities (ISQ).  Electric current is also known as amperage and is measured using a device called an ammeter.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In the International System of Units (SI), electric current is expressed in units of ampere (sometimes called an &amp;quot;amp&amp;quot;, symbol A), which is equivalent to one coulomb per second. &lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Electric currents create magnetic fields, which are used in motors, generators, inductors, and transformers. In ordinary conductors, they cause Joule heating, which creates light in incandescent light bulbs. Time-varying currents emit electromagnetic waves, which are used in telecommunications to broadcast information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The ampere is an SI base unit and electric current is a base quantity in the International System of Quantities (ISQ).  Electric current is also known as amperage and is measured using a device called an ammeter.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Electric currents create magnetic fields, which are used in motors, generators, inductors, and transformers. In ordinary conductors, they cause Joule heating, which creates light in incandescent light bulbs. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Time-varying currents emit electromagnetic waves, which are used in telecommunications to broadcast information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="openLinks">
               <bool>false</bool>
@@ -3256,8 +3307,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>632</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -3285,7 +3336,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -3332,14 +3383,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -3377,7 +3428,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -3407,7 +3458,9 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aleo'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Voltage, also known as electric pressure, electric tension, or (electric) potential difference, is the difference in electric potential between two points. In a static electric field, it corresponds to the work needed per unit of charge to move a test charge between the two points. In the International System of Units (SI), the derived unit for voltage is volt (V).&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Voltage, also known as electric pressure, electric tension, or (electric) potential difference, is the difference in electric potential between two points. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In a static electric field, it corresponds to the work needed per unit of charge to move a test charge between the two points. In the International System of Units (SI), the derived unit for voltage is volt (V).&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The voltage between points can be caused by the build-up of electric charge (e.g., a capacitor), and from an electromotive force (e.g., electromagnetic induction in generator, inductors, and transformers).&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -3443,8 +3496,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>632</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -3472,7 +3525,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -3512,7 +3565,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <widget class="QLabel" name="torqueImageLabel">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -3525,8 +3578,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -3564,7 +3617,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -3596,9 +3649,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aleo'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In physics and mechanics, torque is the rotational analogue of linear force. It is also referred to as the moment of force (also abbreviated to moment). It describes the rate of change of angular momentum that would be imparted to an isolated body.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The concept originated with the studies by Archimedes of the usage of levers, which is reflected in his famous quote: &amp;quot;Give me a lever and a place to stand and I will move the Earth&amp;quot;. Just as a linear force is a push or a pull applied to a body, a torque can be thought of as a twist applied to an object with respect to a chosen point. Torque is defined as the product of the magnitude of the perpendicular component of the force and the distance of the line of action of a force from the point around which it is being determined. The law of conservation of energy can also be used to understand torque. The symbol for torque is typically  the lowercase Greek letter tau. When being referred to as moment of force, it is commonly denoted by M.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The concept originated with the studies by Archimedes of the usage of levers, which is reflected in his famous quote: &amp;quot;Give me a lever and a place to stand and I will move the Earth&amp;quot;.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In three dimensions, the torque is a pseudovector; for point particles, it is given by the cross product of the displacement vector and the force vector. The magnitude of torque applied to a rigid body depends on three quantities: the force applied, the lever arm vector connecting the point about which the taorque is being measured to the point of force application, and the angle between the force and lever arm vectors.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; Just as a linear force is a push or a pull applied to a body, a torque can be thought of as a twist applied to an object with respect to a chosen point. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Torque is defined as the product of the magnitude of the perpendicular component of the force and the distance of the line of action of a force from the point around which it is being determined. The law of conservation of energy can also be used to understand torque.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; The symbol for torque is typically  the lowercase Greek letter tau. When being referred to as moment of force, it is commonly denoted by M.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In three dimensions, the torque is a pseudovector; for point particles, it is given by the cross product of the displacement vector and the force vector. &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The magnitude of torque applied to a rigid body depends on three quantities: the force applied, the lever arm vector connecting the point about which the taorque is being measured to the point of force application, and the angle between the force and lever arm vectors.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="openLinks">
               <bool>false</bool>
@@ -3628,7 +3689,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>632</width>
+             <width>696</width>
              <height>678</height>
             </rect>
            </property>
@@ -3657,7 +3718,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>80</height>
               </size>
              </property>
@@ -3678,7 +3739,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
               </font>
              </property>
              <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;Volumetric Flow Rate&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;Volumetric Flow &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;Rate&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="textFormat">
               <enum>Qt::AutoText</enum>
@@ -3704,14 +3765,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>320</width>
-               <height>320</height>
+               <width>256</width>
+               <height>256</height>
               </size>
              </property>
              <property name="font">
@@ -3749,7 +3810,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </property>
              <property name="minimumSize">
               <size>
-               <width>320</width>
+               <width>256</width>
                <height>232</height>
               </size>
              </property>
@@ -3785,7 +3846,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volumetric flow rate should not be confused with volumetric flux, as defined by Darcy's law and represented by the symbol q, with units of m3/(m2·s), that is, m·s−1. The integration of a flux over an area gives the volumetric flow rate.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The SI unit is cubic metres per second (m3/s). Another unit used is standard cubic centimetres per minute (SCCM). In US customary units and imperial units, volumetric flow rate is often expressed as cubic feet per second (ft3/s) or gallons per minute (either US or imperial definitions). In oceanography, the sverdrup (symbol: Sv, not to be confused with the sievert) is a non-SI metric unit of flow, with 1 Sv equal to 1 million cubic metres per second (260,000,000 US gal/s); it is equivalent to the SI derived unit cubic hectometer per second (symbol: hm3/s or hm3⋅s−1). Named after Harald Sverdrup, it is used almost exclusively in oceanography to measure the volumetric rate of transport of ocean currents.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The SI unit is cubic metres per second (m3/s). Another unit used is standard cubic centimetres per minute (SCCM). In US customary units and imperial units, volumetric flow rate is often expressed as cubic feet per second (ft3/s) or gallons per minute (either US or imperial definitions).&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; In oceanography, the sverdrup (symbol: Sv, not to be confused with the sievert) is a non-SI metric unit of flow, with 1 Sv equal to 1 million cubic metres per second (260,000,000 US gal/s); it is equivalent to the SI derived unit cubic hectometer per second (symbol: hm3/s or hm3⋅s−1). &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Named after Harald Sverdrup, it is used almost exclusively in oceanography to measure the volumetric rate of transport of ocean currents.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="openLinks">
               <bool>false</bool>
