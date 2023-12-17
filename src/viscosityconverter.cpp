@@ -1,9 +1,16 @@
 #include "viscosityconverter.h"
 
 ViscosityConverter::ViscosityConverter(QWidget *parent)
-    : AbstractConverter({{"N.m (newton-meter)", 1}, {"daN.m (dekanewton-meter)", 0.1}, {"kN.m (kilonewton-meter)", 0.001},
-                        {"kgf.m (kilogram-force meter)", 0.1019716213}, {"ozfin (ounceforce-inch)", 141.611933},
-                        {"lbf.in (poundforce-inch)", 8.850746}, {"lbf.ft (poundforce-foot)", 0.737562},  {"gf.cm (gramforce-centimeter)", 10197.1621}, },
+    : AbstractConverter({{"Ps.s (pascal second)", 1}, {"kilogram-force second per square meter", 0.1019716213}, {"newton second per square meter", 1},
+                        {"millinewton second per square meter", 1000}, {"dyne second per square centimeter", 10}, {"P (poise)", 10},
+                        {"EP (exapoise)", 1.E-17}, {"PP (petapoise)", 1.E-14}, {"TP (terrapoise)", 1.E-11},
+                        {"GP (gigapoise)", 1.E-8}, {"MP (megapoise)", 0.00001}, {"kP (kilopoise)", 0.01},
+                        {"hP (hectopoise)", 0.1}, {"daP (dekapoise)", 1}, {"dP (decipoise)", 100},
+                        {"cP (centipoise)", 1000}, {"mP (millipoise)", 10000}, {"µP (micropoise)", 10000000},
+                        {"nP (nanopoise)", 10000000000}, {"pP (picopoise)", 10000000000000}, {"fP (femtopoise)", 10000000000000000},
+                        {"pound-force second per square inch", 0.0001450377}, {"pound-force second per square foot", 0.0208854342}, {"poundal second/square foot", 0.6719689751},
+                        {"gram per centimeter second", 10}, {"slug per foot second", 0.0208854342}, {"pound per foot second",0.6719689751},
+                         {"lb/ft.h (pound per foot hour)", 2419.0883105} },
                         "Viscosity", parent)
 {
 
