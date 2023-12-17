@@ -1,9 +1,10 @@
 #include "magneticfluxdensityconverter.h"
 
 MagneticFluxDensityConverter::MagneticFluxDensityConverter(QWidget *parent)
-    : AbstractConverter({{"N.m (newton-meter)", 1}, {"daN.m (dekanewton-meter)", 0.1}, {"kN.m (kilonewton-meter)", 0.001},
-                        {"kgf.m (kilogram-force meter)", 0.1019716213}, {"ozfin (ounceforce-inch)", 141.611933},
-                        {"lbf.in (poundforce-inch)", 8.850746}, {"lbf.ft (poundforce-foot)", 0.737562},  {"gf.cm (gramforce-centimeter)", 10197.1621}, },
+    : AbstractConverter({{"T (tesla)", 1}, {"Wb/m² (weber per square meter)", 1}, {"Wb/cm² (weber per square centimeter)", 0.0001},
+                        {"Wb/in² (weber per square inch)", 0.00064516}, {"Mx/m² (maxwell per square meter)", 1}, {"Mx/cm² (maxwell per square centimeter)", 10000},
+                        {"Mx/in² (maxwell per square inch)", 64516}, {"Gs, G (Gauss)", 10000}, {"line per square centimeter", 10000},
+                        {"line per square inch", 64516}, {"gamma", 1000000000}, },
                         "Magnetic Flux Density", parent)
 {
 
