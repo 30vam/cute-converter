@@ -15,6 +15,10 @@
 #include "src/voltageconverter.h"
 #include "src/torqueconverter.h"
 #include "src/volumetricflowrateconverter.h"
+#include "src/densityconverter.h"
+#include "src/viscosityconverter.h"
+#include "src/magneticfluxdensityconverter.h"
+#include "src/concentrationconverter.h"
 
 #include <QDebug>
 
@@ -53,6 +57,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->voltageToolButton->setDefaultAction(ui->switchToVoltageAction);
     ui->torqueToolButton->setDefaultAction(ui->switchToTorqueAction);
     ui->volumetricFlowRateToolButton->setDefaultAction(ui->switchToVolumetricFlowRateAction);
+    ui->densityToolButton->setDefaultAction(ui->switchToDensityAction);
+    ui->viscosityToolButton->setDefaultAction(ui->switchToViscosityAction);
+    ui->magneticFluxDensityToolButton->setDefaultAction(ui->switchToMagneticFluxDensityAction);
+    ui->concentrationToolButton->setDefaultAction(ui->switchToConcentrationAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -85,6 +93,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->torqueScrollArea->setWidget(torqueConverter);
     VolumetricFlowRateConverter *volumetricFlowRateConverter = new VolumetricFlowRateConverter(this);
     ui->volumetricFlowRateScrollArea->setWidget(volumetricFlowRateConverter);
+    DensityConverter *densityConverter = new DensityConverter(this);
+    ui->densityScrollArea->setWidget(densityConverter);
+    ViscosityConverter *viscosityConverter = new ViscosityConverter(this);
+    ui->viscosityScrollArea->setWidget(viscosityConverter);
+    MagneticFluxDensityConverter *magneticFluxDensityConverter = new MagneticFluxDensityConverter(this);
+    ui->magneticFluxDensityScrollArea->setWidget(magneticFluxDensityConverter);
+    ConcentrationConverter *concentrationConverter = new ConcentrationConverter(this);
+    ui->concentrationScrollArea->setWidget(concentrationConverter);
 }
 
 //Deconstructor
@@ -138,6 +154,14 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
             ui->conversionStackedWidget->setCurrentIndex(15);
         else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(7))  //Volumetric Flow Rate page
             ui->conversionStackedWidget->setCurrentIndex(16);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(8))  //Density page
+            ui->conversionStackedWidget->setCurrentIndex(17);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(9))  //Viscosity page
+            ui->conversionStackedWidget->setCurrentIndex(18);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(10))  //Magnetic Flux Density page
+            ui->conversionStackedWidget->setCurrentIndex(19);
+        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(11))  //Concentration page
+            ui->conversionStackedWidget->setCurrentIndex(20);
     }
 }
 
@@ -223,5 +247,25 @@ void MainWindow::on_switchToTorqueAction_triggered()  //TORQUE
 void MainWindow::on_switchToVolumetricFlowRateAction_triggered()   //VOLUMETRIC FLOW RATE
 {
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(7));
+}
+
+void MainWindow::on_switchToDensityAction_triggered()  //DENSITY
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(8));
+}
+
+void MainWindow::on_switchToViscosityAction_triggered()  //VESCOSITY
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(9));
+}
+
+void MainWindow::on_switchToMagneticFluxDensityAction_triggered()  //MAGNETIC FLUX DENSITY
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(10));
+}
+
+void MainWindow::on_switchToConcentrationAction_triggered()  //CONCENTRATION
+{
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(11));
 }
 

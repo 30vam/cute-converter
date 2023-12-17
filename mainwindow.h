@@ -41,5 +41,9 @@ private slots:
     void on_aboutAction_triggered();
     void on_switchToTorqueAction_triggered();
     void on_switchToVolumetricFlowRateAction_triggered();
+    void on_switchToDensityAction_triggered();
+    void on_switchToViscosityAction_triggered();
+    void on_switchToMagneticFluxDensityAction_triggered();
+    void on_switchToConcentrationAction_triggered();
 };
 #endif // MAINWINDOW_H

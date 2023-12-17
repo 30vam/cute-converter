@@ -438,7 +438,7 @@
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="currentIndex">
-       <number>20</number>
+       <number>17</number>
       </property>
       <widget class="QWidget" name="basicPage">
        <layout class="QHBoxLayout" name="horizontalLayout_15">
@@ -452,8 +452,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>978</width>
-             <height>678</height>
+             <width>564</width>
+             <height>180</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_3">
@@ -793,8 +793,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>696</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -2124,8 +2124,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>978</width>
-             <height>678</height>
+             <width>868</width>
+             <height>234</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout">
@@ -2550,8 +2550,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>693</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -2739,8 +2739,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>696</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -2932,8 +2932,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>696</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -3121,8 +3121,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>696</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -3306,8 +3306,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>696</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -3499,8 +3499,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>696</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -3688,8 +3688,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>696</width>
-             <height>678</height>
+             <width>19</width>
+             <height>16</height>
             </rect>
            </property>
           </widget>
@@ -5077,7 +5077,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <string>Switch to viscosity converter</string>
    </property>
   </action>
-  <action name="switchToMagnetic Flux DensityAction">
+  <action name="switchToMagneticFluxDensityAction">
    <property name="icon">
     <iconset resource="icons.qrc">
      <normaloff>:/icons/magnetic_flux_density_icon.png</normaloff>:/icons/magnetic_flux_density_icon.png</iconset>

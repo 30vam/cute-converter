@@ -14,16 +14,20 @@ SOURCES += \
     mainwindow.cpp \
     src/abstractconverter.cpp \
     src/areaconverter.cpp \
+    src/concentrationconverter.cpp \
     src/currentconverter.cpp \
+    src/densityconverter.cpp \
     src/energyconverter.cpp \
     src/forceconverter.cpp \
     src/lengthconverter.cpp \
+    src/magneticfluxdensityconverter.cpp \
     src/powerconverter.cpp \
     src/pressureconverter.cpp \
     src/speedconverter.cpp \
     src/temperatureconverter.cpp \
     src/timeconverter.cpp \
     src/torqueconverter.cpp \
+    src/viscosityconverter.cpp \
     src/voltageconverter.cpp \
     src/volumeconverter.cpp \
     src/volumetricflowrateconverter.cpp \
@@ -34,16 +38,20 @@ HEADERS += \
     mainwindow.h \
     src/abstractconverter.h \
     src/areaconverter.h \
+    src/concentrationconverter.h \
     src/currentconverter.h \
+    src/densityconverter.h \
     src/energyconverter.h \
     src/forceconverter.h \
     src/lengthconverter.h \
+    src/magneticfluxdensityconverter.h \
     src/powerconverter.h \
     src/pressureconverter.h \
     src/speedconverter.h \
     src/temperatureconverter.h \
     src/timeconverter.h \
     src/torqueconverter.h \
+    src/viscosityconverter.h \
     src/voltageconverter.h \
     src/volumeconverter.h \
     src/volumetricflowrateconverter.h \
