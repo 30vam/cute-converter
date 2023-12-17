@@ -1998,7 +1998,7 @@ QToolButton[autoRaise="false"]
 {
     background-color: #eff0f1;
     border: 0.04em solid #bab9b8;
-    border-radius: 0.6em;
+    border-radius: 1.4em;
 }
 
 QToolButton[autoRaise="true"]
@@ -2022,14 +2022,14 @@ QDialog QToolBar QToolButton[hasMenu="true"][popupMode="2"]
 
 QToolButton:hover
 {
-    border: 0.1em solid rgba(51, 164, 223, 0.5);
+    border: 0.1em solid rgba(0, 0, 0, 0.5);
 }
 
 QToolButton:checked,
 QToolButton:pressed
 {
-    border: 0.04em solid rgba(51, 164, 223, 0.5);
-    background-color: rgba(51, 164, 223, 0.5);
+    border: 0.04em solid rgba(0, 0, 0, 0.5);
+    background-color: rgba(243, 247, 193, 0.5);
 }
 
 QToolButton::right-arrow,
