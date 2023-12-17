@@ -1,9 +1,10 @@
 #include "concentrationconverter.h"
 
 ConcentrationConverter::ConcentrationConverter(QWidget *parent)
-    : AbstractConverter({{"N.m (newton-meter)", 1}, {"daN.m (dekanewton-meter)", 0.1}, {"kN.m (kilonewton-meter)", 0.001},
-                        {"kgf.m (kilogram-force meter)", 0.1019716213}, {"ozfin (ounceforce-inch)", 141.611933},
-                        {"lbf.in (poundforce-inch)", 8.850746}, {"lbf.ft (poundforce-foot)", 0.737562},  {"gf.cm (gramforce-centimeter)", 10197.1621}, },
+    : AbstractConverter({{"kg/L (kilogram per liter)", 1}, {"g/L (gram per liter)", 1000}, {"mg/L (milligram per liter)", 1000000},
+                        {"ppm (part per million)", 1001142.303}, {"gr/gal (US) (grain/gallon (US))", 58417.8306}, {"gr/gal (UK) (grain/gallon (UK))", 70156.88929},
+                        {"pound per gallon (US)", 8.345404374}, {"pound per gallon (UK)", 10.02241276}, {"pound per million gallon (US)", 8345404.374},
+                        {"pound per million gallon (US)", 10022412.76}, {"lb/ft³ (pound per cubic foot)", 62.42796} },
                         "Concentration", parent)
 {
 

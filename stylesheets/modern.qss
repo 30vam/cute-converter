@@ -2022,14 +2022,15 @@ QDialog QToolBar QToolButton[hasMenu="true"][popupMode="2"]
 
 QToolButton:hover
 {
-    border: 0.1em solid rgba(0, 0, 0, 0.5);
+    border: 0.1em solid #bab9b8;
+    background-color: rgba(246, 250, 215, 0.5);
 }
 
 QToolButton:checked,
 QToolButton:pressed
 {
-    border: 0.04em solid rgba(0, 0, 0, 0.5);
-    background-color: rgba(243, 247, 193, 0.5);
+    border: 0.04em solid #bab9b8;
+    background-color: rgba(243, 250, 130, 0.5);
 }
 
 QToolButton::right-arrow,
