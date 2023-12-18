@@ -135,7 +135,7 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
 
         else  //Otherwise if it's child of a tree:
         {
-            for (int currentTreeIndex = 0; currentTreeIndex < treeParentCount; currentTreeIndex++)  //loop through HEADERS (int i = basic, scientific, etc.)
+            for (int currentTreeIndex = 0; currentTreeIndex < treeParentCount; currentTreeIndex++)  //loop through HEADERS (basic, scientific, etc.)
             {
                 if(selectedItem->parent() == ui->conversionTypeTreeWidget->topLevelItem(currentTreeIndex))  //If we're in the selected item's parent:
                 {
@@ -150,10 +150,7 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
                                 for(int i = 0; i < currentTreeIndex; i++)
                                     widgetIndex += ui->conversionTypeTreeWidget->topLevelItem(i)->childCount() + 1;
                             }
-                            break;
                         }
-                        else
-                            continue;
                     }
                 }
             }
@@ -185,97 +182,116 @@ void MainWindow::on_favoriteAction_triggered()  //FAVORITE
 //Actions for switching converters
 void MainWindow::on_switchToLengthAction_triggered()  //LENGTH
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(0));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("length", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToAreaAction_triggered()  //AREA
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(1));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("area", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToVolumeAction_triggered()  //VOLUME
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(2));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("volume", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToWeightAction_triggered()  //WEIGHT
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(3));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("weight", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToTemperatureAction_triggered()  //TEMPERATURE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(4));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("temperature", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToTimeAction_triggered()  //TIME
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(5));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("time", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToSpeedAction_triggered()  //SPEED
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(6));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("speed", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToPressureAction_triggered()  //PRESSURE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(0));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("pressure", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToForceAction_triggered()  //FORCE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(1));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("force", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToEnergyAction_triggered()  //ENERGY
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(2));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("energy", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToPowerAction_triggered()  //POWER
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(3));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("power", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToCurrentAction_triggered()  //CURRENT
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(4));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("current", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToVoltageAction_triggered()  //VOLTAGE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(5));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("voltage", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToTorqueAction_triggered()  //TORQUE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(6));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("torque", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToVolumetricFlowRateAction_triggered()   //VOLUMETRIC FLOW RATE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(7));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("volumetric flow rate", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToDensityAction_triggered()  //DENSITY
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(8));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("density", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
-void MainWindow::on_switchToViscosityAction_triggered()  //VESCOSITY
+void MainWindow::on_switchToViscosityAction_triggered()  //VISCOSITY
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(9));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("viscosity", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToMagneticFluxDensityAction_triggered()  //MAGNETIC FLUX DENSITY
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(10));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("magnetic flux density", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 void MainWindow::on_switchToConcentrationAction_triggered()  //CONCENTRATION
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(11));
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("concentration", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
 
