@@ -46,5 +46,7 @@
         <file>icons/favorite_icon.png</file>
         <file>icons/angle_icon.png</file>
         <file>icons/angle_tree_icon.png</file>
+        <file>icons/data_storage_icon.png</file>
+        <file>icons/data_storage_tree_icon.png</file>
     </qresource>
 </RCC>

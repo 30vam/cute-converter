@@ -50,5 +50,6 @@ private slots:
     void on_searchAction_triggered();
     void on_favoriteAction_triggered();
     void on_switchToAngleAction_triggered();
+    void on_switchToDataStorageAction_triggered();
 };
 #endif // MAINWINDOW_H

@@ -17,6 +17,7 @@ SOURCES += \
     src/areaconverter.cpp \
     src/concentrationconverter.cpp \
     src/currentconverter.cpp \
+    src/datastorageconverter.cpp \
     src/densityconverter.cpp \
     src/energyconverter.cpp \
     src/forceconverter.cpp \
@@ -42,6 +43,7 @@ HEADERS += \
     src/areaconverter.h \
     src/concentrationconverter.h \
     src/currentconverter.h \
+    src/datastorageconverter.h \
     src/densityconverter.h \
     src/energyconverter.h \
     src/forceconverter.h \

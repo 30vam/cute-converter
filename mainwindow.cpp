@@ -20,6 +20,7 @@
 #include "src/magneticfluxdensityconverter.h"
 #include "src/concentrationconverter.h"
 #include "src/angleconverter.h"
+#include "src/datastorageconverter.h"
 
 #include <QDebug>
 
@@ -66,6 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->magneticFluxDensityToolButton->setDefaultAction(ui->switchToMagneticFluxDensityAction);
     ui->concentrationToolButton->setDefaultAction(ui->switchToConcentrationAction);
     ui->angleToolButton->setDefaultAction(ui->switchToAngleAction);
+    ui->dataStorageToolButton->setDefaultAction(ui->switchToDataStorageAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -108,6 +110,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->concentrationScrollArea->setWidget(concentrationConverter);
     AngleConverter *angleConverter = new AngleConverter(this);
     ui->angleScrollArea->setWidget(angleConverter);
+    DataStorageConverter *dataStorageConverter = new DataStorageConverter(this);
+    ui->dataStorageScrollArea->setWidget(dataStorageConverter);
 }
 
 //Deconstructor
@@ -303,6 +307,12 @@ void MainWindow::on_switchToConcentrationAction_triggered()  //CONCENTRATION
 void MainWindow::on_switchToAngleAction_triggered()  //ANGLE
 {
     QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("angle", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
+}
+
+void MainWindow::on_switchToDataStorageAction_triggered()  //DATA STORAGE
+{
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("data storage", Qt::MatchContains | Qt::MatchRecursive);
     ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
