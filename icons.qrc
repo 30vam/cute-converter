@@ -44,5 +44,7 @@
         <file>icons/magnetic_flux_density_tree_icon.png</file>
         <file>icons/search_icon.png</file>
         <file>icons/favorite_icon.png</file>
+        <file>icons/angle_icon.png</file>
+        <file>icons/angle_tree_icon.png</file>
     </qresource>
 </RCC>

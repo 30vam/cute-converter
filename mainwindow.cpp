@@ -19,6 +19,7 @@
 #include "src/viscosityconverter.h"
 #include "src/magneticfluxdensityconverter.h"
 #include "src/concentrationconverter.h"
+#include "src/angleconverter.h"
 
 #include <QDebug>
 
@@ -64,6 +65,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->viscosityToolButton->setDefaultAction(ui->switchToViscosityAction);
     ui->magneticFluxDensityToolButton->setDefaultAction(ui->switchToMagneticFluxDensityAction);
     ui->concentrationToolButton->setDefaultAction(ui->switchToConcentrationAction);
+    ui->angleToolButton->setDefaultAction(ui->switchToAngleAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -104,6 +106,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->magneticFluxDensityScrollArea->setWidget(magneticFluxDensityConverter);
     ConcentrationConverter *concentrationConverter = new ConcentrationConverter(this);
     ui->concentrationScrollArea->setWidget(concentrationConverter);
+    AngleConverter *angleConverter = new AngleConverter(this);
+    ui->angleScrollArea->setWidget(angleConverter);
 }
 
 //Deconstructor
@@ -123,17 +127,19 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
     int widgetIndex = 0;
     int treeParentCount = ui->conversionTypeTreeWidget->topLevelItemCount();
     int firstTreeChildCount = ui->conversionTypeTreeWidget->topLevelItem(0)->childCount();
+    int secondTreeChildCount = ui->conversionTypeTreeWidget->topLevelItem(1)->childCount();
     QList<QTreeWidgetItem*> selectedItems = ui->conversionTypeTreeWidget->selectedItems();
 
     foreach (QTreeWidgetItem *selectedItem, selectedItems) //There's only 1 selected item at a time in this case, but Qt still treats it as a list so I use a loop
     {
-        if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0))  //if it's the first tree HEADER
+        if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0))  //if it's the 1st tree HEADER
             widgetIndex = 0;
-
-        else  if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1))  //if it's second tree HEADER
+        else  if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1))  //if it's the 2nd tree HEADER
             widgetIndex = firstTreeChildCount + 1;
+        else  if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(2))  //if it's the 3nd tree HEADER
+            widgetIndex = secondTreeChildCount + firstTreeChildCount + 2;
 
-        else  //Otherwise if it's child of a tree:
+        else  //Otherwise if the item is child of a tree:
         {
             for (int currentTreeIndex = 0; currentTreeIndex < treeParentCount; currentTreeIndex++)  //loop through HEADERS (basic, scientific, etc.)
             {
@@ -294,5 +300,9 @@ void MainWindow::on_switchToConcentrationAction_triggered()  //CONCENTRATION
     ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
-
+void MainWindow::on_switchToAngleAction_triggered()  //ANGLE
+{
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("angle", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
+}
 

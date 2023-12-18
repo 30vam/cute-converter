@@ -49,5 +49,6 @@ private slots:
     void on_switchToConcentrationAction_triggered();
     void on_searchAction_triggered();
     void on_favoriteAction_triggered();
+    void on_switchToAngleAction_triggered();
 };
 #endif // MAINWINDOW_H

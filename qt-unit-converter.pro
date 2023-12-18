@@ -13,6 +13,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     src/abstractconverter.cpp \
+    src/angleconverter.cpp \
     src/areaconverter.cpp \
     src/concentrationconverter.cpp \
     src/currentconverter.cpp \
@@ -37,6 +38,7 @@ HEADERS += \
     aboutdialog.h \
     mainwindow.h \
     src/abstractconverter.h \
+    src/angleconverter.h \
     src/areaconverter.h \
     src/concentrationconverter.h \
     src/currentconverter.h \
