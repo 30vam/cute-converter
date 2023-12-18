@@ -17,8 +17,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 private:
-    int indexOfItemInParent;
-    int indexOfParent;
+    int m_basicPageIndex;
+    int m_scientificPageIndex;
+    int m_miscPageIndex;
+
     AboutDialog *aboutPage;  //About page instance
 
     Ui::MainWindow *ui;
@@ -45,5 +47,7 @@ private slots:
     void on_switchToViscosityAction_triggered();
     void on_switchToMagneticFluxDensityAction_triggered();
     void on_switchToConcentrationAction_triggered();
+    void on_searchAction_triggered();
+    void on_favoriteAction_triggered();
 };
 #endif // MAINWINDOW_H

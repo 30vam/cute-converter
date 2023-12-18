@@ -29,14 +29,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    //Setup variables
+    m_basicPageIndex = 0;
+    m_scientificPageIndex = 1;
+    m_miscPageIndex = 2;
+
     //Set app to fullscreen and icon
     this->showMaximized();
 
     //Set up tree widget
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0));  //Set the default page to the BASIC page
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex));  //Set the default page to the BASIC page
     //ui->conversionTypeTreeWidget->expandAll(); //Expand the tree list when the program starts
-    indexOfItemInParent = 0;
-    indexOfParent = 0;
 
     //Create about page
     aboutPage = new AboutDialog(this);
@@ -117,155 +120,163 @@ MainWindow::~MainWindow()
 //Setup Stacked Widget page
 void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using SelectionChanged slot instead of Clicked because it also works with keyboard
 {
+    int widgetIndex = 0;
+    int treeParentCount = ui->conversionTypeTreeWidget->topLevelItemCount();
+    int firstTreeChildCount = ui->conversionTypeTreeWidget->topLevelItem(0)->childCount();
     QList<QTreeWidgetItem*> selectedItems = ui->conversionTypeTreeWidget->selectedItems();
+
     foreach (QTreeWidgetItem *selectedItem, selectedItems) //There's only 1 selected item at a time in this case, but Qt still treats it as a list so I use a loop
     {
-        if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0))  //Basic page
-            ui->conversionStackedWidget->setCurrentIndex(0);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(0))  //Length page
-            ui->conversionStackedWidget->setCurrentIndex(1);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(1))  //Area page
-            ui->conversionStackedWidget->setCurrentIndex(2);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(2))  //Volume page
-            ui->conversionStackedWidget->setCurrentIndex(3);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(3))  //Weight/Mass page
-            ui->conversionStackedWidget->setCurrentIndex(4);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(4))  //Temperature page
-            ui->conversionStackedWidget->setCurrentIndex(5);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(5))  //Time page
-            ui->conversionStackedWidget->setCurrentIndex(6);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0)->child(6))  //Speed page
-            ui->conversionStackedWidget->setCurrentIndex(7);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1))  //Scientific page
-            ui->conversionStackedWidget->setCurrentIndex(8);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(0))  //Pressure page
-            ui->conversionStackedWidget->setCurrentIndex(9);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(1))  //Force page
-            ui->conversionStackedWidget->setCurrentIndex(10);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(2))  //Energy page
-            ui->conversionStackedWidget->setCurrentIndex(11);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(3))  //Power page
-            ui->conversionStackedWidget->setCurrentIndex(12);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(4))  //Current page
-            ui->conversionStackedWidget->setCurrentIndex(13);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(5))  //Voltage page
-            ui->conversionStackedWidget->setCurrentIndex(14);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(6))  //Torque page
-            ui->conversionStackedWidget->setCurrentIndex(15);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(7))  //Volumetric Flow Rate page
-            ui->conversionStackedWidget->setCurrentIndex(16);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(8))  //Density page
-            ui->conversionStackedWidget->setCurrentIndex(17);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(9))  //Viscosity page
-            ui->conversionStackedWidget->setCurrentIndex(18);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(10))  //Magnetic Flux Density page
-            ui->conversionStackedWidget->setCurrentIndex(19);
-        else if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1)->child(11))  //Concentration page
-            ui->conversionStackedWidget->setCurrentIndex(20);
+        if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0))  //if it's the first tree HEADER
+            widgetIndex = 0;
+
+        else  if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1))  //if it's second tree HEADER
+            widgetIndex = firstTreeChildCount + 1;
+
+        else  //Otherwise if it's child of a tree:
+        {
+            for (int currentTreeIndex = 0; currentTreeIndex < treeParentCount; currentTreeIndex++)  //loop through HEADERS (int i = basic, scientific, etc.)
+            {
+                if(selectedItem->parent() == ui->conversionTypeTreeWidget->topLevelItem(currentTreeIndex))  //If we're in the selected item's parent:
+                {
+                    for (int currentChildIndex = 0; currentChildIndex < selectedItem->parent()->childCount(); currentChildIndex++)  //loop through children of i (int j)
+                    {
+                        if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(currentTreeIndex)->child(currentChildIndex))  //If we're in the correct child:
+                        {
+                            widgetIndex = currentChildIndex + 1;   //if we are in the 1st tree
+
+                            if(currentTreeIndex >= 1)  //if we are in any other tree..... add the previous children counts to widgetIndex
+                            {
+                                for(int i = 0; i < currentTreeIndex; i++)
+                                    widgetIndex += ui->conversionTypeTreeWidget->topLevelItem(i)->childCount() + 1;
+                            }
+                            break;
+                        }
+                        else
+                            continue;
+                    }
+                }
+            }
+        }
+
+        qDebug() << widgetIndex;
+        ui->conversionStackedWidget->setCurrentIndex(widgetIndex);  //Finally, set the widget page to the correct one...(hopefully)
     }
 }
 
 //ACTIONS ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//Credit window
-void MainWindow::on_aboutAction_triggered()
+//Toolbar
+void MainWindow::on_aboutAction_triggered()  //ABOUT
 {
     aboutPage->exec();
 }
 
-//Toolbar actions for changing converters
+void MainWindow::on_searchAction_triggered()  //SEARCH
+{
+
+}
+
+void MainWindow::on_favoriteAction_triggered()  //FAVORITE
+{
+
+}
+
+//Actions for switching converters
 void MainWindow::on_switchToLengthAction_triggered()  //LENGTH
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(0));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(0));
 }
 
 void MainWindow::on_switchToAreaAction_triggered()  //AREA
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(1));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(1));
 }
 
 void MainWindow::on_switchToVolumeAction_triggered()  //VOLUME
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(2));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(2));
 }
 
 void MainWindow::on_switchToWeightAction_triggered()  //WEIGHT
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(3));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(3));
 }
 
 void MainWindow::on_switchToTemperatureAction_triggered()  //TEMPERATURE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(4));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(4));
 }
 
 void MainWindow::on_switchToTimeAction_triggered()  //TIME
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(5));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(5));
 }
 
 void MainWindow::on_switchToSpeedAction_triggered()  //SPEED
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0)->child(6));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex)->child(6));
 }
 
 void MainWindow::on_switchToPressureAction_triggered()  //PRESSURE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(0));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(0));
 }
 
 void MainWindow::on_switchToForceAction_triggered()  //FORCE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(1));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(1));
 }
 
 void MainWindow::on_switchToEnergyAction_triggered()  //ENERGY
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(2));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(2));
 }
 
 void MainWindow::on_switchToPowerAction_triggered()  //POWER
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(3));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(3));
 }
 
 void MainWindow::on_switchToCurrentAction_triggered()  //CURRENT
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(4));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(4));
 }
 
 void MainWindow::on_switchToVoltageAction_triggered()  //VOLTAGE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(5));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(5));
 }
 
 void MainWindow::on_switchToTorqueAction_triggered()  //TORQUE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(6));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(6));
 }
 
 void MainWindow::on_switchToVolumetricFlowRateAction_triggered()   //VOLUMETRIC FLOW RATE
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(7));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(7));
 }
 
 void MainWindow::on_switchToDensityAction_triggered()  //DENSITY
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(8));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(8));
 }
 
 void MainWindow::on_switchToViscosityAction_triggered()  //VESCOSITY
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(9));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(9));
 }
 
 void MainWindow::on_switchToMagneticFluxDensityAction_triggered()  //MAGNETIC FLUX DENSITY
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(10));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(10));
 }
 
 void MainWindow::on_switchToConcentrationAction_triggered()  //CONCENTRATION
 {
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(1)->child(11));
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_scientificPageIndex)->child(11));
 }
+
+
 
