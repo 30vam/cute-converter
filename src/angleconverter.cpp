@@ -1,7 +1,10 @@
 #include "angleconverter.h"
 
 AngleConverter::AngleConverter(QWidget *parent)
-    : AbstractConverter({ {"K/Kelvin", 0}, {"°C/Celsius (Centigrade)", 0}, {"°F/Fahrenheit", 0}, {"°R/Rankine", 0}, {"°Ré/Réaumur", 0} },
+    : AbstractConverter({ {"rad (radian)", 1}, {"° (degree) (Centigrade)", 57.295779513}, {"g (grad)", 63.661977237}, {"' (minute)", 3437.7467708},
+                        {"\" (second)", 206264.80625}, {"gon", 63.661977237}, {"sign", 1.9098593171}, {"mil", 1018.5916358},
+                        {"r (revolution)", 0.1591549431}, {"°circle", 0.1591549431}, {"turn", 0.1591549431}, {"quandrant", 0.6366197724},
+                        {"right angle", 0.6366197724}, {"sextant", 0.9549296586} },
                         "Angle", parent)
 {
 
@@ -18,78 +21,20 @@ void AngleConverter::convertValues(int unitIndex, QString valueString)
                 m_lineEditList.at(i)->setText("");
         }
     }
-
     //Otherwise convert values
     else
     {
         double inputDouble = valueString.toDouble();
-        double inputToKelvin;
-        double inputToCelsius;
+        double toRadianCoefficient = m_unitList.at(unitIndex).second;
+        double inputToRadian = inputDouble / toRadianCoefficient;
 
-        //Convert FROM different units to kelvin/celsius
-        switch (unitIndex) {
-        case 0:  //K
-            inputToKelvin = inputDouble;
-            inputToCelsius = inputToKelvin - m_celsiusThreshold;
-            break;
-        case 1:  //°C
-            inputToCelsius = inputDouble;
-            inputToKelvin = inputToCelsius + m_celsiusThreshold;
-            break;
-        case 2:  //°F
-            inputToCelsius = (inputDouble - m_fahrenheitThreshold) / m_fahrenheitCoefficient;
-            inputToKelvin = inputToCelsius + m_celsiusThreshold;
-            break;
-        case 3:  //°R
-            inputToKelvin = inputDouble / m_rankineCoefficient;
-            inputToCelsius = inputToKelvin - m_celsiusThreshold;
-            break;
-        case 4:  //°Ré
-            inputToCelsius = inputDouble * m_reaumurCoefficient;
-            inputToKelvin = inputToCelsius + m_celsiusThreshold;
-            break;
-        default:
-            break;
-        }
-
-        //Convert TO different units
         for(int i = 0; i < m_lineEditList.count(); i++)
         {
-            double convertedValue{ 0 };
-
-            //If kelvin IS NOT valid, print "invalid" in other LineEdits
-            if(inputToKelvin < 0 &&i != unitIndex )
+            //This condition makes it so the LineEdit which is correctly being edited is not affected by the loop
+            if (i != unitIndex)
             {
-                m_lineEditList.at(i)->clear();
-                m_lineEditList.at(i)->setPlaceholderText("Temp can't be lower than absolute 0");
-            }
-            //If kelvin IS valid, convert it to other units
-            else {
-                //This condition makes it so the LineEdit which is correctly being edited is not affected by the loop
-                if (i != unitIndex) {
-                    switch (i) {
-                    case 0:  //K
-                        convertedValue = inputToKelvin;
-                        break;
-                    case 1:  //°C
-                        convertedValue = inputToCelsius;
-                        break;
-                    case 2:  //°F
-                        convertedValue = (inputToCelsius * m_fahrenheitCoefficient) + m_fahrenheitThreshold;
-                        break;
-                    case 3:  //°R
-                        convertedValue = inputToKelvin * m_rankineCoefficient;
-                        break;
-                    case 4:  //°Ré
-                        convertedValue = inputToCelsius / m_reaumurCoefficient;
-                        break;
-                    default:
-                        convertedValue = 0;
-                        break;
-                    }
-
-                    m_lineEditList.at(i)->setText(QString::number(convertedValue));
-                }
+                double convertedValue = inputToRadian * m_unitList.at(i).second;
+                m_lineEditList.at(i)->setText(QString::number(convertedValue));
             }
         }
     }
