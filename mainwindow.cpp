@@ -22,6 +22,7 @@
 #include "src/angleconverter.h"
 #include "src/datastorageconverter.h"
 #include "src/fuelconsumptionconverter.h"
+#include "src/luminanceconverter.h"
 
 #include <QDebug>
 
@@ -80,6 +81,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->dataStorageScrollArea->setWidget(dataStorageConverter);
     FuelConsumptionConverter *fuelConsumptionConverter = new FuelConsumptionConverter(this);
     ui->fuelConsumptionScrollArea->setWidget(fuelConsumptionConverter);
+    LuminanceConverter *luminanceConverter = new LuminanceConverter(this);
+    ui->luminanceScrollArea->setWidget(luminanceConverter);
 
     //Connect QToolButtons from GENERAL pages(basic, scientific) to their corresponding converters
     ui->lengthToolButton->setDefaultAction(ui->switchToLengthAction);
@@ -104,6 +107,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->angleToolButton->setDefaultAction(ui->switchToAngleAction);
     ui->dataStorageToolButton->setDefaultAction(ui->switchToDataStorageAction);
     ui->fuelConsumptionToolButton->setDefaultAction(ui->switchToFuelConsumptionAction);
+    ui->luminanceToolButton->setDefaultAction(ui->switchToLuminanceAction);
 
     //Setup variables
     m_basicPageIndex = 0;
@@ -360,4 +364,9 @@ void MainWindow::on_switchToFuelConsumptionAction_triggered()  //FUEL CONSUMPTIO
     ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 
+void MainWindow::on_switchToLuminanceAction_triggered()  //LUMINANCE
+{
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("luminance", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
+}
 

@@ -23,6 +23,7 @@ SOURCES += \
     src/forceconverter.cpp \
     src/fuelconsumptionconverter.cpp \
     src/lengthconverter.cpp \
+    src/luminanceconverter.cpp \
     src/magneticfluxdensityconverter.cpp \
     src/powerconverter.cpp \
     src/pressureconverter.cpp \
@@ -50,6 +51,7 @@ HEADERS += \
     src/forceconverter.h \
     src/fuelconsumptionconverter.h \
     src/lengthconverter.h \
+    src/luminanceconverter.h \
     src/magneticfluxdensityconverter.h \
     src/powerconverter.h \
     src/pressureconverter.h \

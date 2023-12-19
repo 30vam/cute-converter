@@ -56,5 +56,6 @@ private slots:
     void on_nextAction_triggered();
     void on_previousAction_triggered();
     void on_conversionStackedWidget_currentChanged(int arg1);
+    void on_switchToLuminanceAction_triggered();
 };
 #endif // MAINWINDOW_H
