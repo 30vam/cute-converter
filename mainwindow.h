@@ -20,6 +20,7 @@ private:
     int m_basicPageIndex;
     int m_scientificPageIndex;
     int m_miscPageIndex;
+    int m_totalWidgetCount;
 
     AboutDialog *aboutPage;  //About page instance
 
@@ -52,5 +53,8 @@ private slots:
     void on_switchToAngleAction_triggered();
     void on_switchToDataStorageAction_triggered();
     void on_switchToFuelConsumptionAction_triggered();
+    void on_nextAction_triggered();
+    void on_previousAction_triggered();
+    void on_conversionStackedWidget_currentChanged(int arg1);
 };
 #endif // MAINWINDOW_H

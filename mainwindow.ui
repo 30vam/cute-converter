@@ -490,7 +490,7 @@
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="currentIndex">
-       <number>24</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="basicPage">
        <layout class="QHBoxLayout" name="horizontalLayout_15">
@@ -845,8 +845,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>19</width>
-             <height>16</height>
+             <width>696</width>
+             <height>678</height>
             </rect>
            </property>
           </widget>
@@ -5632,6 +5632,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>false</bool>
    </attribute>
    <addaction name="aboutAction"/>
+   <addaction name="previousAction"/>
+   <addaction name="nextAction"/>
    <addaction name="searchAction"/>
    <addaction name="favoriteAction"/>
    <addaction name="separator"/>
@@ -5934,6 +5936,30 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="toolTip">
     <string>Switch to Fuel Consumption converter</string>
+   </property>
+  </action>
+  <action name="nextAction">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/next_icon.png</normaloff>:/icons/next_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Next Tool</string>
+   </property>
+   <property name="toolTip">
+    <string>Go to next page</string>
+   </property>
+  </action>
+  <action name="previousAction">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/previous_icon.png</normaloff>:/icons/previous_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Previous Tool</string>
+   </property>
+   <property name="toolTip">
+    <string>Go to previous page</string>
    </property>
   </action>
  </widget>

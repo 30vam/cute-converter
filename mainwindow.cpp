@@ -32,47 +32,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //Setup variables
-    m_basicPageIndex = 0;
-    m_scientificPageIndex = 1;
-    m_miscPageIndex = 2;
-
-    //Set app to fullscreen and icon
-    this->showMaximized();
-
-    //Set up tree widget
-    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(m_basicPageIndex));  //Set the default page to the BASIC page
-    //ui->conversionTypeTreeWidget->expandAll(); //Expand the tree list when the program starts
-
     //Create about page
     aboutPage = new AboutDialog(this);
-
-    //Connect QToolButtons from GENERAL pages(basic, scientific) to their corresponding converters
-    for (int var = 0; var < total; ++var) {
-
-    }
-    ui->lengthToolButton->setDefaultAction(ui->switchToLengthAction);
-    ui->areaToolButton->setDefaultAction(ui->switchToAreaAction);
-    ui->volumeToolButton->setDefaultAction(ui->switchToVolumeAction);
-    ui->weightToolButton->setDefaultAction(ui->switchToWeightAction);
-    ui->temperatureToolButton->setDefaultAction(ui->switchToTemperatureAction);
-    ui->timeToolButton->setDefaultAction(ui->switchToTimeAction);
-    ui->speedToolButton->setDefaultAction(ui->switchToSpeedAction);
-    ui->pressureToolButton->setDefaultAction(ui->switchToPressureAction);
-    ui->forceToolButton->setDefaultAction(ui->switchToForceAction);
-    ui->energyToolButton->setDefaultAction(ui->switchToEnergyAction);
-    ui->powerToolButton->setDefaultAction(ui->switchToPowerAction);
-    ui->currentToolButton->setDefaultAction(ui->switchToCurrentAction);
-    ui->voltageToolButton->setDefaultAction(ui->switchToVoltageAction);
-    ui->torqueToolButton->setDefaultAction(ui->switchToTorqueAction);
-    ui->volumetricFlowRateToolButton->setDefaultAction(ui->switchToVolumetricFlowRateAction);
-    ui->densityToolButton->setDefaultAction(ui->switchToDensityAction);
-    ui->viscosityToolButton->setDefaultAction(ui->switchToViscosityAction);
-    ui->magneticFluxDensityToolButton->setDefaultAction(ui->switchToMagneticFluxDensityAction);
-    ui->concentrationToolButton->setDefaultAction(ui->switchToConcentrationAction);
-    ui->angleToolButton->setDefaultAction(ui->switchToAngleAction);
-    ui->dataStorageToolButton->setDefaultAction(ui->switchToDataStorageAction);
-    ui->fuelConsumptionToolButton->setDefaultAction(ui->switchToFuelConsumptionAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -119,6 +80,43 @@ MainWindow::MainWindow(QWidget *parent)
     ui->dataStorageScrollArea->setWidget(dataStorageConverter);
     FuelConsumptionConverter *fuelConsumptionConverter = new FuelConsumptionConverter(this);
     ui->fuelConsumptionScrollArea->setWidget(fuelConsumptionConverter);
+
+    //Connect QToolButtons from GENERAL pages(basic, scientific) to their corresponding converters
+    ui->lengthToolButton->setDefaultAction(ui->switchToLengthAction);
+    ui->areaToolButton->setDefaultAction(ui->switchToAreaAction);
+    ui->volumeToolButton->setDefaultAction(ui->switchToVolumeAction);
+    ui->weightToolButton->setDefaultAction(ui->switchToWeightAction);
+    ui->temperatureToolButton->setDefaultAction(ui->switchToTemperatureAction);
+    ui->timeToolButton->setDefaultAction(ui->switchToTimeAction);
+    ui->speedToolButton->setDefaultAction(ui->switchToSpeedAction);
+    ui->pressureToolButton->setDefaultAction(ui->switchToPressureAction);
+    ui->forceToolButton->setDefaultAction(ui->switchToForceAction);
+    ui->energyToolButton->setDefaultAction(ui->switchToEnergyAction);
+    ui->powerToolButton->setDefaultAction(ui->switchToPowerAction);
+    ui->currentToolButton->setDefaultAction(ui->switchToCurrentAction);
+    ui->voltageToolButton->setDefaultAction(ui->switchToVoltageAction);
+    ui->torqueToolButton->setDefaultAction(ui->switchToTorqueAction);
+    ui->volumetricFlowRateToolButton->setDefaultAction(ui->switchToVolumetricFlowRateAction);
+    ui->densityToolButton->setDefaultAction(ui->switchToDensityAction);
+    ui->viscosityToolButton->setDefaultAction(ui->switchToViscosityAction);
+    ui->magneticFluxDensityToolButton->setDefaultAction(ui->switchToMagneticFluxDensityAction);
+    ui->concentrationToolButton->setDefaultAction(ui->switchToConcentrationAction);
+    ui->angleToolButton->setDefaultAction(ui->switchToAngleAction);
+    ui->dataStorageToolButton->setDefaultAction(ui->switchToDataStorageAction);
+    ui->fuelConsumptionToolButton->setDefaultAction(ui->switchToFuelConsumptionAction);
+
+    //Setup variables
+    m_basicPageIndex = 0;
+    m_scientificPageIndex = 1;
+    m_miscPageIndex = 2;
+    m_totalWidgetCount = ui->conversionStackedWidget->count();
+
+     //Set the default page to the BASIC page
+    ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0));
+    //ui->conversionTypeTreeWidget->expandAll(); //Expand the tree list when the program starts
+
+    //Set app to fullscreen and icon
+    this->showMaximized();
 }
 
 //Deconstructor
@@ -127,10 +125,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-//Methods ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-//SLOTS -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Setup Stacked Widget page
 void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using SelectionChanged slot instead of Clicked because it also works with keyboard
@@ -178,12 +172,49 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
     }
 }
 
+
+//Methods ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//SLOTS -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+void MainWindow::on_conversionStackedWidget_currentChanged(int newIndex)  //Widget Changed
+{
+    //Managing activation of next and previous buttons in toolbar
+    if(newIndex == m_totalWidgetCount - 1)  //If the next page is the last page, disable the next button. -1 because index starts from 0.
+        ui->nextAction->setEnabled(false);
+    if(newIndex > 0 && !ui->previousAction->isEnabled())  //Enable the prev. button when in any other page besides the 1st page
+        ui->previousAction->setEnabled(true);
+    if(newIndex == 0)  //Disable prev button if we're going to the first page
+        ui->previousAction->setEnabled(false);
+    if(newIndex < m_totalWidgetCount - 1 && !ui->nextAction->isEnabled())  //Enable the next button when in any other page besides the last page
+        ui->nextAction->setEnabled(true);
+
+    qDebug() << newIndex;
+}
+
+
 //ACTIONS ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Toolbar
 void MainWindow::on_aboutAction_triggered()  //ABOUT
 {
     aboutPage->exec();
+}
+
+void MainWindow::on_nextAction_triggered()  //NEXT BUTTON
+{
+    //activation and deactivation is managed when widget_page_changed slot is activated
+    int currentIndex = ui->conversionStackedWidget->currentIndex();
+
+    ui->conversionStackedWidget->setCurrentIndex(currentIndex + 1);
+}
+
+void MainWindow::on_previousAction_triggered()  //PREVIOUS BUTTON
+{
+    //activation and deactivation is managed when widget_page_changed slot is activated
+    int currentIndex = ui->conversionStackedWidget->currentIndex();
+
+    ui->conversionStackedWidget->setCurrentIndex(currentIndex - 1);
 }
 
 void MainWindow::on_searchAction_triggered()  //SEARCH
@@ -328,4 +359,5 @@ void MainWindow::on_switchToFuelConsumptionAction_triggered()  //FUEL CONSUMPTIO
     QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("fuel consumption", Qt::MatchContains | Qt::MatchRecursive);
     ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
+
 
