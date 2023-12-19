@@ -21,6 +21,7 @@
 #include "src/concentrationconverter.h"
 #include "src/angleconverter.h"
 #include "src/datastorageconverter.h"
+#include "src/fuelconsumptionconverter.h"
 
 #include <QDebug>
 
@@ -68,6 +69,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->concentrationToolButton->setDefaultAction(ui->switchToConcentrationAction);
     ui->angleToolButton->setDefaultAction(ui->switchToAngleAction);
     ui->dataStorageToolButton->setDefaultAction(ui->switchToDataStorageAction);
+    ui->fuelConsumptionToolButton->setDefaultAction(ui->switchToFuelConsumptionAction);
 
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
@@ -112,6 +114,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->angleScrollArea->setWidget(angleConverter);
     DataStorageConverter *dataStorageConverter = new DataStorageConverter(this);
     ui->dataStorageScrollArea->setWidget(dataStorageConverter);
+    FuelConsumptionConverter *fuelConsumptionConverter = new FuelConsumptionConverter(this);
+    ui->fuelConsumptionScrollArea->setWidget(fuelConsumptionConverter);
 }
 
 //Deconstructor
@@ -313,6 +317,12 @@ void MainWindow::on_switchToAngleAction_triggered()  //ANGLE
 void MainWindow::on_switchToDataStorageAction_triggered()  //DATA STORAGE
 {
     QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("data storage", Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
+}
+
+void MainWindow::on_switchToFuelConsumptionAction_triggered()  //FUEL CONSUMPTION
+{
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems("fuel consumption", Qt::MatchContains | Qt::MatchRecursive);
     ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
 }
 

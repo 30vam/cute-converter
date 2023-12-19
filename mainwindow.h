@@ -51,5 +51,6 @@ private slots:
     void on_favoriteAction_triggered();
     void on_switchToAngleAction_triggered();
     void on_switchToDataStorageAction_triggered();
+    void on_switchToFuelConsumptionAction_triggered();
 };
 #endif // MAINWINDOW_H
