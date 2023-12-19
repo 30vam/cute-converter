@@ -48,6 +48,9 @@ MainWindow::MainWindow(QWidget *parent)
     aboutPage = new AboutDialog(this);
 
     //Connect QToolButtons from GENERAL pages(basic, scientific) to their corresponding converters
+    for (int var = 0; var < total; ++var) {
+
+    }
     ui->lengthToolButton->setDefaultAction(ui->switchToLengthAction);
     ui->areaToolButton->setDefaultAction(ui->switchToAreaAction);
     ui->volumeToolButton->setDefaultAction(ui->switchToVolumeAction);

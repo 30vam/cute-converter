@@ -50,5 +50,6 @@
         <file>icons/data_storage_tree_icon.png</file>
         <file>icons/fuel_consumption_icon.png</file>
         <file>icons/fuel_consumption_tree_icon.png</file>
+        <file>icons/random_tree_icon.png</file>
     </qresource>
 </RCC>

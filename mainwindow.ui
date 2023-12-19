@@ -415,13 +415,17 @@
       </item>
       <item>
        <property name="text">
-        <string>Miscellaneous</string>
+        <string>Misc.</string>
        </property>
        <property name="font">
         <font>
          <family>Aleo Medium</family>
          <pointsize>20</pointsize>
         </font>
+       </property>
+       <property name="icon">
+        <iconset resource="icons.qrc">
+         <normaloff>:/icons/random_tree_icon.png</normaloff>:/icons/random_tree_icon.png</iconset>
        </property>
        <item>
         <property name="text">
