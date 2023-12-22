@@ -1,8 +1,8 @@
 #include "searchdialog.h"
 #include "ui_searchdialog.h"
 
-SearchDialog::SearchDialog(QStandardItemModel *converterItemModel, QWidget *parent) :
-    QDialog(parent),
+SearchDialog::SearchDialog(DataModel *dataModel, QWidget *parent) :
+    QDialog(parent), m_dataModel(dataModel),
     ui(new Ui::SearchDialog)
 {
     ui->setupUi(this);
@@ -15,9 +15,14 @@ SearchDialog::SearchDialog(QStandardItemModel *converterItemModel, QWidget *pare
     this->setWindowTitle("Search Converters : ");
     ui->searchButtonBox->addButton(m_searchButton, QDialogButtonBox::AcceptRole);
 
-    //Search List
+    //Signals and slots
+    connect(&m_dataModel, &DataModel::modelDataChanged, this, &SearchDialog::modelDataChangedSlot);
 
+    //Test
+    m_firstIndex = m_dataModel.getModel()->index(0, 0, QModelIndex());
+    m_lastIndex = m_dataModel.getModel()->index(0, 10, QModelIndex());
 
+    emit m_dataModel.modelDataChanged(m_firstIndex, m_lastIndex);
 }
 
 SearchDialog::~SearchDialog()
@@ -26,6 +31,11 @@ SearchDialog::~SearchDialog()
 }
 
 //Slots ----------------------------------------------------------------------------------
+void SearchDialog::modelDataChangedSlot(const QModelIndex &topLeft, const QModelIndex &bottomRight)
+{
+    QStandardItemModel *model = m_dataModel.getModel();
+    ui->searchListView->setModel(model);
+}
 
 void SearchDialog::on_searchButtonBox_clicked(QAbstractButton *button)
 {

@@ -24,7 +24,7 @@
 #include "src/fuelconsumptionconverter.h"
 #include "src/luminanceconverter.h"
 
-#include "searchdialog.h"
+#include "datamodel.h"
 
 #include <QDebug>
 
@@ -118,8 +118,8 @@ MainWindow::MainWindow(QWidget *parent)
     m_aboutPage = new AboutDialog(this);
 
     //Create search window
-    m_treeWidgetItemModel = new QStandardItemModel;
-    m_searchDialog = new SearchDialog(m_treeWidgetItemModel, this);
+    DataModel *dataModel = new DataModel();
+    m_searchDialog = new SearchDialog(dataModel, this);
 
      //Set the default page to the BASIC page
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0));
@@ -134,7 +134,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 
 //Setup Stacked Widget page
 void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using SelectionChanged slot instead of Clicked because it also works with keyboard
@@ -182,9 +181,13 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
     }
 }
 
+//Getters and Setters ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Methods ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+void getItemModel()
+{
 
+}
 
 //SLOTS -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 void MainWindow::on_conversionStackedWidget_currentChanged(int newIndex)  //Widget Changed

@@ -1,11 +1,13 @@
 #ifndef SEARCHDIALOG_H
-#define SEARCHDIALOG_H
+#define SEARCHDIALOG_Hs
 
 #include <QDialog>
 #include <QAbstractButton>
 #include <QPushButton>
 #include <QIcon>
 #include <QStandardItemModel>
+
+#include "datamodel.h"
 
 namespace Ui {
 class SearchDialog;
@@ -16,16 +18,20 @@ class SearchDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit SearchDialog(QStandardItemModel *converterItemModel, QWidget *parent = nullptr);
+    explicit SearchDialog(DataModel *dataModel, QWidget *parent = nullptr);
     ~SearchDialog();
 
 private slots:
+    void modelDataChangedSlot(const QModelIndex &topLeft, const QModelIndex &bottomRight);
     void on_searchButtonBox_clicked(QAbstractButton *button);
 
 private:
     QPushButton *m_searchButton;
     QIcon m_goToIcon;
     QStringList m_searchStringList;
+    DataModel m_dataModel;
+    QModelIndex m_firstIndex;
+    QModelIndex m_lastIndex;
 
     Ui::SearchDialog *ui;
 };

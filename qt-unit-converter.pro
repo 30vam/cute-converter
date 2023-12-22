@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     aboutdialog.cpp \
+    datamodel.cpp \
     main.cpp \
     mainwindow.cpp \
     searchdialog.cpp \
@@ -40,6 +41,7 @@ SOURCES += \
 
 HEADERS += \
     aboutdialog.h \
+    datamodel.h \
     mainwindow.h \
     searchdialog.h \
     src/abstractconverter.h \

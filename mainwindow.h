@@ -19,18 +19,27 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    //Getters and setters
+
 private:
     int m_basicPageIndex;
     int m_scientificPageIndex;
     int m_miscPageIndex;
     int m_totalWidgetCount;
-    QStandardItemModel *m_treeWidgetItemModel;
+    QStandardItemModel *m_treeWidgetModel;
+
+    //Methods
+    void getItemModel();
 
     AboutDialog *m_aboutPage;  //About page instance
     SearchDialog *m_searchDialog;
 ;
 
     Ui::MainWindow *ui;
+
+signals:
+    void modelDataChanged();
 
 private slots:
     void on_conversionTypeTreeWidget_itemSelectionChanged();
