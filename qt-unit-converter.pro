@@ -12,6 +12,7 @@ SOURCES += \
     aboutdialog.cpp \
     main.cpp \
     mainwindow.cpp \
+    searchdialog.cpp \
     src/abstractconverter.cpp \
     src/angleconverter.cpp \
     src/areaconverter.cpp \
@@ -40,6 +41,7 @@ SOURCES += \
 HEADERS += \
     aboutdialog.h \
     mainwindow.h \
+    searchdialog.h \
     src/abstractconverter.h \
     src/angleconverter.h \
     src/areaconverter.h \
@@ -67,7 +69,8 @@ HEADERS += \
 
 FORMS += \
     aboutdialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    searchdialog.ui
 
 TRANSLATIONS += \
     qt-unit-converter_fa_IR.ts

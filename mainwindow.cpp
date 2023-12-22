@@ -24,6 +24,8 @@
 #include "src/fuelconsumptionconverter.h"
 #include "src/luminanceconverter.h"
 
+#include "searchdialog.h"
+
 #include <QDebug>
 
 //Constructor
@@ -223,7 +225,8 @@ void MainWindow::on_previousAction_triggered()  //PREVIOUS BUTTON
 
 void MainWindow::on_searchAction_triggered()  //SEARCH
 {
-
+    SearchDialog *searchDialog = new SearchDialog();
+    searchDialog->exec();
 }
 
 void MainWindow::on_favoriteAction_triggered()  //FAVORITE

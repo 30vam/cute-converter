@@ -55,5 +55,6 @@
         <file>icons/previous_icon.png</file>
         <file>icons/luminance_icon.png</file>
         <file>icons/luminance_tree_icon.png</file>
+        <file>icons/go_to_icon.jpg</file>
     </qresource>
 </RCC>
