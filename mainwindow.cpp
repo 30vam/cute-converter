@@ -35,9 +35,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //Create about page
-    aboutPage = new AboutDialog(this);
-
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
     ui->lengthScrollArea->setWidget(lengthConverter);
@@ -116,6 +113,13 @@ MainWindow::MainWindow(QWidget *parent)
     m_scientificPageIndex = 1;
     m_miscPageIndex = 2;
     m_totalWidgetCount = ui->conversionStackedWidget->count();
+
+    //Create about page
+    m_aboutPage = new AboutDialog(this);
+
+    //Create search window
+    m_treeWidgetItemModel = new QStandardItemModel;
+    m_searchDialog = new SearchDialog(m_treeWidgetItemModel, this);
 
      //Set the default page to the BASIC page
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0));
@@ -204,7 +208,7 @@ void MainWindow::on_conversionStackedWidget_currentChanged(int newIndex)  //Widg
 //Toolbar
 void MainWindow::on_aboutAction_triggered()  //ABOUT
 {
-    aboutPage->exec();
+    m_aboutPage->exec();
 }
 
 void MainWindow::on_nextAction_triggered()  //NEXT BUTTON
@@ -225,8 +229,7 @@ void MainWindow::on_previousAction_triggered()  //PREVIOUS BUTTON
 
 void MainWindow::on_searchAction_triggered()  //SEARCH
 {
-    SearchDialog *searchDialog = new SearchDialog();
-    searchDialog->exec();
+    m_searchDialog->exec();
 }
 
 void MainWindow::on_favoriteAction_triggered()  //FAVORITE

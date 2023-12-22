@@ -3,7 +3,10 @@
 
 #include <QMainWindow>
 #include <QTreeWidget>
+#include <QStandardItemModel>
+
 #include "aboutdialog.h"
+#include "searchdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,8 +24,11 @@ private:
     int m_scientificPageIndex;
     int m_miscPageIndex;
     int m_totalWidgetCount;
+    QStandardItemModel *m_treeWidgetItemModel;
 
-    AboutDialog *aboutPage;  //About page instance
+    AboutDialog *m_aboutPage;  //About page instance
+    SearchDialog *m_searchDialog;
+;
 
     Ui::MainWindow *ui;
 
