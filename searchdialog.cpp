@@ -12,6 +12,7 @@ SearchDialog::SearchDialog(DataModel *dataModel, QWidget *parent) :
     m_searchButton = new QPushButton(m_goToIcon, "Go To", this);
 
     //Set up UI
+    this->setFixedSize(this->size());  //Locked dialog size
     this->setWindowTitle("Search Converters : ");
     ui->searchButtonBox->addButton(m_searchButton, QDialogButtonBox::AcceptRole);
 
