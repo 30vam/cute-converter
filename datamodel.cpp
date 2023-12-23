@@ -16,6 +16,7 @@ DataModel::DataModel(QObject *parent)
     QStandardItem *temperatureItem = new QStandardItem("Temperature");
     QStandardItem *timeItem = new QStandardItem("Time");
     QStandardItem *speedItem = new QStandardItem("Speed");
+    QStandardItem *scientificItem = new QStandardItem("Scientific");
     QStandardItem *pressureItem = new QStandardItem("Pressure");
     QStandardItem *forceItem = new QStandardItem("Force");
     QStandardItem *energyItem = new QStandardItem("Energy");
@@ -43,6 +44,7 @@ DataModel::DataModel(QObject *parent)
     m_model->appendRow(temperatureItem);
     m_model->appendRow(timeItem);
     m_model->appendRow(speedItem);
+    m_model->appendRow(scientificItem);
     m_model->appendRow(pressureItem);
     m_model->appendRow(forceItem);
     m_model->appendRow(energyItem);
@@ -68,7 +70,8 @@ DataModel::DataModel(QObject *parent)
         {
             QStandardItem *currentItem = m_model->item(row, column);  //Which item are we iterating through right now?
             currentItem->setFont(m_itemFont);
-            currentItem->setEditable(false);
+            currentItem->setEditable(false);  //Remove item editting ability from use
+            currentItem->setData(row, Qt::UserRole);  //Give an index to the item
         }
     }
 

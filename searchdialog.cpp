@@ -1,6 +1,8 @@
 #include "searchdialog.h"
 #include "ui_searchdialog.h"
 
+#include <QDebug>
+
 SearchDialog::SearchDialog(DataModel *dataModel, QWidget *parent) :
     QDialog(parent), m_dataModel(dataModel),
     ui(new Ui::SearchDialog)
@@ -14,15 +16,13 @@ SearchDialog::SearchDialog(DataModel *dataModel, QWidget *parent) :
     //Set up UI
     this->setFixedSize(this->size());  //Locked dialog size
     this->setWindowTitle("Search Converters : ");
+    ui->searchLineEdit->setPlaceholderText("Search all converters...");
     ui->searchButtonBox->addButton(m_searchButton, QDialogButtonBox::AcceptRole);
 
     //Signals and slots
     connect(&m_dataModel, &DataModel::modelDataChanged, this, &SearchDialog::modelDataChangedSlot);
 
-    //Test
-    m_firstIndex = m_dataModel.getModel()->index(0, 0, QModelIndex());
-    m_lastIndex = m_dataModel.getModel()->index(0, 10, QModelIndex());
-
+    //Emit a signal when the search window opens
     emit m_dataModel.modelDataChanged(m_firstIndex, m_lastIndex);
 }
 
@@ -42,7 +42,21 @@ void SearchDialog::on_searchButtonBox_clicked(QAbstractButton *button)
 {
     if(button == m_searchButton)  //When clicked on the search button
     {
-
+        m_searchedItemIndex = m_dataModel.getModel()->data(ui->searchListView->currentIndex(), Qt::UserRole).toInt();
+        qDebug() << m_searchedItemIndex << "was searched.";
     }
+}
+
+//Getters and setters
+int SearchDialog::getSearchedItemIndex()
+{
+    return m_searchedItemIndex;
+}
+
+//When user clicks on an item
+void SearchDialog::on_searchListView_clicked(const QModelIndex &index)
+{
+    int selectedIndex = m_dataModel.getModel()->data(index, Qt::UserRole).toInt();
+    qDebug() << selectedIndex << "was selected.";
 }
 

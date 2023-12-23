@@ -35,6 +35,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    //Create the data model for quantities
+    m_quantityDataModel = new DataModel();
+
     //Create the custom converter widgets
     LengthConverter *lengthConverter = new LengthConverter(this);
     ui->lengthScrollArea->setWidget(lengthConverter);
@@ -108,18 +111,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->fuelConsumptionToolButton->setDefaultAction(ui->switchToFuelConsumptionAction);
     ui->luminanceToolButton->setDefaultAction(ui->switchToLuminanceAction);
 
+    //Create about page
+    m_aboutPage = new AboutDialog(this);
+
     //Setup variables
     m_basicPageIndex = 0;
     m_scientificPageIndex = 1;
     m_miscPageIndex = 2;
     m_totalWidgetCount = ui->conversionStackedWidget->count();
-
-    //Create about page
-    m_aboutPage = new AboutDialog(this);
-
-    //Create search window
-    DataModel *dataModel = new DataModel();
-    m_searchDialog = new SearchDialog(dataModel, this);
 
      //Set the default page to the BASIC page
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0));
@@ -232,6 +231,7 @@ void MainWindow::on_previousAction_triggered()  //PREVIOUS BUTTON
 
 void MainWindow::on_searchAction_triggered()  //SEARCH
 {
+    m_searchDialog = new SearchDialog(m_quantityDataModel, this);
     m_searchDialog->exec();
 }
 

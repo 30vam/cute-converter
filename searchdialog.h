@@ -21,11 +21,18 @@ public:
     explicit SearchDialog(DataModel *dataModel, QWidget *parent = nullptr);
     ~SearchDialog();
 
+    //Getters and setters
+    int getSearchedItemIndex();
+
 private slots:
     void modelDataChangedSlot(const QModelIndex &topLeft, const QModelIndex &bottomRight);
     void on_searchButtonBox_clicked(QAbstractButton *button);
 
+    void on_searchListView_clicked(const QModelIndex &index);
+
 private:
+    int m_searchedItemIndex;
+
     QPushButton *m_searchButton;
     QIcon m_goToIcon;
     QStringList m_searchStringList;

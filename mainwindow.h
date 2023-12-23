@@ -28,6 +28,7 @@ private:
     int m_miscPageIndex;
     int m_totalWidgetCount;
     QStandardItemModel *m_treeWidgetModel;
+    DataModel *m_quantityDataModel;
 
     //Methods
     void getItemModel();
