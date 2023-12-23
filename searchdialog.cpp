@@ -17,13 +17,13 @@ SearchDialog::SearchDialog(DataModel *dataModel, QWidget *parent) :
     this->setFixedSize(this->size());  //Locked dialog size
     this->setWindowTitle("Search Converters : ");
     ui->searchLineEdit->setPlaceholderText("Search all converters...");
-    ui->searchButtonBox->addButton(m_searchButton, QDialogButtonBox::AcceptRole);
+    ui->searchButtonBox->addButton(m_searchButton, QDialogButtonBox::ApplyRole);
 
     //Signals and slots
     connect(&m_dataModel, &DataModel::modelDataChanged, this, &SearchDialog::modelDataChangedSlot);
 
-    //Emit a signal when the search window opens
-    emit m_dataModel.modelDataChanged(m_firstIndex, m_lastIndex);
+    //Emit a signal when the search window opens, so that it creates the itemList
+    emit m_dataModel.modelDataChanged(m_firstIndex, m_lastIndex);  //first and last index are empty for now, because I dont think they are needed for now
 }
 
 SearchDialog::~SearchDialog()
@@ -31,7 +31,7 @@ SearchDialog::~SearchDialog()
     delete ui;
 }
 
-//Slots ----------------------------------------------------------------------------------
+//Slots ------------------------------------------------------------------------------------------------
 void SearchDialog::modelDataChangedSlot(const QModelIndex &topLeft, const QModelIndex &bottomRight)
 {
     QStandardItemModel *model = m_dataModel.getModel();
@@ -40,23 +40,27 @@ void SearchDialog::modelDataChangedSlot(const QModelIndex &topLeft, const QModel
 
 void SearchDialog::on_searchButtonBox_clicked(QAbstractButton *button)
 {
-    if(button == m_searchButton)  //When clicked on the search button
+    if(button == m_searchButton && ui->searchListView->selectionModel()->hasSelection())  //When clicked on the search button AND an item is selected
     {
-        m_searchedItemIndex = m_dataModel.getModel()->data(ui->searchListView->currentIndex(), Qt::UserRole).toInt();
-        qDebug() << m_searchedItemIndex << "was searched.";
+        int searchedItemIndex = m_dataModel.getModel()->data(ui->searchListView->currentIndex(), Qt::UserRole).toInt();
+        QString searchedItemText = m_dataModel.getModel()->data(ui->searchListView->currentIndex(), Qt::DisplayRole).toString();
+        emit searchSelected(searchedItemText);
+        close();
+
+        //Test
+        qDebug() << searchedItemIndex << searchedItemText << "was searched.";
     }
 }
 
-//Getters and setters
-int SearchDialog::getSearchedItemIndex()
-{
-    return m_searchedItemIndex;
-}
+//Getters and setters  ----------------------------------------------------------------------------------
 
-//When user clicks on an item
-void SearchDialog::on_searchListView_clicked(const QModelIndex &index)
+//SLOTS -------------------------------------------------------------------------------------------------
+void SearchDialog::on_searchListView_clicked(const QModelIndex &index) //When user clicks on an item
 {
-    int selectedIndex = m_dataModel.getModel()->data(index, Qt::UserRole).toInt();
-    qDebug() << selectedIndex << "was selected.";
+    int searchedItemIndex = m_dataModel.getModel()->data(index, Qt::UserRole).toInt();
+    QString searchedItemText = m_dataModel.getModel()->data(index, Qt::DisplayRole).toString();
+
+    //Test
+    qDebug() << searchedItemIndex << searchedItemText<< "was selected.";
 }
 

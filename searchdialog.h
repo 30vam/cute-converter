@@ -1,5 +1,5 @@
 #ifndef SEARCHDIALOG_H
-#define SEARCHDIALOG_Hs
+#define SEARCHDIALOG_H
 
 #include <QDialog>
 #include <QAbstractButton>
@@ -16,23 +16,7 @@ class SearchDialog;
 class SearchDialog : public QDialog
 {
     Q_OBJECT
-
-public:
-    explicit SearchDialog(DataModel *dataModel, QWidget *parent = nullptr);
-    ~SearchDialog();
-
-    //Getters and setters
-    int getSearchedItemIndex();
-
-private slots:
-    void modelDataChangedSlot(const QModelIndex &topLeft, const QModelIndex &bottomRight);
-    void on_searchButtonBox_clicked(QAbstractButton *button);
-
-    void on_searchListView_clicked(const QModelIndex &index);
-
 private:
-    int m_searchedItemIndex;
-
     QPushButton *m_searchButton;
     QIcon m_goToIcon;
     QStringList m_searchStringList;
@@ -41,6 +25,21 @@ private:
     QModelIndex m_lastIndex;
 
     Ui::SearchDialog *ui;
+
+public:
+    explicit SearchDialog(DataModel *dataModel, QWidget *parent = nullptr);
+    ~SearchDialog();
+
+    //Getters and setters
+
+private slots:
+    void modelDataChangedSlot(const QModelIndex &topLeft, const QModelIndex &bottomRight);
+    void on_searchButtonBox_clicked(QAbstractButton *button);
+    void on_searchListView_clicked(const QModelIndex &index);
+
+signals:
+    void searchSelected(QString searchedItemText);  //Signal enmits when user clicks on the "Go to" button
+
 };
 
 #endif // SEARCHDIALOG_H

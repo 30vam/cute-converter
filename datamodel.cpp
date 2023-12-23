@@ -63,7 +63,7 @@ DataModel::DataModel(QObject *parent)
     m_model->appendRow(fuelConsumptionItem);
     m_model->appendRow(luminanceItem);
 
-    //Iterate throught the items for modification
+    //Iterate throught the items for modifying and giving data to each item etc.
     for (int row = 0; row < m_model->rowCount(); row++)
     {
         for (int column = 0; column < m_model->columnCount(); column++)

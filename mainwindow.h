@@ -27,15 +27,13 @@ private:
     int m_scientificPageIndex;
     int m_miscPageIndex;
     int m_totalWidgetCount;
-    QStandardItemModel *m_treeWidgetModel;
-    DataModel *m_quantityDataModel;
+
+    DataModel *m_quantityDataModel;  //Data model that has all the data related to the available converter quantities
 
     //Methods
     void getItemModel();
 
     AboutDialog *m_aboutPage;  //About page instance
-    SearchDialog *m_searchDialog;
-;
 
     Ui::MainWindow *ui;
 
@@ -43,6 +41,10 @@ signals:
     void modelDataChanged();
 
 private slots:
+    //Custom Slots
+    void searchItemSelectedSlot(QString searchedItemText);
+
+    //UI Slots
     void on_conversionTypeTreeWidget_itemSelectionChanged();
     void on_switchToLengthAction_triggered();
     void on_switchToAreaAction_triggered();

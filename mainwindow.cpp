@@ -134,6 +134,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+
 //Setup Stacked Widget page
 void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using SelectionChanged slot instead of Clicked because it also works with keyboard
 {
@@ -183,13 +185,9 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
 //Getters and Setters ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Methods ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-void getItemModel()
-{
-
-}
 
 //SLOTS -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-void MainWindow::on_conversionStackedWidget_currentChanged(int newIndex)  //Widget Changed
+void MainWindow::on_conversionStackedWidget_currentChanged(int newIndex)  //On Widget Page Changed
 {
     //Managing activation of next and previous buttons in toolbar
     if(newIndex == m_totalWidgetCount - 1)  //If the next page is the last page, disable the next button. -1 because index starts from 0.
@@ -202,6 +200,15 @@ void MainWindow::on_conversionStackedWidget_currentChanged(int newIndex)  //Widg
         ui->nextAction->setEnabled(true);
 
     qDebug() << newIndex;
+}
+
+void MainWindow::searchItemSelectedSlot(QString searchedItemText)  //When the user searches a converter
+{
+    QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems(searchedItemText, Qt::MatchContains | Qt::MatchRecursive);
+    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
+
+    //Test
+    qDebug() << "Search signal recieved: " << searchedItemText;
 }
 
 
@@ -231,8 +238,9 @@ void MainWindow::on_previousAction_triggered()  //PREVIOUS BUTTON
 
 void MainWindow::on_searchAction_triggered()  //SEARCH
 {
-    m_searchDialog = new SearchDialog(m_quantityDataModel, this);
-    m_searchDialog->exec();
+    SearchDialog *searchDialog = new SearchDialog(m_quantityDataModel, this);
+    connect(searchDialog, &SearchDialog::searchSelected, this, &MainWindow::searchItemSelectedSlot);
+    searchDialog->exec();
 }
 
 void MainWindow::on_favoriteAction_triggered()  //FAVORITE
