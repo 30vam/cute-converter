@@ -5,6 +5,7 @@
 #include <QStandardItemModel>
 #include <QStandardItem>
 #include <QModelIndex>
+#include <QFont>
 
 class DataModel : public QObject
 {
@@ -16,6 +17,7 @@ public:
 
 private:
     QStandardItemModel *m_model;
+    QFont m_itemFont;
 
 signals:
     void modelDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight);
