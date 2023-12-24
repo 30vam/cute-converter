@@ -34,6 +34,8 @@ DataModel::DataModel(QObject *parent)
     QStandardItem *dataStorageItem = new QStandardItem("Data Storage");
     QStandardItem *fuelConsumptionItem = new QStandardItem("Fuel Consumption");
     QStandardItem *luminanceItem = new QStandardItem("Luminance");
+    QStandardItem *numberBaseItem = new QStandardItem("Number Base");
+    QStandardItem *timeZoneItem = new QStandardItem("Time Zone");
 
     //Add the items to the model:
     m_model->appendRow(basicItem);
@@ -62,6 +64,8 @@ DataModel::DataModel(QObject *parent)
     m_model->appendRow(dataStorageItem);
     m_model->appendRow(fuelConsumptionItem);
     m_model->appendRow(luminanceItem);
+    m_model->appendRow(numberBaseItem);
+    m_model->appendRow(timeZoneItem);
 
     //Iterate throught the items for modifying and giving data to each item etc.
     for (int row = 0; row < m_model->rowCount(); row++)
@@ -71,7 +75,7 @@ DataModel::DataModel(QObject *parent)
             QStandardItem *currentItem = m_model->item(row, column);  //Which item are we iterating through right now?
             currentItem->setFont(m_itemFont);
             currentItem->setEditable(false);  //Remove item editting ability from use
-            currentItem->setData(row, Qt::UserRole);  //Give an index to the item
+            //currentItem->setData(row, Qt::UserRole);  //Give an index to the item
         }
     }
 

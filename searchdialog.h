@@ -20,10 +20,8 @@ class SearchDialog : public QDialog
 private:
     QPushButton *m_searchButton;
     QIcon m_goToIcon;
-    QStringList m_searchStringList;
+    QList <QStandardItem *> m_searchResultList;
     DataModel m_dataModel;
-    QModelIndex m_firstIndex;
-    QModelIndex m_lastIndex;
 
     Ui::SearchDialog *ui;
 
@@ -31,10 +29,8 @@ public:
     explicit SearchDialog(DataModel *dataModel, QWidget *parent = nullptr);
     ~SearchDialog();
 
-    //Getters and setters
-
 private slots:
-    void modelDataChangedSlot(const QModelIndex &topLeft, const QModelIndex &bottomRight);
+    void onModelDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight);
     void on_searchButtonBox_clicked(QAbstractButton *button);
     void on_searchLineEdit_textChanged(const QString &arg1);
 

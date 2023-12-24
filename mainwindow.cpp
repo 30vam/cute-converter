@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #include "src/lengthconverter.h"
 #include "src/areaconverter.h"
 #include "src/volumeconverter.h"
@@ -24,7 +25,8 @@
 #include "src/fuelconsumptionconverter.h"
 #include "src/luminanceconverter.h"
 
-#include "datamodel.h"
+#include "aboutdialog.h"
+#include "searchdialog.h"
 
 #include <QDebug>
 
@@ -35,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //Create the data model for quantities
+    //Create an object of the data model that contains data about available quantities
     m_quantityDataModel = new DataModel();
 
     //Create the custom converter widgets
@@ -111,20 +113,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->fuelConsumptionToolButton->setDefaultAction(ui->switchToFuelConsumptionAction);
     ui->luminanceToolButton->setDefaultAction(ui->switchToLuminanceAction);
 
-    //Create about page
-    m_aboutPage = new AboutDialog(this);
-
     //Setup variables
-    m_basicPageIndex = 0;
-    m_scientificPageIndex = 1;
-    m_miscPageIndex = 2;
     m_totalWidgetCount = ui->conversionStackedWidget->count();
 
      //Set the default page to the BASIC page
     ui->conversionTypeTreeWidget->setCurrentItem(ui->conversionTypeTreeWidget->topLevelItem(0));
-    //ui->conversionTypeTreeWidget->expandAll(); //Expand the tree list when the program starts
 
-    //Set app to fullscreen and icon
+    //Set app to fullscreen
     this->showMaximized();
 }
 
@@ -134,9 +129,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+//Getters and Setters ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Methods ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//Setup Stacked Widget page
+//SLOTS -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Connect TreeWidget items to StackedWidget indexes, it's a weird code but it works?
 void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using SelectionChanged slot instead of Clicked because it also works with keyboard
 {
     int widgetIndex = 0;
@@ -147,6 +145,7 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
 
     foreach (QTreeWidgetItem *selectedItem, selectedItems) //There's only 1 selected item at a time in this case, but Qt still treats it as a list so I use a loop
     {
+        //First, we connect all tree topLevelItems to their pages since they are a special case
         if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(0))  //if it's the 1st tree HEADER
             widgetIndex = 0;
         else  if(selectedItem == ui->conversionTypeTreeWidget->topLevelItem(1))  //if it's the 2nd tree HEADER
@@ -177,19 +176,17 @@ void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using Sel
             }
         }
 
-        qDebug() << widgetIndex;
         ui->conversionStackedWidget->setCurrentIndex(widgetIndex);  //Finally, set the widget page to the correct one...(hopefully)
+
+        //TEST
+        qDebug() << "Tree Widget item selected, item number: " << widgetIndex;
     }
 }
 
-//Getters and Setters ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-//Methods ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-//SLOTS -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-void MainWindow::on_conversionStackedWidget_currentChanged(int newIndex)  //On Widget Page Changed
+//When StackedWidget index Changes:
+void MainWindow::on_conversionStackedWidget_currentChanged(int newIndex)
 {
-    //Managing activation of next and previous buttons in toolbar
+    //Managing activation/de-activation of next and previous buttons in toolbar
     if(newIndex == m_totalWidgetCount - 1)  //If the next page is the last page, disable the next button. -1 because index starts from 0.
         ui->nextAction->setEnabled(false);
     if(newIndex > 0 && !ui->previousAction->isEnabled())  //Enable the prev. button when in any other page besides the 1st page
@@ -199,25 +196,33 @@ void MainWindow::on_conversionStackedWidget_currentChanged(int newIndex)  //On W
     if(newIndex < m_totalWidgetCount - 1 && !ui->nextAction->isEnabled())  //Enable the next button when in any other page besides the last page
         ui->nextAction->setEnabled(true);
 
-    qDebug() << newIndex;
+    //TEST
+    qDebug() << "Going to Stacked Widget index: " << newIndex;
 }
 
-void MainWindow::searchItemSelectedSlot(QString searchedItemText)  //When the user searches a converter
+void MainWindow::handleSearchItemSelected(QString searchedItemText)  //When the user searches a converter
 {
     QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems(searchedItemText, Qt::MatchContains | Qt::MatchRecursive);
-    ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
+
+    //Check if the search result exists at all, to avoid out of index error. Then set the page
+    if(searchList.count() > 0)
+        ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
+
 
     //Test
-    qDebug() << "Search signal recieved: " << searchedItemText;
+    qDebug() << "Search signal for:" << searchedItemText << "was recieved.";
 }
 
 
 //ACTIONS ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//Toolbar
+//Toolbar actions
 void MainWindow::on_aboutAction_triggered()  //ABOUT
 {
-    m_aboutPage->exec();
+    //Create about page
+    AboutDialog *aboutPage = new AboutDialog(this);
+
+    aboutPage->exec();
 }
 
 void MainWindow::on_nextAction_triggered()  //NEXT BUTTON
@@ -239,7 +244,8 @@ void MainWindow::on_previousAction_triggered()  //PREVIOUS BUTTON
 void MainWindow::on_searchAction_triggered()  //SEARCH
 {
     SearchDialog *searchDialog = new SearchDialog(m_quantityDataModel, this);
-    connect(searchDialog, &SearchDialog::searchSelected, this, &MainWindow::searchItemSelectedSlot);
+
+    connect(searchDialog, &SearchDialog::searchSelected, this, &MainWindow::handleSearchItemSelected);
     searchDialog->exec();
 }
 

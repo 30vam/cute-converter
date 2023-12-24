@@ -5,8 +5,7 @@
 #include <QTreeWidget>
 #include <QStandardItemModel>
 
-#include "aboutdialog.h"
-#include "searchdialog.h"
+#include "datamodel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,20 +19,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    //Getters and setters
-
 private:
-    int m_basicPageIndex;
-    int m_scientificPageIndex;
-    int m_miscPageIndex;
     int m_totalWidgetCount;
-
     DataModel *m_quantityDataModel;  //Data model that has all the data related to the available converter quantities
-
-    //Methods
-    void getItemModel();
-
-    AboutDialog *m_aboutPage;  //About page instance
 
     Ui::MainWindow *ui;
 
@@ -42,7 +30,7 @@ signals:
 
 private slots:
     //Custom Slots
-    void searchItemSelectedSlot(QString searchedItemText);
+    void handleSearchItemSelected(QString searchedItemText);
 
     //UI Slots
     void on_conversionTypeTreeWidget_itemSelectionChanged();

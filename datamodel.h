@@ -10,8 +10,10 @@
 class DataModel : public QObject
 {
     Q_OBJECT
+
 public:
     explicit DataModel(QObject *parent = nullptr);
+
     //Getters and setters
     QStandardItemModel *getModel();
 
