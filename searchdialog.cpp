@@ -20,7 +20,6 @@ SearchDialog::SearchDialog(DataModel *dataModel, QWidget *parent) :
     ui->searchButtonBox->addButton(m_searchButton, QDialogButtonBox::ApplyRole);
 
     //Signals and slots
-
     connect(&m_dataModel, &DataModel::modelDataChanged, this, &SearchDialog::modelDataChangedSlot);
 
     //Emit a signal when the search window opens, so that it creates the itemList
@@ -71,14 +70,14 @@ void SearchDialog::on_searchLineEdit_textChanged(const QString &searchText)  //W
                 QModelIndex currentIndex = m_dataModel.getModel()->index(row, column);  //Which index are we iterating through?
                 QString currentText = m_dataModel.getModel()->data(currentIndex, Qt::DisplayRole).toString();
 
-                if(currentText.contains(searchText, Qt::CaseInsensitive))
+                if(currentText.contains(searchText, Qt::CaseInsensitive))  //Add items that containt the searchText to an itemList
                 {
                     matchCount++;
                     searchResultList.append(m_dataModel.getModel()->itemFromIndex(currentIndex));
                 }
             }
         }
-        if(searchResultList.count() > 0)  //Check if any items were found by the search (Otherwise it will give an out of range error)
+        if(searchResultList.count() > 0)  //Check if any items were found by the search (To avoid out of range error)
             ui->searchListView->setCurrentIndex(searchResultList.at(0)->index());  //Set the current item to the FIRST found searched item
 
         //Test
