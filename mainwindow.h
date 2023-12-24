@@ -30,7 +30,7 @@ signals:
 
 private slots:
     //Custom Slots
-    void handleSearchItemSelected(QString searchedItemText);
+    void handleSearch(QString searchedItemText);
 
     //UI Slots
     void on_conversionTypeTreeWidget_itemSelectionChanged();

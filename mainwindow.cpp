@@ -201,7 +201,7 @@ void MainWindow::on_conversionStackedWidget_currentChanged(int newIndex)
     qDebug() << "Going to Stacked Widget index:" << newIndex;
 }
 
-void MainWindow::handleSearchItemSelected(QString searchedItemText)  //When the user searches a converter
+void MainWindow::handleSearch(QString searchedItemText)  //When the user searches a converter
 {
     QList<QTreeWidgetItem *> searchList = ui->conversionTypeTreeWidget->findItems(searchedItemText, Qt::MatchContains | Qt::MatchRecursive);
 
@@ -245,7 +245,7 @@ void MainWindow::on_searchAction_triggered()  //SEARCH
 {
     SearchDialog *searchDialog = new SearchDialog(m_quantityDataModel, this);
 
-    connect(searchDialog, &SearchDialog::searchSelected, this, &MainWindow::handleSearchItemSelected);
+    connect(searchDialog, &SearchDialog::searchSelected, this, &MainWindow::handleSearch);
     searchDialog->exec();
 }
 
