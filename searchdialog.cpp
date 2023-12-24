@@ -78,8 +78,8 @@ void SearchDialog::on_searchLineEdit_textChanged(const QString &searchText)  //W
                 }
             }
         }
-
-        ui->searchListView->setCurrentIndex(searchResultList.at(0)->index());  //Set the current item to the FIRST found searched item
+        if(searchResultList.count() > 0)  //Check if any items were found by the search (Otherwise it will give an out of range error)
+            ui->searchListView->setCurrentIndex(searchResultList.at(0)->index());  //Set the current item to the FIRST found searched item
 
         //Test
         qDebug() << matchCount << "results were found for" << searchText << ":";
