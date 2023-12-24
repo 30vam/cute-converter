@@ -198,7 +198,7 @@ void MainWindow::on_conversionStackedWidget_currentChanged(int newIndex)
         ui->nextAction->setEnabled(true);
 
     //TEST
-    qDebug() << "Going to Stacked Widget index: " << newIndex;
+    qDebug() << "Going to Stacked Widget index:" << newIndex;
 }
 
 void MainWindow::handleSearchItemSelected(QString searchedItemText)  //When the user searches a converter
@@ -208,7 +208,6 @@ void MainWindow::handleSearchItemSelected(QString searchedItemText)  //When the 
     //Check if the search result exists at all, to avoid out of index error. Then set the page
     if(searchList.count() > 0)
         ui->conversionTypeTreeWidget->setCurrentItem(searchList[0]);
-
 
     //Test
     qDebug() << "Search signal for:" << searchedItemText << "was recieved.";

@@ -62,14 +62,11 @@ DataModel::DataModel(QObject *parent)
     appendRow(fuelConsumptionItem);
     appendRow(luminanceItem);
 
-    //Iterate throught the items for modifying and giving data to each item etc.
+    //Iterate throught the items for setting font etc.
     for (int row = 0; row < this->rowCount(); row++)
     {
         QStandardItem *currentItem = this->item(row, 0);  //Which item are we iterating through right now?
         currentItem->setFont(m_itemFont);
-        currentItem->setEditable(false);  //Remove item editting ability from use
+        currentItem->setEditable(false);  //Remove item editting ability from user
     }
-
-    //Signals and slots
-    connect(this, &QStandardItemModel::dataChanged, this, &DataModel::modelDataChanged);
 }

@@ -29,7 +29,6 @@ public:
     ~SearchDialog();
 
 private slots:
-    void onModelDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight);
     void on_searchButtonBox_clicked(QAbstractButton *button);
     void on_searchLineEdit_textChanged(const QString &arg1);
 
