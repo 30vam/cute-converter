@@ -2,11 +2,9 @@
 #define SEARCHDIALOG_H
 
 #include <QDialog>
-#include <QAbstractButton>
 #include <QPushButton>
 #include <QIcon>
 #include <QStandardItemModel>
-#include <QItemSelectionModel>
 
 #include "datamodel.h"
 
@@ -19,9 +17,10 @@ class SearchDialog : public QDialog
     Q_OBJECT
 private:
     QPushButton *m_searchButton;
+    QStandardItemModel *m_searchResultModel;
     QIcon m_goToIcon;
-    QList <QStandardItem *> m_searchResultList;
     DataModel m_dataModel;
+    QFont m_searchResultFont;
 
     Ui::SearchDialog *ui;
 

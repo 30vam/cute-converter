@@ -7,18 +7,13 @@
 #include <QModelIndex>
 #include <QFont>
 
-class DataModel : public QObject
+class DataModel : public QStandardItemModel
 {
     Q_OBJECT
-
 public:
     explicit DataModel(QObject *parent = nullptr);
 
-    //Getters and setters
-    QStandardItemModel *getModel();
-
 private:
-    QStandardItemModel *m_model;
     QFont m_itemFont;
 
 signals:

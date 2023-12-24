@@ -134,6 +134,7 @@ MainWindow::~MainWindow()
 //Methods ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //SLOTS -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 //Connect TreeWidget items to StackedWidget indexes, it's a weird code but it works?
 void MainWindow::on_conversionTypeTreeWidget_itemSelectionChanged()  //Using SelectionChanged slot instead of Clicked because it also works with keyboard
 {
