@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QIcon>
 #include <QStandardItemModel>
+#include <QItemSelectionModel>
 
 #include "datamodel.h"
 
@@ -35,7 +36,7 @@ public:
 private slots:
     void modelDataChangedSlot(const QModelIndex &topLeft, const QModelIndex &bottomRight);
     void on_searchButtonBox_clicked(QAbstractButton *button);
-    void on_searchListView_clicked(const QModelIndex &index);
+    void on_searchLineEdit_textChanged(const QString &arg1);
 
 signals:
     void searchSelected(QString searchedItemText);  //Signal enmits when user clicks on the "Go to" button
