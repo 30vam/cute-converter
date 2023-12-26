@@ -33,8 +33,8 @@ DataModel::DataModel(QObject *parent)
     QStandardItem *dataStorageItem = new QStandardItem("Data Storage");
     QStandardItem *fuelConsumptionItem = new QStandardItem("Fuel Consumption");
     QStandardItem *luminanceItem = new QStandardItem("Luminance");
-    QStandardItem *numberBaseItem = new QStandardItem("Number Base");
-    QStandardItem *timeZoneItem = new QStandardItem("Time Zone");
+    //QStandardItem *numberBaseItem = new QStandardItem("Number Base");
+    //QStandardItem *timeZoneItem = new QStandardItem("Time Zone");
 
     //Add the items to the model:
     appendRow(basicItem);
@@ -63,8 +63,8 @@ DataModel::DataModel(QObject *parent)
     appendRow(dataStorageItem);
     appendRow(fuelConsumptionItem);
     appendRow(luminanceItem);
-    appendRow(numberBaseItem);
-    appendRow(timeZoneItem);
+    //appendRow(numberBaseItem);
+    //appendRow(timeZoneItem);
 
     //Iterate throught the items for setting font etc.
     for (int row = 0; row < this->rowCount(); row++)
